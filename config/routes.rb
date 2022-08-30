@@ -15,9 +15,9 @@ Rails.application.routes.draw do
     # get 'interests', to: 'interests#profile'
 
     resources :plants do
-       resources :interests, only: [:new, :create]
-   #   resources :reviews, only: [:new]
-    end
+      resources :interests, only: [:new, :create]
+  #   resources :reviews, only: [:new]
+      end
     resources :interests, only: [:index, :show, :destroy]
     # resources :reviews
 
