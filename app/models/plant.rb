@@ -1,11 +1,12 @@
 class Plant < ApplicationRecord
   belongs_to :user
-  # has_many :markings
+  has_one_attached :photo
+  # has_many :interests
   # has_many :reviews
 
 
   # has_one_attached :photo
   validates :name, :category, presence: true
-  validates :category, inclusion: { in: ["cactus and succulents", "seeds", "trees", "climbers", "herbs", "flowers"] }
+  validates :category, inclusion: { in: ["Cactus and Succulents", "House Plants", "Seeds", "Trees", "Climbers", "Herbs", "Flowers", "Other"] }
 
 end
