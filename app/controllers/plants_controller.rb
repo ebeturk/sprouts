@@ -13,7 +13,7 @@ class PlantsController < ApplicationController
       #   # info_window: "<h1>hola probando</h1>",
       #   image_url: helpers.asset_url("tagmap.png")
       # }
-    end
+    # end
   end
 
   def show
