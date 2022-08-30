@@ -7,6 +7,12 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
 
+# Interest.destroy_all
+# Plant.destroy_all
+# User.destroy_all
+# Chatroom.destroy_all
+# Message.destroy_all
+
 puts "Creating plants..."
 
 2.times do |n|
@@ -22,5 +28,9 @@ puts "Creating plants..."
   lavender = Plant.create!( name: "Lavender", category: "Flowers", lighting: "🌞🌞🌞", watering: "💧💧💧",  user_id: user.id)
   pearl_ivy = Plant.create!( name: "Pearl Ivy", category: "Climbers", lighting: "🌞🌞", watering: "💧💧",  user_id: user.id)
 end
+
+Chatroom.create!
+Chatroom.create!
+Chatroom.create!
 
 puts "Finished!"
