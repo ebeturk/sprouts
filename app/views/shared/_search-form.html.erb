@@ -1,0 +1,15 @@
+<br>
+<div class="container row justify-content-center">
+<%= form_with url: root_path, method: :get, class: "d-flex col-12 py-3" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Let's grow together!"
+  %>
+  <%= submit_tag "🌿", class: "btn btn-primary fa-solid" %>
+<% end %>
+<% if params[:query] %>
+    <h2 class="text-center"><%= "Mark the plants you would like to grow at home" %></h2>
+<% end %>
+
+</div>
