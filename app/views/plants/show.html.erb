@@ -1,0 +1,23 @@
+<h1 class="title-card">See Plant Details</h1>
+
+<div class="card-plant">
+  <%# <%= cl_image_tag @plant.photo.key, crop: :fill %>
+      <div class="card-plant-description">
+        <h3> <%= @plant.name %> </h3>
+        <h4> Category: <strong><%= @plant.category %></strong></h4>
+        <h5> Lighting: <%= @plant.lighting %> </h5>
+        <h5> Watering: <%= @plant.watering %></h5>
+        <h5> Temperature: <%= @plant.temperature %></h5>
+        <h5> Location: <%= @plant.address %></h5>
+      </div>
+      <%# <div class="interest-plant">
+        <% @plant.interests.find_by(user_id: current_user.id) %>
+        <br>
+        <%# <%= render "interests/form", plant: @plant, interest: @interest %>
+      </div>
+    <div class="buttons btn-back-to-plants">
+      <%# <%= link_to "Book this Beast!", new_plant_booking_path(@plant), class: "btn btn-ghost" %>
+      <%= link_to "Back to plants", plants_path, class: "btn btn-ghost" %>
+    </div>
+  </div>
+</div>
