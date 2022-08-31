@@ -10,11 +10,28 @@ class InterestsController < ApplicationController
   end
 
   def create
-    @interest = Interest.new(interest_params)
+    @interest = Interest.new
     @plant = Plant.find(params[:plant_id])
-    @interest.plant_interest_id = interest_plant.id # plant user is interested in
-    @interest.user_interest_id = current_user.id # user that is interested in plant
-    @interest.user_exchange_id = interest_plant.user.id # owner of plant we are interested in
+    @interest.plant_interest_id = @plant.id # plant user is interested in
+    @interest.user_interest_id = current_user.id# user that is interested in plant
+    # @interest.user_exchange_id = interest_plant.user.id # owner of plant we are interested in
+    @interest.user_exchange_id = @plant.user.id
+    @interest.save!
+
+    #redirect_to
+
+    #@interest = Interest.new(interest_params)
+    #@plant = Plant.find(params[:plant_id])
+    #@interest.plant = @plant
+    #@interest.user = current_user
+    #@owner = @plant.user
+  end
+
+  def match
+    @interest = Interest.find(params[:interest_id])
+    @plant = Plant.find(params[:plant_id])
+    @interest.plant_exchange_id = @plant.id
+    @interest.match = true
     @interest.save!
   end
 
@@ -33,3 +50,6 @@ class InterestsController < ApplicationController
     params.require(:interest).permit(:match, :plant_interest_id, :plant_exchange_id, :user_interest_id, :user_exchange_id)
   end
 end
+
+
+

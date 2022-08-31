@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_124418) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_30_104715) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,20 +18,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_124418) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "interests", force: :cascade do |t|
-    t.boolean "match", default: false
-    t.bigint "plant_interest_id"
-    t.bigint "plant_exchange_id"
-    t.bigint "user_interest_id"
-    t.bigint "user_exchange_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["plant_exchange_id"], name: "index_interests_on_plant_exchange_id"
-    t.index ["plant_interest_id"], name: "index_interests_on_plant_interest_id"
-    t.index ["user_exchange_id"], name: "index_interests_on_user_exchange_id"
-    t.index ["user_interest_id"], name: "index_interests_on_user_interest_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -73,10 +59,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_124418) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "interests", "plants", column: "plant_exchange_id"
-  add_foreign_key "interests", "plants", column: "plant_interest_id"
-  add_foreign_key "interests", "users", column: "user_exchange_id"
-  add_foreign_key "interests", "users", column: "user_interest_id"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "plants", "users"
