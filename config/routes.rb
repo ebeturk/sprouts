@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'matches/index'
+  get 'matches/show'
+  get 'matches/delete'
   devise_for :users
   root to: "pages#home"
 

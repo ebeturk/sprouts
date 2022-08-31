@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_124418) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_213536) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,18 +20,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_124418) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "interests", force: :cascade do |t|
-    t.boolean "match", default: false
-    t.bigint "plant_interest_id"
-    t.bigint "plant_exchange_id"
-    t.bigint "user_interest_id"
-    t.bigint "user_exchange_id"
+  create_table "matches", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["plant_exchange_id"], name: "index_interests_on_plant_exchange_id"
-    t.index ["plant_interest_id"], name: "index_interests_on_plant_interest_id"
-    t.index ["user_exchange_id"], name: "index_interests_on_user_exchange_id"
-    t.index ["user_interest_id"], name: "index_interests_on_user_interest_id"
+    t.bigint "plant_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["plant_id"], name: "index_matches_on_plant_id"
+    t.index ["user_id"], name: "index_matches_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -73,11 +68,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_124418) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "interests", "plants", column: "plant_exchange_id"
-  add_foreign_key "interests", "plants", column: "plant_interest_id"
-  add_foreign_key "interests", "users", column: "user_exchange_id"
-  add_foreign_key "interests", "users", column: "user_interest_id"
+  create_table "wants", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "plant_id", null: false
+    t.index ["plant_id"], name: "index_wants_on_plant_id"
+    t.index ["user_id"], name: "index_wants_on_user_id"
+  end
+
+  add_foreign_key "matches", "plants"
+  add_foreign_key "matches", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "plants", "users"
+  add_foreign_key "wants", "plants"
+  add_foreign_key "wants", "users"
 end

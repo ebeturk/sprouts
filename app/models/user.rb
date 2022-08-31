@@ -4,7 +4,8 @@ class User < ApplicationRecord
   has_many :plants
   has_many :messages
 
-has_many :interests
+  has_many :wants
+  has_many :matches
 devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
 end
