@@ -12,11 +12,28 @@ class InterestsController < ApplicationController
   def create
     @interest = Interest.new(interest_params)
     @plant = Plant.find(params[:plant_id])
-    @interest.plant_interest_id = interest_plant.id # plant user is interested in
-    @interest.user_interest_id = current_user.id # user that is interested in plant
-    @interest.user_exchange_id = interest_plant.user.id # owner of plant we are interested in
     @interest.save!
+    @interest.plant = @plant # plant user is interested in
+    @interest.user = current_user # user that is interested in plant
+    @chatroom = Chatroom.new(params[:chatroom_id])
+
   end
+
+  def match
+    current_user.interests.each |interest| do
+      interest.plant.user.interests.each |int| do
+        int.plant.user == current_user
+      end
+    end
+  end
+
+        # @request = Request.new(request_params)
+        # @plant = Plant.find(params[:plant_id])
+        # @request.plant = @plant
+        # @user = @plant.user
+        # @user =
+        # @interest = Interest.new(interest_params)
+        # @plant = Plant.find(params[:plant_id])
 
   def destroy
     @interest = Interest.find(params[:id])
