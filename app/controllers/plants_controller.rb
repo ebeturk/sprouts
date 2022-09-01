@@ -19,7 +19,7 @@ class PlantsController < ApplicationController
   end
 
   def show
-    # @interest = Interest.new
+    @mark = Mark.new
   end
 
   def new
