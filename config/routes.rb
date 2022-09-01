@@ -20,8 +20,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index
 
-    # get 'profile', to: 'users#profile'
-    # get 'interests', to: 'interests#profile'
+
     resources :users, only: [:index, :show]
 
 
