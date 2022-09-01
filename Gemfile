@@ -80,3 +80,7 @@ end
 gem 'faker'
 
 gem "cloudinary"
+
+gem 'rails-bootstrap-toggle-buttons'
+
+gem "geocoder"
