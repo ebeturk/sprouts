@@ -79,5 +79,4 @@ end
 
 gem 'faker'
 
-gem "dotenv-rails", groups: [:development, :test]
-
+gem "cloudinary"
