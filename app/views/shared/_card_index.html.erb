@@ -7,7 +7,11 @@
   {:width=>"296", :height=>"300", :crop=>"lpad"},
   {:border=>"4px_solid_gold"}
   ] %>
-
+<% if mark.present? %>
+  <p>Unmark</p>
+  <% else %>
+    <%= render "marks/form", plant: plant, mark: mark %>
+  <% end %>
     <h2><%=link_to plant.name, plant_path(plant)%></h2>
   </div>
 </div>
