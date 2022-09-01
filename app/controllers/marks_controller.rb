@@ -22,8 +22,8 @@ class MarksController < ApplicationController
 
     def match
       current_user.marks.each |mark| do
-        interest.plant.user.marks.each |marked| do
-          if int.plant.user == current_user
+        mark.plant.user.marks.each |marked| do
+          if marked.plant.user == current_user
             match = Match.new
             match.user1 = current_user
             match.user2 = marked.plant.user
