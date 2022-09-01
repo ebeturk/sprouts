@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
     # get 'profile', to: 'users#profile'
     # get 'interests', to: 'interests#profile'
+    resources :users, only: [:index, :show]
 
     resources :plants do
       resources :interests, only: [:new, :create]
