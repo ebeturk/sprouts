@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
-    get "profile", to: "pages#profile", as: :profile
+  get "profile", to: "pages#profile", as: :profile
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
@@ -28,5 +29,7 @@ Rails.application.routes.draw do
       resources :marks, only: [:new, :create, :edit, :update]
     end
     resources :marks, only: [:index, :show, :destroy]
+
+  resources :users, only: [:index, :show]
 
 end
