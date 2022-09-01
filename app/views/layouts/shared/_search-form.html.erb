@@ -1,6 +1,6 @@
 <br>
 <div class="container row justify-content-center">
-<%= form_with url: root_path, method: :get, class: "d-flex col-12 py-3" do %>
+<%= form_with url: plants_path, method: :get, class: "d-flex col-12 py-3" do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
