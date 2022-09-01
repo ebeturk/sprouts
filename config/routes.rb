@@ -26,8 +26,8 @@ Rails.application.routes.draw do
 
 
     resources :plants do
-      resources :interests, only: [:new, :create]
+      resources :marks, only: [:new, :create, :edit, :update]
     end
-    resources :interests, only: [:index, :show, :destroy]
+    resources :marks, only: [:index, :show, :destroy]
 
 end
