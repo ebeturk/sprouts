@@ -1,7 +1,8 @@
 class Plant < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
-  # has_many :interests
+  has_many :marks
+  has_many :matches
   # has_many :reviews
 
 
