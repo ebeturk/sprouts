@@ -1,6 +1,7 @@
 <div class="content">
-  <div class="image">
-  <img  class="image" src=../assets/images/fukayamamo-BBmyspFyRWs-unsplash />
+  <%# <img  class="image" src=../assets/images/fukayamamo-BBmyspFyRWs-unsplash /> %>
+  <%# <img  class="image" src="https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" /> %>
+
 
   <%# <%= cl_image_tag plant.photo.key, :transformation=>[
   {:effect=>"trim"},
@@ -8,6 +9,15 @@
   {:border=>"4px_solid_gold"}
   ] %>
 
-    <h2><%=link_to plant.name, plant_path(plant)%></h2>
+  <div class="mycard">
+    <div class="card-name">
+      <h2><%=link_to plant.name, plant_path(plant)%></h2>
+    </div>
+    <div class="buttons-card">
+      <i class="fa-regular fa-heart"></i>
+      <i class="fa-regular fa-compass"></i>
+      <i class="fa-regular fa-circle-user"></i>
+      <%# <%= link_to "a", plants_path %>
+    </div>
   </div>
 </div>
