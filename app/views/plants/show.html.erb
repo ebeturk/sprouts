@@ -10,10 +10,10 @@
         <h5> Temperature: <%= @plant.temperature %></h5>
         <h5> Location: <%= @plant.address %></h5>
       </div>
-      <%# <div class="interest-plant">
-        <% @plant.interests.find_by(user_id: current_user.id) %>
+      <%# <div class="mark-plant">
+        <% @plant.marks.find_by(user_id: current_user.id) %>
         <br>
-        <%# <%= render "interests/form", plant: @plant, interest: @interest %>
+        <%# <%= render "marks/form", plant: @plant, mark: @mark %>
       </div>
     <div class="buttons btn-back-to-plants">
       <%# <%= link_to "Book this Beast!", new_plant_booking_path(@plant), class: "btn btn-ghost" %>
@@ -22,5 +22,17 @@
   </div>
 </div>
 
+
+
 <%# <% mark.plant_id = plant.id %>
-<%# <%= render "marks/form", plant: @plant, mark: @mark %> 
+<%# <%= render "marks/form", plant: @plant, mark: @mark %>
+
+<% if current_user.marked?(@plant) %>
+  <%= link_to plant_likes_path(plant), method: :delete do %>
+    <i class="fas fa-heart"></i>
+  <% end %>
+<% else %>
+  <%= link_to plant_likes_path(@plant), method: :post do %>
+    <i class="far fa-heart"></i>
+  <% end %>
+<% end %>

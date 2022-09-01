@@ -1,3 +1,5 @@
 <%= simple_form_for [plant, mark] do |f| %>
   <%= f.submit "mark" %>
 <% end %>
+
+<%= link_to "Mark", plant_marks_path(@plant), method: :post %>

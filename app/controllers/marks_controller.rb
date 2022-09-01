@@ -4,12 +4,15 @@ class MarksController < ApplicationController
       @mark = Mark.all
     end
 
+    def marked?
+      Mark.where(user_id: current_user.id, plant_id: params[:plant_id]).exists?
+    end
 
     def create
-      @mark = Mark.new
+      @mark = Mark.new unless marked?
       @plant = Plant.find(params[:plant_id])
-      @mark.plant = @plant # plant user is marked in
-      @mark.user = current_user # user that is marked in plant
+      @mark.plant = @plant # plant user marked
+      @mark.user = current_user # user that marks the plant
       # @chatroom = Chatroom.new(params[:chatroom_id])
       if @mark.save!
         redirect_to plant_path(@plant)
