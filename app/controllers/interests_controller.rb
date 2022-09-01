@@ -50,6 +50,3 @@ class InterestsController < ApplicationController
     params.require(:interest).permit(:match, :plant_interest_id, :plant_exchange_id, :user_interest_id, :user_exchange_id)
   end
 end
-
-
-
