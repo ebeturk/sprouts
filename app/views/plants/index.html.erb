@@ -1,13 +1,13 @@
 
 <div class="container">
-    <%= render "shared/search-form"  %>
+  <%= render "layouts/shared/search-form"  %>
 </div>
 <br>
 <h1>Plants to Grow</h1>
 <br>
 <div class="cards">
   <% @plants.each do |plant| %>
-   <%= render "shared/card_index", plant: plant  %> %>
+  <%= render "shared/card_index", plant: plant  %> %>
   <% end %>
 </div>
 

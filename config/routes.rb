@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :chatrooms, only: [:index, :show] do
+  resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
   get "profile", to: "pages#profile", as: :profile
@@ -19,16 +19,10 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
 
     resources :plants do
-<<<<<<< HEAD
-      resources :marks, only: [:new, :create]
-    end
-    resources :marks, only: [:index, :show, :destroy]
-=======
       resources :marks, only: [:create, :edit, :update]
     end
     resources :marks, only: [:index, :show, :destroy]
 
   resources :users, only: [:index, :show]
->>>>>>> master
 
 end
