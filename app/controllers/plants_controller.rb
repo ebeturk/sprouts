@@ -4,6 +4,8 @@ class PlantsController < ApplicationController
 
   def index
     @plants = Plant.all
+    sql = "name @@ :query OR category @@ :query"
+      @plants = Plant.where(sql, query: "%#{params[:query]}%")
     # The `geocoded` scope filters only plants with coordinates
     # @markers = @plants.geocoded.map do |plant|
       # {
