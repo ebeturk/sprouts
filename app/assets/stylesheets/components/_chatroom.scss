@@ -1,5 +1,4 @@
 .chatroom {
-  background: white;
   margin-top: 9px;
   height: calc(100vh - 75px);
   display: flex;
@@ -14,6 +13,9 @@
   }
 
   .messages {
+    height: 200px;
+    background-color: #cccccc;
+    background-image: linear-gradient(rgb(255, 194, 203), rgb(179, 255, 199));
     height: 100%;
     overflow: scroll;
     padding: 1rem;

@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_075921) do
   end
 
   create_table "interests", force: :cascade do |t|
-    t.boolean "match"
+    t.boolean "match", default: false
     t.bigint "plant_interest_id"
     t.bigint "plant_exchange_id"
     t.bigint "user_interest_id"
