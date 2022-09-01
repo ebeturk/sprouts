@@ -18,7 +18,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_075921) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
   end
 
   create_table "interests", force: :cascade do |t|
@@ -33,8 +32,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_075921) do
     t.index ["plant_interest_id"], name: "index_interests_on_plant_interest_id"
     t.index ["user_exchange_id"], name: "index_interests_on_user_exchange_id"
     t.index ["user_interest_id"], name: "index_interests_on_user_interest_id"
-=======
->>>>>>> master
   end
 
   create_table "marks", force: :cascade do |t|
@@ -99,23 +96,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_075921) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> master
   add_foreign_key "interests", "plants", column: "plant_exchange_id"
   add_foreign_key "interests", "plants", column: "plant_interest_id"
   add_foreign_key "interests", "users", column: "user_exchange_id"
   add_foreign_key "interests", "users", column: "user_interest_id"
-<<<<<<< HEAD
-=======
-
-  add_foreign_key "chatrooms", "users", column: "user_1_id"
-  add_foreign_key "chatrooms", "users", column: "user_2_id"
->>>>>>> master
->>>>>>> master
   add_foreign_key "marks", "plants"
   add_foreign_key "marks", "users"
   add_foreign_key "matches", "plants", column: "plant_1_id"
