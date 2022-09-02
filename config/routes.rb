@@ -23,6 +23,4 @@ Rails.application.routes.draw do
     end
     resources :marks, only: [:index, :show, :destroy]
 
-  resources :users, only: [:index, :show]
-
 end
