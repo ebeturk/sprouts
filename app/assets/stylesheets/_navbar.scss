@@ -1,0 +1,24 @@
+.navbar-nav me-auto {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar {
+  background: white;
+  width: 100vw;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+ul li {
+  margin:5px;
+}
