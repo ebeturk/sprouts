@@ -10,8 +10,10 @@
 <div class="cards">
   <% @plants.each do |plant| %>
 
+
   <% mark = @marks.to_a.find{ |mark| mark.plant_id == plant.id } %>
   <%= render "layouts/shared/card_index", mark: mark, plant: plant  %>
+
   <% end %>
 </div>
 
