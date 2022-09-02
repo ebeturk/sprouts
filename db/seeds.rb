@@ -7,11 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
 
-# Interest.destroy_all
-# Plant.destroy_all
-# User.destroy_all
-# Chatroom.destroy_all
-# Message.destroy_all
+Mark.destroy_all
+Plant.destroy_all
+User.destroy_all
+Chatroom.destroy_all
+Message.destroy_all
 
 puts "Creating plants..."
 
@@ -22,11 +22,15 @@ puts "Creating plants..."
     username: "Sprout",
     description: "Plant lover"
   )
-  pilea = Plant.create!(name: "Pilea", category: "House Plants", lighting: "🌞🌞", watering: "💧💧💧", user_id: user.id)
+  rubber_plant = Plant.create!(name: "Rubber Plant", category: "House Plants", lighting: "🌞🌞", watering: "💧💧", user_id: user.id)
+  pilea = Plant.create!( name: "Pilea Plant", category: "House Plants", lighting: "🌞", watering: "💧💧",  user_id: user.id)
+  palm = Plant.create!( name: "Palm Tree", category: "Trees", lighting: "🌞🌞🌞", watering: "💧",  user_id: user.id)
+  red_prayer = Plant.create!( name: "Red Prayer", category: "House Plants", lighting: "🌞🌞", watering: "💧💧",  user_id: user.id)
+  mango = Plant.create!( name: "Mango", category: "Trees", lighting: "🌞🌞🌞", watering: "💧💧",   user_id: user.id)
+  sanseveria = Plant.create!( name: "Sanseveria", category: "House Plants", lighting: "🌞🌞🌞", watering: "💧💧",   user_id: user.id)
   monstera = Plant.create!( name: "Monstera", category: "House Plants", lighting: "🌞", watering: "💧",   user_id: user.id)
-  sunflower = Plant.create!( name: "Sunflower", category: "Flowers", lighting: "🌞🌞🌞", watering: "💧💧💧",  user_id: user.id)
-  lavender = Plant.create!( name: "Lavender", category: "Flowers", lighting: "🌞🌞🌞", watering: "💧💧💧",  user_id: user.id)
-  pearl_ivy = Plant.create!( name: "Pearl Ivy", category: "Climbers", lighting: "🌞🌞", watering: "💧💧",  user_id: user.id)
+  pothos = Plant.create!( name: "Pothos Plant", category: "Climber", lighting: "🌞🌞🌞", watering: "💧💧",   user_id: user.id)
+
 end
 
 Chatroom.create!(name: "Gingko House", user_1_id: 1, user_2_id: 2)
