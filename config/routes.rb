@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 
   devise_for :users
-  root to: "pages#home"
+  root to: "plants#index"
 
   resources :chatrooms, only: :show do
     resources :messages, only: :create
@@ -22,7 +22,5 @@ Rails.application.routes.draw do
       resources :marks, only: [:create, :edit, :update]
     end
     resources :marks, only: [:index, :show, :destroy]
-
-  resources :users, only: [:index, :show]
 
 end
