@@ -9,8 +9,8 @@ require "faker"
 
 Mark.destroy_all
 Plant.destroy_all
-Chatroom.destroy_all
 User.destroy_all
+Chatroom.destroy_all
 Message.destroy_all
 
 puts "Creating plants..."
