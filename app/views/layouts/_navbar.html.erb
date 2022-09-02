@@ -1,4 +1,12 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<<<<<<< HEAD:app/views/shared/_navbar.html.erb
+  <div class="container-fluid" style="width: 100vw;display: flex;justify-content: center;">
+    <%# <%= link_to root_path, class: "navbar-brand" do %>
+      <%# <%= image_tag "sprouts_logo.jpg" %>
+    <%# <% end %>
+    <div class="">
+      <ul style="display:flex;list-style: none">
+=======
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
@@ -10,13 +18,39 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+>>>>>>> ab9ddc3e9cd154b216b30abea4c721cbe8852e27:app/views/layouts/_navbar.html.erb
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+          <li class="nav-item active" style="margin:5px;">
+            <%= link_to plants_path, class: "navbar-brand" do %>
+              <%= image_tag "home.png" %>
+            <% end %>
+          </li>
+          <li class="nav-item active" style="margin:5px;">
+            <%= link_to chatroom_path(current_user), class: "navbar-brand" do %>
+              <%= image_tag "chat.png" %>
+            <% end %>
+          </li>
+          <li class="nav-item active" style="margin:5px;">
+            <%= link_to new_plant_path, class: "navbar-brand" do %>
+              <%= image_tag "post.png" %>
+            <% end %>
+          </li>
+          <li class="nav-item active" style="margin:5px;">
+            <%= link_to marks_path, class: "navbar-brand" do %>
+              <%= image_tag "mark.png" %>
+            <% end %>
+          </li>
+          <li class="nav-item active" style="margin:5px;">
+            <%= link_to user_path(current_user), class: "navbar-brand" do %>
+              <%= image_tag "profile.png" %>
+            <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
           </li>
+<<<<<<< HEAD:app/views/shared/_navbar.html.erb
+          <% else %>
+=======
 
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -38,9 +72,9 @@
           </li> %>
 
         <% else %>
+>>>>>>> ab9ddc3e9cd154b216b30abea4c721cbe8852e27:app/views/layouts/_navbar.html.erb
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
         <% end %>
       </ul>
     </div>
