@@ -1,5 +1,5 @@
 class MarksController < ApplicationController
-    
+
     def index
       @mark = Mark.all
     end
@@ -13,13 +13,14 @@ class MarksController < ApplicationController
       @user = @plant.user # user that owns the plant
       plants = current_user.plants
       if @mark.save!
-      matching_mark = Mark.where(user: @user, plant_id: plants.pluck(:id)).order("created_at asc").first #array of my plants' ids
+        matching_mark = Mark.where(user: @user, plant_id: plants.pluck(:id)).order("created_at asc").first #array of my plants' ids
         if matching_mark.present?
           Match.create(user1: current_user, user2: @user, plant1: @plant, plant2: matching_mark.plant)
           redirect_to plant_path, flash: "💚 Your plant's got a match! 💚"
         else
       # @chatroom = Chatroom.new(params[:chatroom_id])
         redirect_to plant_path(@plant)
+        end
       else
         render "plants/show", status: :unprocessable_entity
       end

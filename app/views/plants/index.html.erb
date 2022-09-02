@@ -1,13 +1,13 @@
 
 <div class="container">
-  <%= render "shared/search-form"  %>
+  <%# <%= render "shared/search-form"  %>
 </div>
 <br>
 <h1>Plants to Grow</h1>
 <br>
 <div class="cards">
   <% @plants.each do |plant| %>
-  <% mark = @marks.to_a.find( |mark| mark.plant_id == plant.id) %>
+  <% mark = @marks.to_a.find{ |mark| mark.plant_id == plant.id } %>
   <%= render "shared/card_index", mark: mark, plant: plant  %>
   <% end %>
 </div>

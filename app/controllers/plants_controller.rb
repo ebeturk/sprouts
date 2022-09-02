@@ -9,6 +9,7 @@ class PlantsController < ApplicationController
     else
     @plants = Plant.all
     end
+    @marks = current_user.marks
     # The `geocoded` scope filters only plants with coordinates
     # @markers = @plants.geocoded.map do |plant|
       # {
