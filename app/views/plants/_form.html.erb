@@ -1,0 +1,38 @@
+<div class="input-form-new-plant">
+  <div class="form-column">
+
+  <%= simple_form_for(plant, html: { id: :tame_form })  do |f| %>
+
+      <%= f.label :name  %>
+      <%= f.text_field :name %>
+
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+
+      <%= f.label :lighting, class: "input input-width" %>
+      <%= f.text_field :lighting, class: "input" %>
+
+      <%= f.label :watering, class: "input input-width" %>
+      <%= f.text_field :watering, class: "input" %>
+
+      <%= f.label :temperature, class: "input input-width" %>
+      <%= f.text_field :temperature, class: "input" %>
+
+      <%= f.label :address, class: "input input-width" %>
+      <%= f.text_field :address, class: "input" %>
+
+      <div class="p-4 mt-6 d-flex justify-content-center">
+        <%= f.file_field :photo, class: "btn button-create file-width-fix"%>
+      </div>
+
+      <div class="p-4 justify-content-center">
+        <%# <%= f.submit class: "btn button-create fa-solid fa-tree" %>
+        <%= f.button :button, class: "my-button" do %>
+          <i class="fa-solid fa-tree"></i>
+        <% end %>
+      </div>
+
+  <% end %>
+
+  </div>
+</div>
