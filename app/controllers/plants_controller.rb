@@ -3,9 +3,12 @@ class PlantsController < ApplicationController
   # skip_before_action :authenticate_user!, only: :index
 
   def index
-    @plants = Plant.all
-    sql = "name @@ :query OR category @@ :query"
-      @plants = Plant.where(sql, query: "%#{params[:query]}%")
+      if params[:query].present?
+        sql = "name @@ :query OR category @@ :query"
+          @plants = Plant.where(sql, query: "%#{params[:query]}%")
+      else
+      @plants = Plant.all
+      end
     # The `geocoded` scope filters only plants with coordinates
     # @markers = @plants.geocoded.map do |plant|
       # {

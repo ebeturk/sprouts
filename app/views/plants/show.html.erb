@@ -3,9 +3,7 @@
 
   <div class="card-plant">
     <%# <%= cl_image_tag @plant.photo.key, crop: :fill %>
-    <img src="https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" alt=""
-        class="plant-image"
-    >
+    <img src="https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" alt="" class="plant-image" >
         <div class="card-plant-description">
           <h3> <%= @plant.name %> </h3>
           <h4> Category: <strong><%= @plant.category %></strong></h4>
@@ -13,6 +11,15 @@
           <h5> Watering: <%= @plant.watering %></h5>
           <h5> Temperature: <%= @plant.temperature %></h5>
           <h5> Location: <%= @plant.address %></h5>
+          <i class="fa-regular fa-heart"></i>
+          <%= link_to "Back to plants", plants_path, class: "btn btn-ghost" %>
+
+          <div class="buttons btn-back-to-plants">
+            <%# <%= link_to "Book this Beast!", new_plant_booking_path(@plant), class: "btn btn-ghost" %>
+          <%= link_to plants_path do %> <i class="fa-regular fa-heart" aria-hidden="true" target="_blank"></i><% end %>
+
+
+          </div>
         </div>
         <%# <div class="interest-plant">
           <% @plant.interests.find_by(user_id: current_user.id) %>

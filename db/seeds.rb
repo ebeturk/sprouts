@@ -29,8 +29,8 @@ puts "Creating plants..."
   pearl_ivy = Plant.create!( name: "Pearl Ivy", category: "Climbers", lighting: "🌞🌞", watering: "💧💧",  user_id: user.id)
 end
 
-Chatroom.create!(name: "general")
-Chatroom.create!(name: "random")
-Chatroom.create!(name: "specific")
+# Chatroom.create!(name: "general")
+# Chatroom.create!(name: "random")
+# Chatroom.create!(name: "specific")
 
 puts "Finished!"
