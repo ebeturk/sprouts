@@ -16,24 +16,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_075921) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "name"
+    t.bigint "user_1_id"
+    t.bigint "user_2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    
-  end
 
-  create_table "interests", force: :cascade do |t|
-    t.boolean "match", default: false
-    t.bigint "plant_interest_id"
-    t.bigint "plant_exchange_id"
-    t.bigint "user_interest_id"
-    t.bigint "user_exchange_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["plant_exchange_id"], name: "index_interests_on_plant_exchange_id"
-    t.index ["plant_interest_id"], name: "index_interests_on_plant_interest_id"
-    t.index ["user_exchange_id"], name: "index_interests_on_user_exchange_id"
-    t.index ["user_interest_id"], name: "index_interests_on_user_interest_id"
-  end
+    t.index ["user_1_id"], name: "index_chatrooms_on_user_1_id"
+    t.index ["user_2_id"], name: "index_chatrooms_on_user_2_id"
+
+    end
 
   create_table "marks", force: :cascade do |t|
     t.bigint "user_id"
