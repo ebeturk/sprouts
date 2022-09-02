@@ -9,7 +9,7 @@ require "faker"
 
 Mark.destroy_all
 Plant.destroy_all
-# Chatroom.destroy_all
+Chatroom.destroy_all
 User.destroy_all
 Message.destroy_all
 
@@ -35,7 +35,7 @@ end
 
 
 
-# Chatroom.create!(name: "Gingko House", user_1_id: User.first.id, user_2_id: User.last.id)
+Chatroom.create!(name: "Gingko House", user_1_id: User.first.id, user_2_id: User.last.id)
 # Chatroom.create!(name: "Cedar House", user_1_id: 1, user_2_id: 2)
 # Chatroom.create!(name: "Pine House", user_1_id: 1, user_2_id: 2)
 
