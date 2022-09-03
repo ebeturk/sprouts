@@ -20,20 +20,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_075921) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "interests", force: :cascade do |t|
-    t.boolean "match", default: false
-    t.bigint "plant_interest_id"
-    t.bigint "plant_exchange_id"
-    t.bigint "user_interest_id"
-    t.bigint "user_exchange_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["plant_exchange_id"], name: "index_interests_on_plant_exchange_id"
-    t.index ["plant_interest_id"], name: "index_interests_on_plant_interest_id"
-    t.index ["user_exchange_id"], name: "index_interests_on_user_exchange_id"
-    t.index ["user_interest_id"], name: "index_interests_on_user_interest_id"
-  end
-
   create_table "marks", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "plant_id"
@@ -95,10 +81,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_075921) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
-
-  add_foreign_key "chatrooms", "users", column: "user_1_id"
-  add_foreign_key "chatrooms", "users", column: "user_2_id"
 
   add_foreign_key "marks", "plants"
   add_foreign_key "marks", "users"
