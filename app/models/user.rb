@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :plants
   has_many :messages
 
-  has_many :chatrooms, dependent: :destroy
+  has_many :chatrooms #, dependent: :destroy
 
   has_many :marks
   has_many :matches
