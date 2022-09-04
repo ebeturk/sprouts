@@ -15,15 +15,20 @@
     </div>
     <div class="buttons-card">
       <% if mark.present? %>
-        <i class="fa-solid fa-heart"></i>
+        <%= simple_form_for [plant, mark] do |f| %>
+      <%= f.button(:submit, {value: "Delete Mark", action: 'marks#destroy', method: 'delete'}) %>
+          <%= f.button :button, class: "btn-ghost" do %>
+          <i class="fa-solid fa-heart"></i>
+          <% end %>
+        <% end %>
+
       <% else %>
         <%= simple_form_for [plant, Mark.new] do |f| %>
-  <%# <%= f.button :submit do %>
-  <%= f.button :button, class: "btn-ghost buttons-card"  do %>
+          <%= f.button :button do %>
           <i class="fa-regular fa-heart"></i>
+          <% end %>
         <% end %>
-  <% end %>
-        <% end %>
+      <% end %>
 
       <i class="fa-regular fa-compass"></i>
       <%# <i class="fa-regular fa-circle-user"></i> %>

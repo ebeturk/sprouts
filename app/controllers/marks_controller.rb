@@ -13,13 +13,14 @@ class MarksController < ApplicationController
       @user = @plant.user # user that owns the plant
       plants = current_user.plants
       if @mark.save!
+
         matching_mark = Mark.where(user: @user, plant_id: plants.pluck(:id)).order("created_at asc").first #array of my plants' ids
         if matching_mark.present?
           Match.create(user_1: current_user, user_2: @user, plant_1: @plant, plant_2: matching_mark.plant)
-          redirect_to plants_path(@mark.plant), notice: "💚 Your plant's got a match! 💚"
+          redirect_to plants_path, notice: "💚 Your plant's got a match! 💚"
           # @chatroom = Chatroom.new(params[:chatroom_id]) ADD user_1 and user_2 to params
         else
-        redirect_to plant_path(@plant)
+        redirect_to plants_path(@plant)
         end
       else
         render "plants/show", status: :unprocessable_entity
@@ -28,7 +29,7 @@ class MarksController < ApplicationController
 
 
     def destroy
-      @mark = mark.find(params[:id])
+      @mark = current_user.mark.find(params[:id])
       @mark.destroy
       respond_to do |format|
         format.html { redirect_to plant_path(@mark.plant), notice: "Your Match was cancelled", status: :see_other }
