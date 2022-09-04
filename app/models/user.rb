@@ -8,6 +8,6 @@ class User < ApplicationRecord
 
   has_many :marks
   has_many :matches
-devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 end

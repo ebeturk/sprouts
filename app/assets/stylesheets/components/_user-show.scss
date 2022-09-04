@@ -1,22 +1,76 @@
-#user-profile{
+// #user-profile{
+//   border-radius: 25px;
+// }
+// #user-image{
+//   border-radius: 25px;
+// }
+// .profile-head {
+//   transform: translateY(5rem)
+// }
+
+// .cover {
+//   background-image: url(https://images.unsplash.com/photo-1610639380038-912611f4436f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbnRzJTIwJTJCJTIwZXhjaGFuZ2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60);
+//   background-size: cover;
+//   background-repeat: no-repeat
+// }
+
+// .profile {
+//   border-radius: 20px;
+// }
+// #user-name {
+//   font-weight: 200;
+// }
+.username {
+  padding: 20px;
+}
+.my-collection {
+margin: 10px;
+}
+.about-me {
+ margin: 10px;
+}
+.card-trip {
+  overflow: hidden;
+  background: white;
+  margin: 30px;
+  height: 750px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 25px;
 }
-#user-image{
-  border-radius: 25px;
-}
-.profile-head {
-  transform: translateY(5rem)
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
 }
 
-.cover {
-  background-image: url(https://images.unsplash.com/photo-1610639380038-912611f4436f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbnRzJTIwJTJCJTIwZXhjaGFuZ2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60);
-  background-size: cover;
-  background-repeat: no-repeat
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
 }
 
-.profile {
-  border-radius: 20px;
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  width: 250px;
 }
-#user-name {
-  font-weight: 200;
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  justify-content: space-between;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 100px;
+  height: 100px;
 }

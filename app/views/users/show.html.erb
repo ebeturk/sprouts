@@ -1,4 +1,4 @@
-<div class="row py-5 px-4">
+<%# <div class="row py-5 px-4">
  <div class="col-md-5 mx-auto">
    <div class="bg-white shadow  overflow-hidden" id="user-profile">
     <div class="px-4 pt-0 pb-4 cover">
@@ -43,4 +43,23 @@
          <p class="font-italic mb-0">Photographer</p>
       </div>
     </div>
+  </div> %>
+<div class="card-trip">
+  <img src="https://images.unsplash.com/photo-1551970634-747846a548cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" />
+  <div class="card-trip-infos">
+    <div>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+    <div class="username">
+        <h2><%= link_to @username, current_user%></h2>
+    </div>
+    <div class="about-me">
+      <h2>About Me</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, ad ipsam. Porro itaque nesciunt sunt necessitatibus blanditiis, repellat, ipsa illum maxime soluta accusantium, voluptatibus quo assumenda. Iste fuga ipsam fugit.</p>
+    </div>
+    <div class="my-collection">
+      <h2>My Collection</h2>
+    </div>
+
   </div>
+</div>
