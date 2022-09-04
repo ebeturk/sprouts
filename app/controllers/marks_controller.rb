@@ -8,7 +8,7 @@ class MarksController < ApplicationController
     def create
       @mark = Mark.new
       @plant = Plant.find(params[:plant_id])
-      @mark.plant = @plant # plant user is marked in
+      @mark.plant = @plant # plant user marks
       @mark.user = current_user
       @user = @plant.user # user that owns the plant
       plants = current_user.plants
@@ -17,8 +17,8 @@ class MarksController < ApplicationController
         if matching_mark.present?
           Match.create(user_1: current_user, user_2: @user, plant_1: @plant, plant_2: matching_mark.plant)
           redirect_to plants_path(@mark.plant), notice: "💚 Your plant's got a match! 💚"
+          # @chatroom = Chatroom.new(params[:chatroom_id]) ADD user_1 and user_2 to params
         else
-      # @chatroom = Chatroom.new(params[:chatroom_id])
         redirect_to plant_path(@plant)
         end
       else
