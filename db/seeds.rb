@@ -7,11 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
 
-Mark.destroy_all
-Plant.destroy_all
-Chatroom.destroy_all
-User.destroy_all
-Message.destroy_all
+# Mark.destroy_all
+# Plant.destroy_all
+# Chatroom.destroy_all
+# User.destroy_all
+# Message.destroy_all
 
 puts "Creating plants..."
 
