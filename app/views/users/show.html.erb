@@ -44,3 +44,13 @@
       </div>
     </div>
   </div>
+
+  <%# <p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @user.reviews.each do |review| %>
+    <%# <li class="list-group-item"><%= review.rating %></li>
+    <%# <li class="list-group-item"><%= review.content %></li>
+  <%# <% end %>
+<%# </ul> %>
+<%# <br> %>
+<%= render "reviews/form", user: @user, review: @review %>
