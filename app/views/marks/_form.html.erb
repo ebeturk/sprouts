@@ -1,3 +1,5 @@
 <%= simple_form_for [plant, mark] do |f| %>
-  <%= f.submit "M" %>
+  <%= f.button :button, class: "my-button-mark" do %>
+    <i class="fa-solid fa-heart"></i>
+  <% end %>
 <% end %>
