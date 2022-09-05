@@ -4,14 +4,19 @@ class MarksController < ApplicationController
       @mark = Mark.all
     end
 
+    def marked?
+      Mark.where(user_id: current_user.id, plant_id: params[:plant_id]).exists?
+    end
 
     def create
-      @mark = Mark.new
+      @mark = Mark.new unless marked?
       @plant = Plant.find(params[:plant_id])
+
       @mark.plant = @plant # plant user marks
       @mark.user = current_user
       @user = @plant.user # user that owns the plant
       plants = current_user.plants
+
       if @mark.save!
 
         matching_mark = Mark.where(user: @user, plant_id: plants.pluck(:id)).order("created_at asc").first #array of my plants' ids
@@ -29,11 +34,16 @@ class MarksController < ApplicationController
 
 
     def destroy
-      @mark = current_user.mark.find(params[:id])
+      @mark = Mark.find(params[:id])
       @mark.destroy
-      respond_to do |format|
-        format.html { redirect_to plant_path(@mark.plant), notice: "Your Match was cancelled", status: :see_other }
+      if Match.find(@mark.plant_id)
+        @mark.destroy
+        respond_to do |format|
+        format.html { redirect_to plants_path(@mark.plant), notice: "Your Match was cancelled", status: :see_other }
         format.json { head :no_content }
+        end
+      else
+        redirect_to plants_path(@mark.plant)
       end
     end
 
