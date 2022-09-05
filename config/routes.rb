@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
 
     resources :plants do
-      resources :marks, only: [:create, :edit, :update]
+      resources :marks, only: [:create, :edit, :update, :profile]
     end
     resources :marks, only: [:index, :show, :destroy]
 
