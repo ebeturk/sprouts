@@ -51,16 +51,20 @@
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
     <div>
-        <h2 id="username"><strong><%= @user.username %></strong></h2>
+        <h2 id="username"><strong><%= current_user.username %></strong></h2>
     </div>
     <div class="about-me">
       <h2>About Me</h2>
-      <p><%= @user.description %></p>
+      <p><%= current_user.description %></p>
     </div>
     <div class="my-collection">
       <h2>My Collection</h2>
         <div>
-           <% @user.plants %>
+            <% current_user.plants.each do |plant| %>
+              <% plant.photos.each do |photo| %>
+                  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
+            <%  end %>
         </div>
     </div>
 
