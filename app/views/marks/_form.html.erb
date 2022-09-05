@@ -1,5 +1,9 @@
 <%= simple_form_for [plant, mark] do |f| %>
-  <%= f.submit "mark" %>
-<% end %>
 
-<%= link_to "Mark", plant_marks_path(@plant), method: :post %>
+<%# <%= link_to "Mark", plant_marks_path(@plant), method: :post %>
+
+  <%# <%= f.button :submit do %>
+  <%= f.button :button, class: "btn-ghost buttons-card"  do %>
+          <i class="fa-regular fa-heart"></i>
+        <% end %>
+  <% end %>

@@ -3,7 +3,13 @@ class PlantsController < ApplicationController
   # skip_before_action :authenticate_user!, only: :index
 
   def index
+
+    if params[:query].present?
+      sql = "name @@ :query OR category @@ :query"
+        @plants = Plant.where(sql, query: "%#{params[:query]}%")
+    else
     @plants = Plant.all
+
     sql = "name @@ :query OR category @@ :query"
       @plants = Plant.where(sql, query: "%#{params[:query]}%")
     The `geocoded` scope filters only plants with coordinates
@@ -15,7 +21,22 @@ class PlantsController < ApplicationController
         # info_window: "<h1>hola probando</h1>",
         image_url: helpers.asset_url("sprouts_logo")
       }
+      end
+
     end
+    @marks = current_user.marks
+
+    # The `geocoded` scope filters only plants with coordinates
+    # @markers = @plants.geocoded.map do |plant|
+      # {
+      #   lat: plant.latitude,
+      #   lng: plant.longitude,
+      #   # info_window: render_to_string(partial: "shared/info_window", locals: { plant: plant }),
+      #   # info_window: "<h1>hola probando</h1>",
+      #   image_url: helpers.asset_url("tagmap.png")
+      # }
+    # end
+
   end
 
   def show

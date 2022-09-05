@@ -1,14 +1,19 @@
 
 <div class="container">
-    <%= render "shared/search-form"  %>
+
+  <%= render "layouts/shared/search-form"  %>
+
 </div>
 <br>
 <h1>Plants to Grow</h1>
 <br>
 <div class="cards">
   <% @plants.each do |plant| %>
-  <% mark = @marks.to_a.find( |mark| mark.plant_id == plant.id) %>
-  <%= render "shared/card_index", mark: mark, plant: plant  %>
+
+
+  <% mark = @marks.to_a.find{ |mark| mark.plant_id == plant.id } %>
+  <%= render "layouts/shared/card_index", mark: mark, plant: plant  %>
+
   <% end %>
 </div>
 
@@ -16,6 +21,13 @@
 
 <div style="width: 100%; height: 600px;"
 
+
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+  <%# <% data-controller="map" %>
+  <%# data-map-markers-value="<%= @markers.to_json %>
+  <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
+<%# </div> %>
+
