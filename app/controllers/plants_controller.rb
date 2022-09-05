@@ -17,7 +17,7 @@ class PlantsController < ApplicationController
     else
       @plants = Plant.all
     #  The `geocoded` scope filters only plants with coordinates
-    @markers = @plants.geocoded.map do |plant|
+      @markers = @plants.geocoded.map do |plant|
       {
         lat: plant.latitude,
         lng: plant.longitude,
@@ -36,6 +36,18 @@ class PlantsController < ApplicationController
 
   def new
     @plant = Plant.new
+  end
+
+  def map
+    @plants = Plant.all
+    @markers = @plants.geocoded.map do |plant|
+      {
+        lat: plant.latitude,
+        lng: plant.longitude,
+        info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
+        image_url: helpers.asset_url("sprouts_logo")
+      }
+    end
   end
 
   def create
