@@ -4,31 +4,40 @@ class MarksController < ApplicationController
       @mark = Mark.all
     end
 
-    def marked?
-      Mark.where(user_id: current_user.id, plant_id: params[:plant_id]).exists?
-    end
 
     def create
-      @mark = Mark.new unless marked?
       @plant = Plant.find(params[:plant_id])
-
-      @mark.plant = @plant # plant user marks
-      @mark.user = current_user
-      @user = @plant.user # user that owns the plant
-      plants = current_user.plants
-
-      if @mark.save!
-
-        matching_mark = Mark.where(user: @user, plant_id: plants.pluck(:id)).order("created_at asc").first #array of my plants' ids
-        if matching_mark.present?
-          Match.create(user_1: current_user, user_2: @user, plant_1: @plant, plant_2: matching_mark.plant)
-          redirect_to plants_path, notice: "💚 Your plant's got a match! 💚"
-          @chatroom = Chatroom.new(user_1: current_user, user_2: @user)
-        else
-        redirect_to plants_path(@plant)
-        end
-      else
+      # raise
+      if marked?
         render "plants/show", status: :unprocessable_entity
+      else
+        @mark = Mark.new
+
+        @mark.plant = @plant # plant user marks
+        @mark.user = current_user
+        @user = @plant.user # user that owns the plant
+        plants = current_user.plants
+
+        if @mark.save!
+          matching_mark = Mark.where(user: @user, plant_id: plants.pluck(:id)).order("created_at asc").first #array of my plants' ids
+          if matching_mark.present?
+            Match.create(user_1: current_user, user_2: @user, plant_1: @plant, plant_2: matching_mark.plant)
+            if params[:last_action] == "index"
+              redirect_to plants_path(anchor: "plant-#{@plant.id}"), notice: "💚 Your plant's got a match! 💚"
+              @chatroom = Chatroom.create(user_1: current_user, user_2: @user)
+            else
+              redirect_to plant_path(@plant), notice: "💚 Your plant's got a match! 💚"
+              @chatroom = Chatroom.create(user_1: current_user, user_2: @user)
+            end
+
+          else
+            if params[:last_action] == "index"
+              redirect_to plants_path(anchor: "plant-#{@plant.id}")
+            else
+              redirect_to plant_path(@plant)
+            end
+          end
+        end
       end
     end
 
@@ -39,8 +48,8 @@ class MarksController < ApplicationController
       if Match.find(@mark.plant_id)
         @mark.destroy
         respond_to do |format|
-        format.html { redirect_to plants_path(@mark.plant), notice: "Your Match was cancelled", status: :see_other }
-        format.json { head :no_content }
+          format.html { redirect_to plants_path(@mark.plant), notice: "Your Match was cancelled", status: :see_other }
+          format.json { head :no_content }
         end
       else
         redirect_to plants_path(@mark.plant)
@@ -51,8 +60,12 @@ class MarksController < ApplicationController
 
     def mark_params
       params.require(:mark).permit()
+      end
     end
-  end
+
+    def marked?
+      Mark.where(user_id: current_user.id, plant_id: params[:plant_id]).exists?
+    end
 
   # def match
     # current_user.marks.each |mark| do
@@ -68,3 +81,4 @@ class MarksController < ApplicationController
     #   end
     # end
   # end
+sprouts

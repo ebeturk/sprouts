@@ -1,12 +1,24 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
 }
+.navbar-sprouts {
+  background-color: #82935D;
 
+  // width: 100vw;
+  // position: fixed;
+  // bottom: 0px;
+  // display: flex;
+  // justify-content: space-between;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-default {
+  background-color: #82935D;
+  border-color: #E7E7E7;
 }

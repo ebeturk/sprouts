@@ -17,6 +17,7 @@
                 <%# <i class="fa-solid fa-heart"></i>
               <% end %>
 
+<<<<<<< HEAD
 <div class="card-scene">
 	<div class="awesome-card">
 	  <div class="card-front">
@@ -82,3 +83,39 @@
         <% end %>
       </div>
 -->
+=======
+  <%# <%= cl_image_tag plant.photo.key, :transformation=>[
+  {:effect=>"trim"},
+  {:width=>"296", :height=>"300", :crop=>"lpad"},
+  {:border=>"4px_solid_gold"}
+  ] %>
+
+  <div class="mycard" id="plant-<%= plant.id %>">
+    <div class="card-name">
+      <h2><%=link_to plant.name, plant_path(plant)%></h2>
+    </div>
+    <%# inline if  statement to hide mark for the user %>
+    <div class="buttons-card">
+    <% if !current_user.plants.include?(plant) %>
+      <% if mark.present? %>
+        <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
+          <i class="fa-solid fa-heart"></i>
+        <% end %>
+      <% else %>
+        <%= simple_form_for [plant, Mark.new] do |f| %>
+          <%= hidden_field_tag "last_action", action_name %>
+          <%= f.button :button do %>
+            <i class="fa-regular fa-heart"></i>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+      <i class="fa-regular fa-compass"></i>
+      <%# <i class="fa-regular fa-circle-user"></i> %>
+      <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+      <%# <%= link_to "a", plants_path %>
+    </div>
+  </div>
+</div>
+>>>>>>> master
