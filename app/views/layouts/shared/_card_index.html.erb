@@ -15,13 +15,9 @@
     </div>
     <div class="buttons-card">
       <% if mark.present? %>
-        <%= simple_form_for [plant, mark] do |f| %>
-      <%= f.button(:submit, {value: "Delete Mark", action: 'marks#destroy', method: 'delete'}) %>
-          <%= f.button :button, class: "btn-ghost" do %>
+        <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
           <i class="fa-solid fa-heart"></i>
-          <% end %>
         <% end %>
-
       <% else %>
         <%= simple_form_for [plant, Mark.new] do |f| %>
           <%= f.button :button do %>
