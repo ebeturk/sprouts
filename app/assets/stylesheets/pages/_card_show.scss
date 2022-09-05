@@ -25,7 +25,8 @@
 .plant-actions{
   height: 18%;
   width: 100%;
-  background-color: pink;
+  background: #94AB96;
+  // opacity: 0.9;
   display: flex;
   justify-content: center;
   border-radius: 22px;
@@ -37,12 +38,19 @@
 .name-buttons{
   width: 74%;
   height: 99%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .plant-name, h2 {
   font-size: 35px;
-  margin-bottom: 15px;
+  // margin-bottom: 15px;
   font-family: 'Playfair Display SC';
+  color: rgb(34, 43, 33);
+  margin-right: 22px;
+
+
 }
 
 .buttons-container {
@@ -50,13 +58,15 @@
   justify-content: space-between;
   align-content: flex-end;
   align-items: center;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 
   .fa-heart {
     color: rgb(34, 43, 33);
+    margin-right: 15px;
   }
 
   .fa-compass {
     color: rgb(34, 43, 33);
+    margin-right: 15px;
   }
 }
