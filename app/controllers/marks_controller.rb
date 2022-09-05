@@ -4,14 +4,19 @@ class MarksController < ApplicationController
       @mark = Mark.all
     end
 
+    def marked?
+      Mark.where(user_id: current_user.id, plant_id: params[:plant_id]).exists?
+    end
 
     def create
-      @mark = Mark.new
+      @mark = Mark.new unless marked?
       @plant = Plant.find(params[:plant_id])
+
       @mark.plant = @plant # plant user marks
       @mark.user = current_user
       @user = @plant.user # user that owns the plant
       plants = current_user.plants
+
       if @mark.save!
 
         matching_mark = Mark.where(user: @user, plant_id: plants.pluck(:id)).order("created_at asc").first #array of my plants' ids
