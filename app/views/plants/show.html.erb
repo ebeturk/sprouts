@@ -26,12 +26,12 @@
 <%# <% mark.plant_id = plant.id %>
 <%# <%= render "marks/form", plant: @plant, mark: @mark %>
 
-<% if current_user.marked?(@plant) %>
-  <%= link_to plant_likes_path(plant), method: :delete do %>
-    <i class="fas fa-heart"></i>
+<%# <% if current_user.marked?(@plant) %>
+  <%# <%= link_to plant_likes_path(plant), method: :delete do %>
+    <%# <i class="fas fa-heart"></i>
   <% end %>
-<% else %>
-  <%= link_to plant_likes_path(@plant), method: :post do %>
-    <i class="far fa-heart"></i>
+<%# <% else %>
+  <%# <%= link_to plant_likes_path(@plant), method: :post do %>
+    <%# <i class="far fa-heart"></i>
   <% end %>
-<% end %>
+<%# <% end %>
