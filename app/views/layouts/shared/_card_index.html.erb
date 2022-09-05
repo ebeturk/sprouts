@@ -9,22 +9,26 @@
   {:border=>"4px_solid_gold"}
   ] %>
 
-  <div class="mycard">
+  <div class="mycard" id="plant-<%= plant.id %>">
     <div class="card-name">
       <h2><%=link_to plant.name, plant_path(plant)%></h2>
     </div>
+    <%# inline if  statement to hide mark for the user %>
     <div class="buttons-card">
+    <% if !current_user.plants.include?(plant) %>
       <% if mark.present? %>
         <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
           <i class="fa-solid fa-heart"></i>
         <% end %>
       <% else %>
         <%= simple_form_for [plant, Mark.new] do |f| %>
+          <%= hidden_field_tag "last_action", action_name %>
           <%= f.button :button do %>
-          <i class="fa-regular fa-heart"></i>
+            <i class="fa-regular fa-heart"></i>
           <% end %>
         <% end %>
       <% end %>
+    <% end %>
 
       <i class="fa-regular fa-compass"></i>
       <%# <i class="fa-regular fa-circle-user"></i> %>

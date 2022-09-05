@@ -10,20 +10,18 @@ class PlantsController < ApplicationController
         {
           lat: plant.latitude,
           lng: plant.longitude,
-          # info_window: render_to_string(partial: "shared/info_window", locals: { plant: plant }),
-          # info_window: "<h1>hola probando</h1>",
+          info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
           image_url: helpers.asset_url("sprouts_logo")
         }
       end
     else
       @plants = Plant.all
     #  The `geocoded` scope filters only plants with coordinates
-    @markers = @plants.geocoded.map do |plant|
+      @markers = @plants.geocoded.map do |plant|
       {
         lat: plant.latitude,
         lng: plant.longitude,
-        # info_window: render_to_string(partial: "shared/info_window", locals: { plant: plant }),
-        # info_window: "<h1>hola probando</h1>",
+        info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
         image_url: helpers.asset_url("sprouts_logo")
       }
       end
@@ -32,11 +30,24 @@ class PlantsController < ApplicationController
   end
 
   def show
-    @mark = Mark.new
+    @plant = Plant.find(params[:id])
+    @mark = Mark.where(user: current_user, plant: @plant).first
   end
 
   def new
     @plant = Plant.new
+  end
+
+  def map
+    @plants = Plant.all
+    @markers = @plants.geocoded.map do |plant|
+      {
+        lat: plant.latitude,
+        lng: plant.longitude,
+        info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
+        image_url: helpers.asset_url("sprouts_logo")
+      }
+    end
   end
 
   def create
