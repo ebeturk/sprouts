@@ -1,66 +1,84 @@
-<div class="content">
-  <%# <img  class="image" src=../assets/images/fukayamamo-BBmyspFyRWs-unsplash /> %>
-  <%# <img  class="image" src="https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" /> %>
+<%# <div class="content">
+  <div class="card-flip">
+	  <div class="flip">
+	    <div class="front">
+        <div class="card">
+          <!-- front page card-->
+          <div class="card-name">
+            <h2><%=link_to plant.name, plant_path(plant)%>
+            <%# </h2>
+          </div>
 
-
-  <%# <%= cl_image_tag plant.photo.key, :transformation=>[
-  {:effect=>"trim"},
-  {:width=>"296", :height=>"300", :crop=>"lpad"},
-  {:border=>"4px_solid_gold"}
-  ] %>
-
-
-<div class="card-flip">
-	<div class="flip">
-	<div class="front">
-      <div class="card">
-        <!-- front page card-->
-        <div class="card-name">
-          <h2><%=link_to plant.name, plant_path(plant)%></h2>
-        </div>
-
-        <div class="buttons-card">
-          <% if mark.present? %>
-            <%= simple_form_for [plant, mark] do |f| %>
-              <%= f.button(:submit, {value: "Delete Mark", action: 'marks#destroy', method: 'delete'}) %>
-              <%= f.button :button, class: "btn-ghost" do %>
-              <i class="fa-solid fa-heart"></i>
-            <% end %>
-
-  <div class="mycard">
-    <div class="card-name">
-      <h2><%=link_to plant.name, plant_path(plant)%></h2>
-    </div>
-    <div class="buttons-card">
-      <% if mark.present? %>
-        <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
-          <i class="fa-solid fa-heart"></i>
-        <% end %>
-      <% else %>
-        <%= simple_form_for [plant, Mark.new] do |f| %>
-          <%= f.button :button do %>
-          <i class="fa-regular fa-heart"></i>
-
-          <% end %>
-
-          <% else %>
-            <%= simple_form_for [plant, Mark.new] do |f| %>
-              <%= f.button :button do %>
-                <i class="fa-regular fa-heart"></i>
+          <div class="buttons-card">
+            <% if mark.present? %>
+              <%# <%= simple_form_for [plant, mark] do |f| %>
+                <%# <%= f.button(:submit, {value: "Delete Mark", action: 'marks#destroy', method: 'delete'}) %>
+                <%# <%= f.button :button, class: "btn-ghost" do %>
+                <%# <i class="fa-solid fa-heart"></i>
               <% end %>
+
+<div class="card-scene">
+	<div class="awesome-card">
+	  <div class="card-front">
+      <div class="card-name">
+        <h2><%=link_to plant.name, plant_path(plant)%></h2>
+      </div>
+      <div class="buttons-card">
+        <% if mark.present? %>
+          <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
+            <i class="fa-solid fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= simple_form_for [plant, Mark.new] do |f| %>
+            <%= f.button :button do %>
+              <i class="fa-regular fa-heart"></i>
             <% end %>
           <% end %>
-        <div class="back">
+        <% end %>
+      </div>
+    </div>
+    <div class="card-back">
+      Back side
+    </div>
+  </div>
+</div>
+
+            <%# <%= simple_form_for [plant, Mark.new] do |f| %>
+              <%# <%= f.button :button do %>
+                <%# <i class="fa-regular fa-heart"></i>
+              <% end %>
+            <%# <% end %>
+          <%# <% end %>
+        <%# <div class="back"> %>
         <!-- back page card-->
-          <div class="card">
+          <%# <div class="card">
             <p class="card-text">This text is going to be on the backside of the card.</p>
           </div>
-        </div>
+        </div> %>
         <!-- End Card Flip -->
-      </div>
+      <%# </div>
     </div>
   </div>
 
 </div>
 
-</div>
+</div> %>
+
+<!--
+<div class="card-name">
+        <h2><%=link_to plant.name, plant_path(plant)%></h2>
+      </div>
+      <div class="buttons-card">
+        <% if mark.present? %>
+          <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
+            <i class="fa-solid fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= simple_form_for [plant, Mark.new] do |f| %>
+            <%= f.button :button do %>
+              <i class="fa-regular fa-heart"></i>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+-->
