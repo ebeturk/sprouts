@@ -9,6 +9,7 @@
   {:border=>"4px_solid_gold"}
   ] %>
 
+
 <div class="card-flip">
 	<div class="flip">
 	<div class="front">
@@ -25,6 +26,21 @@
               <%= f.button :button, class: "btn-ghost" do %>
               <i class="fa-solid fa-heart"></i>
             <% end %>
+
+  <div class="mycard">
+    <div class="card-name">
+      <h2><%=link_to plant.name, plant_path(plant)%></h2>
+    </div>
+    <div class="buttons-card">
+      <% if mark.present? %>
+        <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
+          <i class="fa-solid fa-heart"></i>
+        <% end %>
+      <% else %>
+        <%= simple_form_for [plant, Mark.new] do |f| %>
+          <%= f.button :button do %>
+          <i class="fa-regular fa-heart"></i>
+
           <% end %>
 
           <% else %>
@@ -44,4 +60,7 @@
       </div>
     </div>
   </div>
+
+</div>
+
 </div>
