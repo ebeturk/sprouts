@@ -10,17 +10,22 @@
         </div>
         <div class="buttons-container">
           <%# <i class="fa-regular fa-heart fa-3x"></i> %>
-          <% if @mark.present? %>
-            <%= link_to mark_path(@mark), data: {turbo_method: :delete } do %>
-              <i class="fa-solid fa-heart"></i>
-            <% end %>
-          <% else %>
-            <%= simple_form_for [plant, Mark.new] do |f| %>
-              <%= f.button :button do %>
-              <i class="fa-regular fa-heart"></i>
+          <% if !current_user.plants.include?(@plant) %>
+            <% if @mark.present? %>
+              <%= link_to mark_path(@mark), data: {turbo_method: :delete } do %>
+                <i class="fa-solid fa-heart"></i>
+              <% end %>
+            <% else %>
+              <%= simple_form_for [@plant, Mark.new] do |f| %>
+                <%= f.button :button do %>
+                  <i class="fa-regular fa-heart"></i>
+                <% end %>
               <% end %>
             <% end %>
           <% end %>
+
+
+
           <i class="fa-regular fa-compass fa-3x"></i>
           <img class="avatar-bordered-marks" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
         </div>
@@ -33,18 +38,3 @@
     <%= link_to "Back to plants", plants_path, class: "btn btn-ghost" %>
   </div>
 </div>
-
-
-
-<%# <% mark.plant_id = plant.id %>
-<%# <%= render "marks/form", plant: @plant, mark: @mark %>
-
-<%# <% if current_user.marked?(@plant) %>
-  <%# <%= link_to plant_likes_path(plant), method: :delete do %>
-    <%# <i class="fas fa-heart"></i>
-  <% end %>
-<%# <% else %>
-  <%# <%= link_to plant_likes_path(@plant), method: :post do %>
-    <%# <i class="far fa-heart"></i>
-  <% end %>
-<%# <% end %>

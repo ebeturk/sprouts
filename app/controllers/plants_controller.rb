@@ -31,7 +31,7 @@ class PlantsController < ApplicationController
 
   def show
     @plant = Plant.find(params[:id])
-    @mark = Mark.find(plant_id)
+    @mark = Mark.where(user: current_user, plant: @plant).first
   end
 
   def new
