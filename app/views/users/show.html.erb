@@ -50,15 +50,18 @@
     <div>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
-    <div class="username">
-        <h2><%= link_to @username, current_user%></h2>
+    <div>
+        <h2 id="username"><strong><%= @user.username %></strong></h2>
     </div>
     <div class="about-me">
       <h2>About Me</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, ad ipsam. Porro itaque nesciunt sunt necessitatibus blanditiis, repellat, ipsa illum maxime soluta accusantium, voluptatibus quo assumenda. Iste fuga ipsam fugit.</p>
+      <p><%= @user.description %></p>
     </div>
     <div class="my-collection">
       <h2>My Collection</h2>
+        <div>
+           <%# <%= @plant.profile %> %>
+        </div>
     </div>
 
   </div>

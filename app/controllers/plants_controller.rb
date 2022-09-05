@@ -36,11 +36,11 @@ class PlantsController < ApplicationController
     @plant = Plant.new(plant_params)
     @plant.user = current_user
     @plant.save
-    # if @plant.save
-    #   redirect_to plants_path(@plant)
-    # else
-    #   render :new
-    # end
+    #  if @plant.save
+    #    redirect_to plants_path(@plant)
+    #  else
+    #    render :new
+    #  end
   end
 
   def profile

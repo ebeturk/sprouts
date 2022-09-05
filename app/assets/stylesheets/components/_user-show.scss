@@ -20,7 +20,8 @@
 // #user-name {
 //   font-weight: 200;
 // }
-.username {
+#username {
+  font-size: 30px;
   padding: 20px;
 }
 .my-collection {
@@ -31,7 +32,7 @@ margin: 10px;
 }
 .card-trip {
   overflow: hidden;
-  background: white;
+  background: rgba(204, 215, 206, 1);
   margin: 30px;
   height: 750px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -42,19 +43,24 @@ margin: 10px;
   height: 200px;
   width: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+
 }
 
 .card-trip p {
-  font-size: 12px;
+  font-size: 16px;
   opacity: .7;
-  margin: 0;
+  margin: 10px;
   width: 250px;
+  font-family: 'Ubuntu', sans-serif;
+
 }
 
 
