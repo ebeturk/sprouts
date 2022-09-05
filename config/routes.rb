@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile", as: :profile
   get "chatrooms", to: "users#chatrooms"
 
+  get "map", to: "plants#map"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
