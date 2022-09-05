@@ -6,7 +6,10 @@
       class: "form-control",
       placeholder: "Let's grow together!"
     %>
-    <%= submit_tag "🌿", class: "btn-sprouts fa-solid" %>
+    <%# <%= submit_tag "🌿", class: "btn-sprouts fa-solid" %>
+    <button class="btn-sprouts">
+      <i class="fa-solid fa-leaf fa-lg"></i>
+    </button>
   <% end %>
   <% if params[:query] %>
       <h2 class="text-center"><%= "Mark the plants you would like to grow at home" %></h2>
