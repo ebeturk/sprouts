@@ -34,11 +34,16 @@ class MarksController < ApplicationController
 
 
     def destroy
-      @mark = current_user.mark.find(params[:id])
+      @mark = Mark.find(params[:id])
       @mark.destroy
-      respond_to do |format|
-        format.html { redirect_to plant_path(@mark.plant), notice: "Your Match was cancelled", status: :see_other }
+      if Match.find(@mark.plant_id)
+        @mark.destroy
+        respond_to do |format|
+        format.html { redirect_to plants_path(@mark.plant), notice: "Your Match was cancelled", status: :see_other }
         format.json { head :no_content }
+        end
+      else
+        redirect_to plants_path(@mark.plant)
       end
     end
 
