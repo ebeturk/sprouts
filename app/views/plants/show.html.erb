@@ -1,3 +1,5 @@
+  <%= render "layouts/shared/search-form"  %>
+
 <div class="middler">
   <div class="plant-card">
     <div class="plant-bg"></div>
@@ -7,17 +9,28 @@
           <h2><%= @plant.name %></h2>
         </div>
         <div class="buttons-container">
-          <i class="fa-regular fa-heart fa-3x"></i>
+          <%# <i class="fa-regular fa-heart fa-3x"></i> %>
+          <% if @mark.present? %>
+            <%= link_to mark_path(@mark), data: {turbo_method: :delete } do %>
+              <i class="fa-solid fa-heart"></i>
+            <% end %>
+          <% else %>
+            <%= simple_form_for [plant, Mark.new] do |f| %>
+              <%= f.button :button do %>
+              <i class="fa-regular fa-heart"></i>
+              <% end %>
+            <% end %>
+          <% end %>
           <i class="fa-regular fa-compass fa-3x"></i>
           <img class="avatar-bordered-marks" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
         </div>
-      <div class="buttons btn-back-to-plants">
-        <%# <%= link_to "Book this Beast!", new_plant_booking_path(@plant), class: "btn btn-ghost" %>
-        <%= link_to "Back to plants", plants_path, class: "btn btn-ghost" %>
-      </div>
       <%# <div class="avatar-container">
       </div> %>
     </div>
+  </div>
+  <div class="buttons btn-back-to-plants">
+    <%# <%= link_to "Book this Beast!", new_plant_booking_path(@plant), class: "btn btn-ghost" %>
+    <%= link_to "Back to plants", plants_path, class: "btn btn-ghost" %>
   </div>
 </div>
 

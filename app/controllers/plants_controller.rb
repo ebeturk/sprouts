@@ -32,7 +32,8 @@ class PlantsController < ApplicationController
   end
 
   def show
-    @mark = Mark.new
+    @plant = Plant.find(params[:id])
+    @mark = Mark.find(plant_id)
   end
 
   def new

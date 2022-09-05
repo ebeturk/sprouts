@@ -1,23 +1,25 @@
 <br>
-<div class="container row justify-content-center search-custome">
-  <%= form_with url: plants_path, method: :get, class: "d-flex col-12 py-3" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Let's grow together!"
-    %>
-    <%# <%= submit_tag "🌿", class: "btn-sprouts fa-solid" %>
-    <button class="btn-sprouts">
-      <i class="fa-solid fa-leaf fa-lg"></i>
-    </button>
-  <% end %>
-  <% if params[:query] %>
-      <h2 class="text-center"><%= "Mark the plants you would like to grow at home" %></h2>
-  <% end %>
+<div class="search-form">
+  <div class="container row justify-content-center search-custome">
+    <%= form_with url: plants_path, method: :get, class: "d-flex col-12 py-3" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Let's grow together!"
+      %>
+      <%# <%= submit_tag "🌿", class: "btn-sprouts fa-solid" %>
+      <button class="btn-sprouts">
+        <i class="fa-solid fa-leaf fa-lg"></i>
+      </button>
+    <% end %>
+    <% if params[:query] %>
+        <h2 class="text-center"><%= "Mark the plants you would like to grow at home" %></h2>
+    <% end %>
 
-</div>
-<div class="btn-map">
-  <%= link_to plants_path do %>
-    <i class="fa-solid fa-location-dot fa-2x"></i>
-  <% end %>
+  </div>
+  <div class="btn-map">
+    <%= link_to plants_path do %>
+      <i class="fa-solid fa-location-dot fa-2x"></i>
+    <% end %>
+  </div>
 </div>
