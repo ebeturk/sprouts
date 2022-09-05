@@ -12,7 +12,8 @@ class PlantsController < ApplicationController
 
     sql = "name @@ :query OR category @@ :query"
       @plants = Plant.where(sql, query: "%#{params[:query]}%")
-    The `geocoded` scope filters only plants with coordinates
+
+    #  The `geocoded` scope filters only plants with coordinates
     @markers = @plants.geocoded.map do |plant|
       {
         lat: plant.latitude,
@@ -26,16 +27,6 @@ class PlantsController < ApplicationController
     end
     @marks = current_user.marks
 
-    # The `geocoded` scope filters only plants with coordinates
-    # @markers = @plants.geocoded.map do |plant|
-      # {
-      #   lat: plant.latitude,
-      #   lng: plant.longitude,
-      #   # info_window: render_to_string(partial: "shared/info_window", locals: { plant: plant }),
-      #   # info_window: "<h1>hola probando</h1>",
-      #   image_url: helpers.asset_url("tagmap.png")
-      # }
-    # end
 
   end
 
