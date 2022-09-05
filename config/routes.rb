@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
+<<<<<<< HEAD
+=======
+  get "profile", to: "pages#profile", as: :profile
+  get "chatrooms", to: "users#chatrooms"
+>>>>>>> master
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
