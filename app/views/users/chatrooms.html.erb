@@ -1,0 +1,19 @@
+<ol>
+<% current_user.chatroom_as_user_1.each do |chatroom| %>
+  <li>
+  <br><%= chatroom.name %>
+  <br><%= chatroom.user_1.email %>
+  <br><%= chatroom.user_2.email %>
+  </li>
+  <% end %>
+
+
+
+<% current_user.chatroom_as_user_1.each do |chatroom| %>
+  <li>
+  <br><%= chatroom.name %>
+  <br><%= chatroom.user_1.email %>
+  <br><%= chatroom.user_2.email %>
+  </li>
+  <% end %>
+</ol>
