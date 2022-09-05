@@ -9,7 +9,7 @@
   {:border=>"4px_solid_gold"}
   ] %>
 
-  <div class="mycard">
+  <div class="mycard" id="plant-<%= plant.id %>">
     <div class="card-name">
       <h2><%=link_to plant.name, plant_path(plant)%></h2>
     </div>
@@ -22,6 +22,7 @@
         <% end %>
       <% else %>
         <%= simple_form_for [plant, Mark.new] do |f| %>
+          <%= hidden_field_tag "last_action", action_name %>
           <%= f.button :button do %>
             <i class="fa-regular fa-heart"></i>
           <% end %>
