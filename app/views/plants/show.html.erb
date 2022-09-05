@@ -11,9 +11,27 @@
           <i class="fa-regular fa-compass fa-3x"></i>
           <img class="avatar-bordered-marks" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
         </div>
+      <div class="buttons btn-back-to-plants">
+        <%# <%= link_to "Book this Beast!", new_plant_booking_path(@plant), class: "btn btn-ghost" %>
+        <%= link_to "Back to plants", plants_path, class: "btn btn-ghost" %>
       </div>
       <%# <div class="avatar-container">
       </div> %>
     </div>
   </div>
 </div>
+
+
+
+<%# <% mark.plant_id = plant.id %>
+<%# <%= render "marks/form", plant: @plant, mark: @mark %>
+
+<% if current_user.marked?(@plant) %>
+  <%= link_to plant_likes_path(plant), method: :delete do %>
+    <i class="fas fa-heart"></i>
+  <% end %>
+<% else %>
+  <%= link_to plant_likes_path(@plant), method: :post do %>
+    <i class="far fa-heart"></i>
+  <% end %>
+<% end %>
