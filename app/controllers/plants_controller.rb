@@ -13,12 +13,8 @@ class PlantsController < ApplicationController
     sql = "name @@ :query OR category @@ :query"
       @plants = Plant.where(sql, query: "%#{params[:query]}%")
 
-      @markers = @plants.geocoded.map do |plant|
-
-
     #  The `geocoded` scope filters only plants with coordinates
     @markers = @plants.geocoded.map do |plant|
-
       {
         lat: plant.latitude,
         lng: plant.longitude,

@@ -6,8 +6,12 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+<<<<<<< HEAD
 // @import "swiper/scss";
 // @import "swiper/scss/bundle";
+=======
+@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
+>>>>>>> a2a130777e6f0ff7c7cef67a00a17947ed3b9a7a
 
 // Your CSS partials
 @import "components/index";
