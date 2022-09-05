@@ -1,6 +1,7 @@
 <h1 class="title-card">See Plant Details</h1>
 <div class="container-plant">
 
+
   <div class="card-plant">
     <%# <%= cl_image_tag @plant.photo.key, crop: :fill %>
     <img src="https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" alt="" class="plant-image" >
@@ -29,10 +30,23 @@
       <div class="buttons btn-back-to-plants">
         <%# <%= link_to "Book this Beast!", new_plant_booking_path(@plant), class: "btn btn-ghost" %>
         <%= link_to "Back to plants", plants_path, class: "btn btn-ghost" %>
+
       </div>
     </div>
   </div>
 </div>
 
+
+
 <%# <% mark.plant_id = plant.id %>
-<%# <%= render "marks/form", plant: @plant, mark: @mark %> 
+<%# <%= render "marks/form", plant: @plant, mark: @mark %>
+
+<% if current_user.marked?(@plant) %>
+  <%= link_to plant_likes_path(plant), method: :delete do %>
+    <i class="fas fa-heart"></i>
+  <% end %>
+<% else %>
+  <%= link_to plant_likes_path(@plant), method: :post do %>
+    <i class="far fa-heart"></i>
+  <% end %>
+<% end %>
