@@ -38,3 +38,30 @@
     <%= link_to "Back to plants", plants_path, class: "btn btn-ghost" %>
   </div>
 </div>
+
+
+<%# flip js:
+<div class="card-scene">
+	<div class="awesome-card">
+	<div class="card-front">
+    <div class="card-name">
+    </div>
+  </div>
+  <div class="card-back">
+    Back side
+  </div>
+  </div>
+</div>%>
+
+
+<script>
+  const cards = document.querySelectorAll('.awesome-card')
+
+  cards.forEach((card) => {
+    console.log(card)
+    card.addEventListener('click', (event) => {
+      console.log('event listener added')
+      card.classList.toggle('is-flipped')
+    })
+  })
+</script>

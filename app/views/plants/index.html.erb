@@ -1,4 +1,3 @@
-
 <div class="container">
 
   <%= render "layouts/shared/search-form"  %>
@@ -27,15 +26,3 @@
   <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
 <%# </div> %>
 -->
-
-<script>
-  const cards = document.querySelectorAll('.awesome-card')
-
-  cards.forEach((card) => {
-    console.log(card)
-    card.addEventListener('click', (event) => {
-      console.log('event listener added')
-      card.classList.toggle('is-flipped')
-    })
-  })
-</script>

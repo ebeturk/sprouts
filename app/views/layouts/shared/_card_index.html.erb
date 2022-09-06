@@ -17,32 +17,32 @@
                 <%# <i class="fa-solid fa-heart"></i>
               <% end %>
 
-<<<<<<< HEAD
-<div class="card-scene">
+<%# <div class="card-scene">
 	<div class="awesome-card">
 	  <div class="card-front">
       <div class="card-name">
-        <h2><%=link_to plant.name, plant_path(plant)%></h2>
+        <h2><%=link_to plant.name, plant_path(plant)%>
+        <%# </h2>
       </div>
       <div class="buttons-card">
         <% if mark.present? %>
-          <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
-            <i class="fa-solid fa-heart"></i>
+          <%# <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
+            <%# <i class="fa-solid fa-heart"></i>
           <% end %>
-        <% else %>
-          <%= simple_form_for [plant, Mark.new] do |f| %>
-            <%= f.button :button do %>
-              <i class="fa-regular fa-heart"></i>
+        <%# <% else %>
+          <%# <%= simple_form_for [plant, Mark.new] do |f| %>
+            <%# <%= f.button :button do %>
+              <%# <i class="fa-regular fa-heart"></i>
             <% end %>
-          <% end %>
-        <% end %>
-      </div>
+          <%# <% end %>
+        <%# <% end %>
+      <%# </div>
     </div>
     <div class="card-back">
       Back side
     </div>
-  </div>
-</div>
+  </div> %>
+<%# </div> %>
 
             <%# <%= simple_form_for [plant, Mark.new] do |f| %>
               <%# <%= f.button :button do %>
@@ -83,12 +83,13 @@
         <% end %>
       </div>
 -->
-=======
+
   <%# <%= cl_image_tag plant.photo.key, :transformation=>[
   {:effect=>"trim"},
   {:width=>"296", :height=>"300", :crop=>"lpad"},
   {:border=>"4px_solid_gold"}
   ] %>
+
 
   <div class="mycard" id="plant-<%= plant.id %>">
     <div class="card-name">
@@ -118,4 +119,3 @@
     </div>
   </div>
 </div>
->>>>>>> master
