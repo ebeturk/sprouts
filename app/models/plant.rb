@@ -1,4 +1,5 @@
 class Plant < ApplicationRecord
+  geocoded_by :address
   belongs_to :user
   # has_one_attached :photo
   has_many :marks
