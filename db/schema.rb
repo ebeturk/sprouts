@@ -48,20 +48,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_151855) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "interests", force: :cascade do |t|
-    t.boolean "match"
-    t.bigint "plant_interest_id"
-    t.bigint "plant_exchange_id"
-    t.bigint "user_interest_id"
-    t.bigint "user_exchange_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["plant_exchange_id"], name: "index_interests_on_plant_exchange_id"
-    t.index ["plant_interest_id"], name: "index_interests_on_plant_interest_id"
-    t.index ["user_exchange_id"], name: "index_interests_on_user_exchange_id"
-    t.index ["user_interest_id"], name: "index_interests_on_user_interest_id"
-  end
-
   create_table "marks", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "plant_id"
@@ -110,6 +96,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_151855) do
     t.index ["user_id"], name: "index_plants_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -126,10 +121,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_151855) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "interests", "plants", column: "plant_exchange_id"
-  add_foreign_key "interests", "plants", column: "plant_interest_id"
-  add_foreign_key "interests", "users", column: "user_exchange_id"
-  add_foreign_key "interests", "users", column: "user_interest_id"
   add_foreign_key "marks", "plants"
   add_foreign_key "marks", "users"
   add_foreign_key "matches", "plants", column: "plant_1_id"
@@ -139,4 +130,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_151855) do
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "plants", "users"
+  add_foreign_key "reviews", "users"
 end
