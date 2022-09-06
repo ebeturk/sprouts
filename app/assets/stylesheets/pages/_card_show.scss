@@ -66,12 +66,10 @@
 
   .fa-heart {
     color: rgb(34, 43, 33);
-    margin-right: 15px;
   }
 
   .fa-compass {
     color: rgb(34, 43, 33);
-    margin-right: 15px;
   }
 }
 
@@ -79,4 +77,24 @@
 
 .search-form {
   display: flex;
+}
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  i, a, form, .btn {
+    height: 17px !important;
+    width: 17px !important;
+  }
+
+  .fa-regular {
+    transform: translateY(-4px);
+  }
+
+  .btn {
+    padding: 0 !important;
+  }
 }
