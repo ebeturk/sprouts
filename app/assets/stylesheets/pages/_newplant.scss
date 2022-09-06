@@ -48,33 +48,61 @@
   font-size: 40px;
 }
 
-.star-rating{
-	font-size: 0;
+.rating {
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+	unicode-bidi: bidi-override;
+	color: #ddd; /* Personal choice */
 }
-.star-rating__wrap{
-	display: inline-block;
-	font-size: 1rem;
-}
-.star-rating__wrap:after{
-	content: "";
-	display: table;
-	clear: both;
-}
-.star-rating__ico{
-	float: right;
-	padding-left: 2px;
-	cursor: pointer;
-	color: #FFB300;
-}
-.star-rating__ico:last-child{
-	padding-left: 0;
-}
-.star-rating__input{
+.rating input {
 	display: none;
 }
-.star-rating__ico:hover:before,
-.star-rating__ico:hover ~ .star-rating__ico:before,
-.star-rating__input:checked ~ .star-rating__ico:before
-{
-	content: "\f005";
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked + label,
+.rating input:checked + label ~ label {
+	color: #e3e31ce8; /* Personal color choice. Lifted from Bootstrap 4 */
+}
+
+.watering {
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	direction: rtl;
+	unicode-bidi: bidi-override;
+	color: #ddd; /* Personal choice */
+}
+
+.watering input {
+	display: none;
+}
+.watering label:hover,
+.watering label:hover ~ label,
+.watering input:checked + label,
+.watering input:checked + label ~ label {
+	color: #50aeed; /* Personal color choice. Lifted from Bootstrap 4 */
+}
+
+.temperature {
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	direction: rtl;
+	unicode-bidi: bidi-override;
+	color: #ddd; /* Personal choice */
+}
+
+.temperature input {
+	display: none;
+}
+.temperature label:hover,
+.temperature label:hover ~ label,
+.temperature input:checked + label,
+.temperature input:checked + label ~ label {
+	color: red; /* Personal color choice. Lifted from Bootstrap 4 */
 }
