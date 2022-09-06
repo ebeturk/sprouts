@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require "open-uri"
+
 Mark.destroy_all
 Plant.destroy_all
 Chatroom.destroy_all
@@ -92,5 +94,8 @@ Chatroom.create!(name: "Cedar House", user_1: User.second, user_2: User.first)
 Chatroom.create!(name: "Cedar House", user_1: User.second, user_2: User.third)
 
 puts "Chatrooms Gingko House, Cedar House, Pine House, and Oak House are created!"
+
+puts "Let's attach photos now"
+
 
 puts "Finished!"
