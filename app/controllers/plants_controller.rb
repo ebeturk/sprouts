@@ -52,10 +52,13 @@ class PlantsController < ApplicationController
 
   def create
     @plant = Plant.new(plant_params)
+    @plant.watering = params["watering"]
+    @plant.lighting = params["lighting"]
+    @plant.temperature = params["temperature"]
     @plant.user = current_user
     @plant.save!
       if @plant.save
-        redirect_to plants_path(@plant)
+        redirect_to plant_path(@plant)
       else
        render :new
     end
