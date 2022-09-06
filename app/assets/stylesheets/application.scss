@@ -17,4 +17,10 @@
 @import "pages/avatar_cards";
 
 @import "navbar";
-@import "pages/newplant"
+@import "pages/newplant";
+
+.body-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

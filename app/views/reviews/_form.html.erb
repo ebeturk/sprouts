@@ -1,0 +1,7 @@
+<%= simple_form_for [user, review] do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.label :rating %>
+  <%= f.select :rating, collection: [0..5] %>
+  <%= f.submit %>
+<% end %>

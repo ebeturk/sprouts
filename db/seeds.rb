@@ -5,19 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require "faker"
 
-
-Message.destroy_all
-Chatroom.destroy_all
-Match.destroy_all
 Mark.destroy_all
 Plant.destroy_all
+Chatroom.destroy_all
 User.destroy_all
+Message.destroy_all
 
-puts "Creating users and plants. And chatrooms also..."
 
-1.times do |n|
   user = User.create!(
     email: "brane.bencic@gmail.com",
     password: 123456,
@@ -31,7 +26,7 @@ puts "Creating users and plants. And chatrooms also..."
 end
 puts "Brane is born!"
 
-1.times do |n|
+
   user = User.create!(
     email: "lucinejaff@gmail.com",
     password: 123456,
@@ -46,7 +41,7 @@ end
 
 puts "Lucine is born!"
 
-1.times do |n|
+
   user = User.create!(
     email: "logosemre@gmail.com",
     password: 123456,
@@ -61,7 +56,11 @@ end
 
 puts "Emre is born!"
 
-1.times do |n|
+
+puts "Emre is born! but where is Brane 👻"
+
+# Create Raphi
+
   user = User.create!(
     email: "raphaellasidb@gmail.com",
     password: 123456,
@@ -72,11 +71,10 @@ puts "Emre is born!"
   rubber_plant = Plant.create!(name: "Rubber Plant", category: "House Plants", lighting: "🌞🌞", watering: "💧💧", user_id: user.id, latitude: 52.5200, longitude: 13.4050)
   pothos = Plant.create!( name: "Pothos Plant", category: "Climbers", lighting: "🌞🌞🌞", watering: "💧💧", user_id: user.id, 52.5200, longitude: 13.4050)
 
-end
 
-puts "Rafi is born!"
+puts "Raphi is born!"
 
-1.times do |n|
+# Create Sprouty
   user = User.create!(
     email: "claire@queen.com",
     password: 123456,
@@ -87,14 +85,11 @@ puts "Rafi is born!"
   palm = Plant.create!( name: "Palm Tree", category: "Trees", lighting: "🌞🌞🌞", watering: "💧",  user_id: user.id, latitude: 52.4983, longitude: 13.4070)
   monstera = Plant.create!( name: "Monstera", category: "House Plants", lighting: "🌞", watering: "💧", user_id: user.id, 52.4983, longitude: 13.4070)
 
-end
-
 puts "Sprouty is born!"
 
-Chatroom.create!(name: "Gingko House", user_1_id: User.first.id, user_2_id: User.last.id)
-Chatroom.create!(name: "Cedar House", user_1_id: User.second.id, user_2_id: User.first.id)
-Chatroom.create!(name: "Pine House", user_1_id: User.third.id, user_2_id: User.first.id)
-Chatroom.create!(name: "Oak House", user_1_id: User.last.id, user_2_id: User.second.id)
+Chatroom.create!(name: "Gingko House", user_1: User.first, user_2: User.third)
+Chatroom.create!(name: "Cedar House", user_1: User.second, user_2: User.first)
+Chatroom.create!(name: "Cedar House", user_1: User.second, user_2: User.third)
 
 puts "Chatrooms Gingko House, Cedar House, Pine House, and Oak House are created!"
 

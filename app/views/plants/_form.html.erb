@@ -7,7 +7,9 @@
       <%= f.text_field :name %>
 
       <%= f.label :category %>
-      <%= f.input :category, :collection => %w[Mike Nick Jason ] %>
+
+      <%= f.input :category, :collection => ["Cactus and Succulents", "House Plants", "Seeds", "Trees", "Climbers", "Herbs", "Flowers", "Other"] %>
+
 
       <%= f.label :lighting, class: "input input-width" %>
       <%= f.text_field :lighting, class: "input" %>
@@ -22,12 +24,12 @@
       <%= f.text_field :address, class: "input" %>
 
       <div class="p-4 mt-6 d-flex justify-content-center">
-        <%= f.file_field :photo, class: "btn button-create file-width-fix"%>
+      <%= f.input :photo, as: :file %>
       </div>
 
       <div class="p-4 justify-content-center">
         <%# <%= f.submit class: "btn button-create fa-solid fa-tree" %>
-        <%= f.button :button, class: "my-button" do %>
+        <%= f.submit :button, class: "my-button" do %>
           <i class="fa-solid fa-tree"></i>
         <% end %>
       </div>
