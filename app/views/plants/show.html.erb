@@ -12,15 +12,19 @@
           <%# <i class="fa-regular fa-heart fa-3x"></i> %>
           <% if !current_user.plants.include?(@plant) %>
             <% if @mark.present? %>
-              <%= link_to mark_path(@mark), data: {turbo_method: :delete } do %>
-                <i class="fa-solid fa-heart"></i>
-              <% end %>
-            <% else %>
-              <%= simple_form_for [@plant, Mark.new] do |f| %>
-                <%= f.button :button do %>
-                  <i class="fa-regular fa-heart"></i>
+              <div class="icon-wrapper">
+                <%= link_to mark_path(@mark), data: {turbo_method: :delete }, class: "btn" do %>
+                  <i class="fa-solid fa-heart"></i>
                 <% end %>
-              <% end %>
+              </div>
+            <% else %>
+              <div class="icon-wrapper">
+                <%= simple_form_for [@plant, Mark.new] do |f| %>
+                  <%= f.button :button do %>
+                    <i class="fa-regular fa-heart"></i>
+                  <% end %>
+                <% end %>
+              </div>
             <% end %>
           <% end %>
 
