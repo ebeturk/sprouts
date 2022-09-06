@@ -52,10 +52,13 @@ class PlantsController < ApplicationController
 
   def create
     @plant = Plant.new(plant_params)
+    @plant.watering = params["watering"]
+    @plant.lighting = params["lighting"]
+    @plant.temperature = params["temperature"]
     @plant.user = current_user
     @plant.save!
       if @plant.save
-        redirect_to plants_path(@plant)
+        redirect_to plant_path(@plant)
       else
        render :new
     end
@@ -82,7 +85,7 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:name, :user_id, :category, :lighting, :watering, :temperature, :address, photos: [])
+    params.require(:plant).permit(:name, :category, :lighting, :watering, :temperature, :address, :photo)
   end
 
   def set_plant
