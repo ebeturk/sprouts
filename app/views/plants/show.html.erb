@@ -1,4 +1,4 @@
-  <%= render "layouts/shared/search-form"  %>
+<%= render "layouts/shared/search-form"  %>
 
   <div class="scene scene--card">
   <div class="card">
@@ -18,14 +18,14 @@
                     <% if @mark.present? %>
                       <div class="icon-wrapper">
                         <%= link_to mark_path(@mark), data: {turbo_method: :delete }, class: "btn" do %>
-                          <i class="fa-solid fa-heart"></i>
+                          <i class="fa-solid fa-heart fa-3x"></i>
                         <% end %>
                       </div>
                     <% else %>
                       <div class="icon-wrapper">
                         <%= simple_form_for [@plant, Mark.new] do |f| %>
                           <%= f.button :button do %>
-                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-regular fa-heart fa-3x"></i>
                           <% end %>
                         <% end %>
                       </div>
@@ -58,7 +58,7 @@
 
 
 <script>
-  const cards = document.querySelectorAll('.card')
+  const cards = document.querySelectorAll('.plant-card')
 
   cards.forEach((card) => {
     console.log(card)
