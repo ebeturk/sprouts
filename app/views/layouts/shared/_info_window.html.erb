@@ -1,5 +1,15 @@
+
+<h5><%= link_to plant.name do %></h5>
+    <%= image_tag "image (1).jpg", width: 60, height: 80 %>
+<% end %>
+<%= link_to user_path(current_user) do %>
+    <%= image_tag "sprouts_logo.png", width: 50, height: 50 %>
+<% end %>
+<%# <h5><%= link_to <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />, user_path(current_user) do %>
+<%# <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" /></h5> %>
+
 <h5><%= plant.name %></h5>
-<h5><%= link_to user_path(current_user), do %>
-<img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" /></h5>
+<%# <h5><%= link_to user_path(current_user) do %>
+
 <h6><%= plant.address %></h6>
 Oh my god, what a cutie!
