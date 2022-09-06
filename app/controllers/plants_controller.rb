@@ -62,6 +62,13 @@ class PlantsController < ApplicationController
     # else
     #   render :new
     # end
+
+    if @plant.save!
+      redirect_to plant_path(@plant)
+    else
+      render :new
+    end
+
   end
 
   def profile

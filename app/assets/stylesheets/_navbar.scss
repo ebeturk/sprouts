@@ -5,12 +5,13 @@
 }
 
 .navbar {
-  background: #2B5B5A;
-  width: 100vw;
-  position: fixed;
-  bottom: 0px;
   display: flex;
+  background: #2B5B5A;
   justify-content: space-between;
+  border-radius: 24px 24px 0 0;
+  position: fixed;
+  width: 100vw;
+  bottom: 0px;
 }
 
 .wrapper {
@@ -21,4 +22,10 @@
 
 ul li {
   margin:5px;
+}
+
+.nav-item {
+  .fa-solid {
+    color: #112525;
+  }
 }
