@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
   </head>
 
-  <body><%= render "layouts/shared/navbar" %>
+  <body>
+    <div class="body-container">
     <%= render "layouts/shared/flashes" %>
-
     <%= yield %>
+    <%= render "layouts/shared/navbar" %>
+    </div>
   </body>
 </html>
