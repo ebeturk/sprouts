@@ -47,3 +47,62 @@
 .my-button i {
   font-size: 40px;
 }
+
+.rating {
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+	unicode-bidi: bidi-override;
+	color: #ddd; /* Personal choice */
+}
+.rating input {
+	display: none;
+}
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked + label,
+.rating input:checked + label ~ label {
+	color: #e3e31ce8; /* Personal color choice. Lifted from Bootstrap 4 */
+}
+
+.watering {
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	direction: rtl;
+	unicode-bidi: bidi-override;
+	color: #ddd; /* Personal choice */
+}
+
+.watering input {
+	display: none;
+}
+.watering label:hover,
+.watering label:hover ~ label,
+.watering input:checked + label,
+.watering input:checked + label ~ label {
+	color: #50aeed; /* Personal color choice. Lifted from Bootstrap 4 */
+}
+
+.temperature {
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	direction: rtl;
+	unicode-bidi: bidi-override;
+	color: #ddd; /* Personal choice */
+}
+
+.temperature input {
+	display: none;
+}
+.temperature label:hover,
+.temperature label:hover ~ label,
+.temperature input:checked + label,
+.temperature input:checked + label ~ label {
+	color: red; /* Personal color choice. Lifted from Bootstrap 4 */
+}
