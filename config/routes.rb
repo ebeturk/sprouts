@@ -26,10 +26,9 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: [:destroy]
 
-  resources :plants do
-    resources :marks, only: [:create, :edit, :update]
-  end
-
-  resources :marks, only: [:index, :show, :destroy]
+    resources :plants do
+      resources :marks, only: [:create, :edit, :update]
+    end
+    resources :marks, only: [:index, :show, :destroy]
 
 end

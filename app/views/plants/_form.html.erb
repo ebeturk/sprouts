@@ -7,34 +7,16 @@
       <%= f.text_field :name %>
 
       <%= f.label :category %>
-      <%= f.text_field :category %>
+      <%= f.input :category, :collection => ["Cactus and Succulents", "House Plants", "Seeds", "Trees", "Climbers", "Herbs", "Flowers", "Other"] %>
 
       <%= f.label :lighting, class: "input input-width" %>
-      <div class="rating" style="width: 20rem">
-        <input id="rating-5" type="radio" name="rating" value="5"/><label for="rating-5"><i class="fas fa-2x fa-sun"></i></label>
-        <input id="rating-4" type="radio" name="rating" value="4" checked /><label for="rating-4"><i class="fas fa-2x fa-sun"></i></label>
-        <input id="rating-3" type="radio" name="rating" value="3"/><label for="rating-3"><i class="fas fa-2x fa-sun"></i></label>
-        <input id="rating-2" type="radio" name="rating" value="2"/><label for="rating-2"><i class="fas fa-2x fa-sun"></i></label>
-        <input id="rating-1" type="radio" name="rating" value="1"/><label for="rating-1"><i class="fas fa-2x fa-sun"></i></label>
-      </div>
+      <%= f.text_field :lighting, class: "input" %>
 
       <%= f.label :watering, class: "input input-width" %>
-      <div class="watering" style="width: 20rem">
-        <input id="watering-5" type="radio" name="watering" value="5"/><label for="watering-5"><i class="fas fa-2x fa-droplet"></i></label>
-        <input id="watering-4" type="radio" name="watering" value="4" checked /><label for="watering-4"><i class="fas fa-2x fa-droplet"></i></label>
-        <input id="watering-3" type="radio" name="watering" value="3"/><label for="watering-3"><i class="fas fa-2x fa-droplet"></i></label>
-        <input id="watering-2" type="radio" name="watering" value="2"/><label for="watering-2"><i class="fas fa-2x fa-droplet"></i></label>
-        <input id="watering-1" type="radio" name="watering" value="1"/><label for="watering-1"><i class="fas fa-2x fa-droplet"></i></label>
-    </div>
+      <%= f.text_field :watering, class: "input" %>
 
       <%= f.label :temperature, class: "input input-width" %>
-      <div class="temperature" style="width: 20rem">
-        <input id="temperature-5" type="radio" name="temperature" value="5"/><label for="temperature-5"><i class="fas fa-2x fa-light fa-temperature-full "></i></label>
-        <input id="temperature-4" type="radio" name="temperature" value="4" checked /><label for="temperature-4"><i class="fas fa-2x fa-light fa-temperature-three-quarters "></i></label>
-        <input id="temperature-3" type="radio" name="temperature" value="3"/><label for="temperature-3"><i class="fas fa-2x fa-light fa-temperature-half"></i></label>
-        <input id="temperature-2" type="radio" name="temperature" value="2"/><label for="temperature-2"><i class="fas fa-2x fa-light fa-temperature-quarter"></i></label>
-        <input id="temperature-1" type="radio" name="temperature" value="1"/><label for="temperature-1"><i class="fas fa-2x fa-light fa-temperature-empty "></i></label>
-      </div>
+      <%= f.text_field :temperature, class: "input" %>
 
       <%= f.label :address, class: "input input-width" %>
       <%= f.text_field :address, class: "input" %>

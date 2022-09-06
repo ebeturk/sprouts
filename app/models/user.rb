@@ -9,8 +9,6 @@ class User < ApplicationRecord
 
   has_many :marks
   has_many :matches
-  has_many :reviews, dependent: :destroy
-
-  devise :database_authenticatable, :registerable,
+devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
 end
