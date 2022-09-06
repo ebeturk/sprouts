@@ -105,6 +105,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_151855) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -134,4 +136,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_151855) do
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "plants", "users"
+  add_foreign_key "reviews", "users"
 end
