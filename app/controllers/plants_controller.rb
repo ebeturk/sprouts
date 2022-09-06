@@ -3,44 +3,62 @@ class PlantsController < ApplicationController
   # skip_before_action :authenticate_user!, only: :index
 
   def index
-
     if params[:query].present?
       sql = "name @@ :query OR category @@ :query"
-        @plants = Plant.where(sql, query: "%#{params[:query]}%")
+      @plants = Plant.where(sql, query: "%#{params[:query]}%")
+      @markers = @plants.geocoded.map do |plant|
+        {
+          lat: plant.latitude,
+          lng: plant.longitude,
+          info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
+          image_url: helpers.asset_url("sprouts_logo")
+        }
+      end
     else
-    @plants = Plant.all
+      @plants = Plant.all
+    #  The `geocoded` scope filters only plants with coordinates
+      @markers = @plants.geocoded.map do |plant|
+      {
+        lat: plant.latitude,
+        lng: plant.longitude,
+        info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
+        image_url: helpers.asset_url("sprouts_logo")
+      }
+      end
     end
     @marks = current_user.marks
-
-    # The `geocoded` scope filters only plants with coordinates
-    # @markers = @plants.geocoded.map do |plant|
-      # {
-      #   lat: plant.latitude,
-      #   lng: plant.longitude,
-      #   # info_window: render_to_string(partial: "shared/info_window", locals: { plant: plant }),
-      #   # info_window: "<h1>hola probando</h1>",
-      #   image_url: helpers.asset_url("tagmap.png")
-      # }
-    # end
   end
 
   def show
-    @mark = Mark.new
+    @plant = Plant.find(params[:id])
+    @mark = Mark.where(user: current_user, plant: @plant).first
   end
 
   def new
     @plant = Plant.new
   end
 
+  def map
+    @plants = Plant.all
+    @markers = @plants.geocoded.map do |plant|
+      {
+        lat: plant.latitude,
+        lng: plant.longitude,
+        info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
+        image_url: helpers.asset_url("sprouts_logo")
+      }
+    end
+  end
+
   def create
     @plant = Plant.new(plant_params)
     @plant.user = current_user
-    @plant.save
-    # if @plant.save
-    #   redirect_to plants_path(@plant)
-    # else
-    #   render :new
-    # end
+    @plant.save!
+      if @plant.save
+        redirect_to plants_path(@plant)
+      else
+       render :new
+    end
   end
 
   def profile
@@ -64,7 +82,7 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:name, :category, :lighting, :watering, :temperature, :address)
+    params.require(:plant).permit(:name, :user_id, :category, :lighting, :watering, :temperature, :address, photos: [])
   end
 
   def set_plant

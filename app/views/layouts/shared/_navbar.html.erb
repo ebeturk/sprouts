@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-sprouts navbar-expand-sm navbar-default navbar-lewagon">
   <div class="container-fluid" style="width: 100vw;display: flex;justify-content: center;">
     <%# <%= link_to root_path, class: "navbar-brand" do %>
       <%# <%= image_tag "sprouts_logo.jpg" %>
@@ -11,31 +11,36 @@
         <% if user_signed_in? %>
           <li class="nav-item active" style="margin:5px;">
             <%= link_to plants_path, class: "navbar-brand" do %>
-              <%= image_tag "home.png" %>
+              <%# <%= image_tag "home.png" %>
+              <i class="fa-solid fa-house"></i>
             <% end %>
           </li>
 
           <li class="nav-item active" style="margin:5px;">
-            <%= link_to chatroom_path(current_user), class: "navbar-brand" do %>
-              <%= image_tag "chat.png" %>
+            <%= link_to chatrooms_path(current_user), class: "navbar-brand" do %>
+              <%# <%= image_tag "chat.png" %>
+              <i class="fa-solid fa-message-dots"></i>
             <% end %>
           </li>
 
           <li class="nav-item active" style="margin:5px;">
             <%= link_to new_plant_path, class: "navbar-brand" do %>
-              <%= image_tag "post.png" %>
+              <%# <%= image_tag "post.png" %>
+              <i class="fa-solid fa-plus"></i>
             <% end %>
           </li>
 
           <li class="nav-item active" style="margin:5px;">
             <%= link_to marks_path, class: "navbar-brand" do %>
-              <%= image_tag "mark.png" %>
+              <%# <%= image_tag "mark.png" %>
+              <i class="fa-regular fa-heart"></i>
             <% end %>
           </li>
 
           <li class="nav-item active" style="margin:5px;">
             <%= link_to user_path(current_user), class: "navbar-brand" do %>
-              <%= image_tag "profile.png" %>
+              <%# <%= image_tag "profile.png" %>
+              <i class="fa-solid fa-user-hair-long"></i>
             <% end %>
           </li>
 

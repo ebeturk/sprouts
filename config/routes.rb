@@ -10,11 +10,14 @@ Rails.application.routes.draw do
   end
 
   get "profile", to: "pages#profile", as: :profile
+  get "chatrooms", to: "users#chatrooms"
+
+  get "map", to: "plants#map"
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
-  # root "articles#index
+  # root "articles#indexc
 
   #resources :reviews, only: [:new, :create, :destroy]
 
