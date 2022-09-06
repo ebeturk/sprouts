@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
+
   get "profile", to: "pages#profile", as: :profile
   get "chatrooms", to: "users#chatrooms"
 
@@ -18,13 +19,16 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#indexc
 
+  #resources :reviews, only: [:new, :create, :destroy]
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    resources :reviews, only: [:new, :create]
+  end
+  resources :reviews, only: [:destroy]
 
   resources :plants do
-    resources :marks, only: [:create, :edit, :update, :profile]
+    resources :marks, only: [:create, :edit, :update]
   end
-
   resources :marks, only: [:index, :show, :destroy]
 
 end
