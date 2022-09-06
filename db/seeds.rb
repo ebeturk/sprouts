@@ -25,10 +25,10 @@ puts "Creating users and plants. And chatrooms also..."
     description: "I am an enthusiastic programmer and a plant lover."
   )
 
-  mango = Plant.create!( name: "Mango", category: "Trees", lighting: "🌞🌞🌞", watering: "💧💧", user_id: user.id, latitude: 52.4349, longitude: 13.6351)
-  sanseveria = Plant.create!( name: "Sanseveria", category: "House Plants", lighting: "🌞🌞🌞", watering: "💧💧", user_id: user.id, latitude: 53.0349, longitude: 14.0351)
-  monstera = Plant.create!( name: "Monstera", category: "House Plants", lighting: "🌞", watering: "💧", user_id: user.id, latitude: 51.8349, longitude: 12.9051)
-  pothos = Plant.create!( name: "Pothos Plant", category: "Climbers", lighting: "🌞🌞🌞", watering: "💧💧", user_id: user.id, latitude: 52.8349, longitude: 13.1351)
+  mango = Plant.create!( name: "Mango", category: "Trees", lighting: "🌞🌞🌞", watering: "💧💧", temperature: "🌡🌡🌡", user_id: user.id, latitude: 52.4349, longitude: 13.6351)
+  sanseveria = Plant.create!( name: "Sanseveria", category: "House Plants", lighting: "🌞🌞🌞", watering: "💧💧", temperature: "🌡🌡", user_id: user.id, latitude: 53.0349, longitude: 14.0351)
+  monstera = Plant.create!( name: "Monstera", category: "House Plants", lighting: "🌞", watering: "💧", temperature: "🌡🌡🌡", user_id: user.id, latitude: 51.8349, longitude: 12.9051)
+  pothos = Plant.create!( name: "Pothos Plant", category: "Climbers", lighting: "🌞🌞🌞", watering: "💧💧", temperature: "🌡🌡", user_id: user.id, latitude: 52.8349, longitude: 13.1351)
 
 end
 puts "Brane is born!"
