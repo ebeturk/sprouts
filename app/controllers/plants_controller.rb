@@ -56,11 +56,10 @@ class PlantsController < ApplicationController
     @plant.lighting = params["lighting"]
     @plant.temperature = params["temperature"]
     @plant.user = current_user
-    @plant.save!
-      if @plant.save
-        redirect_to plant_path(@plant)
-      else
-       render :new
+    if @plant.save!
+      redirect_to plant_path(@plant)
+    else
+      render :new
     end
   end
 
