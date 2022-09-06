@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+gem "dotenv-rails", groups: [:development, :test]
+
+gem "cloudinary"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 
@@ -55,7 +58,6 @@ gem "simple_form", github: "heartcombo/simple_form"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem "dotenv-rails"
 
 end
 
@@ -79,8 +81,6 @@ end
 
 gem 'faker'
 
-
-gem "cloudinary"
 
 
 gem 'rails-bootstrap-toggle-buttons'
