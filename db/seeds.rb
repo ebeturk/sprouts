@@ -17,9 +17,11 @@ Chatroom.destroy_all
 Plant.destroy_all
 User.destroy_all
 
+puts "TOTAL DESTRUCTION!"
+
 "OK, now we can create a new world."
 
-  user = User.new(
+  brane = User.new(
     email: "brane.bencic@gmail.com",
     password: 123456,
     username: "Brane",
@@ -38,11 +40,12 @@ User.destroy_all
   sansiviera.photo.attach(io: file, filename: "sansiviera.jpg", content_type: "image/jpg")
   sansiviera.save
 
+brane.save
 
 puts "Brane is born!"
 
 
-  user = User.new(
+  lucine = User.new(
     email: "lucinejaff@gmail.com",
     password: 123456,
     username: "Lucine",
@@ -61,10 +64,12 @@ puts "Brane is born!"
   pothos.photo.attach(io: file, filename: "pothos.jpg", content_type: "image/jpg")
   pothos.save
 
+lucine.save
+
 puts "Lucine is born!"
 
 
-  user = User.new(
+  emre = User.new(
     email: "logosemre@gmail.com",
     password: 123456,
     username: "Emre",
@@ -82,7 +87,7 @@ puts "Lucine is born!"
   pilea.photo.attach(io: file, filename: "pilea.jpg", content_type: "image/jpg")
   pilea.save
 
-
+emre.save
 puts "Emre is born!"
 
 
@@ -90,7 +95,7 @@ puts "Emre is born! but where is Brane 👻"
 
 # Create Raphi
 
-  user = User.new(
+  raphi = User.new(
     email: "raphaellasidb@gmail.com",
     password: 123456,
     username: "Raphaella",
@@ -109,11 +114,11 @@ puts "Emre is born! but where is Brane 👻"
   nepenthes.photo.attach(io: file, filename: "nepenthes.jpg", content_type: "image/jpg")
   nepenthes.save
 
-
+raphi.save
 puts "Raphi is born!"
 
 # Create Sprouty
-  user = User.new(
+  claire = User.new(
     email: "claire@queen.com",
     password: 123456,
     username: "Claire",
@@ -131,6 +136,7 @@ puts "Raphi is born!"
   monstera.photo.attach(io: file, filename: "monstera.jpg", content_type: "image/jpg")
   monstera.save
 
+  claire.save
 puts "Claire the Queen is born!"
 
 gingko_house = Chatroom.new(name: "Gingko House", user_1: User.first, user_2: User.last)
