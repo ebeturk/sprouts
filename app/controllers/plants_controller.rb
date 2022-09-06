@@ -82,7 +82,7 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:name, :category, :lighting, :watering, :temperature, :address)
+    params.require(:plant).permit(:name, :category, :lighting, :watering, :temperature, :address, :photo)
   end
 
   def set_plant
