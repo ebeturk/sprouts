@@ -7,7 +7,6 @@
 }
 
 .plant-card{
-
   width: 86%;
   height: 76%;
   border-radius: 24px;
@@ -52,9 +51,6 @@
   color: rgb(34, 43, 33);
   margin-right: 22px;
   align-items: center;
-
-
-
 }
 
 .buttons-container {
@@ -66,12 +62,10 @@
 
   .fa-heart {
     color: rgb(34, 43, 33);
-    margin-right: 15px;
   }
 
   .fa-compass {
     color: rgb(34, 43, 33);
-    margin-right: 15px;
   }
 }
 
@@ -79,11 +73,27 @@
   display: flex;
 }
 
+.icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
+  i, a, form, .btn {
+    height: 17px !important;
+    width: 17px !important;
+  }
 
+  .fa-regular {
+    transform: translateY(-4px);
+  }
 
+  .btn {
+    padding: 0 !important;
+  }
+}
 
-
+// flipping card stuff
 
 .card-scene {
   display: inline-block;
