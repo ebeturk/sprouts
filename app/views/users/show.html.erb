@@ -61,8 +61,8 @@
       <h2>My Collection</h2>
         <div>
             <% current_user.plants.each do |plant| %>
-              <% plant.photos.each do |photo| %>
-                  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+              <% plant.photo.each do |photo| %>
+                  <span id="user-collection"><%= cl_image_tag photo.key, height: 200, width: 250, crop: :fill %></span>
               <% end %>
             <%  end %>
         </div>
