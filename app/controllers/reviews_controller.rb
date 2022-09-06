@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_user, only: [:new, :create]
+
   def new
     @user = User.find(params[:user_id])
     @review = Review.new
@@ -35,4 +36,5 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:rating, :content, :user_id)
   end
+  
 end
