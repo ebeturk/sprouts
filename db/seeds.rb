@@ -35,7 +35,7 @@ puts "Brane is born!"
 
 1.times do |n|
   user = User.create!(
-    email: "lucine@gmail.com",
+    email: "lucinejaff@gmail.com",
     password: 123456,
     username: "Lucine",
     description: "I love my plants, coding, and meditation."
@@ -58,7 +58,6 @@ puts "Lucine is born!"
     description: "Hi! This is Emre. A philosopher, musician, programmer and in love with green."
   )
 
-
   rubber_plant = Plant.create!(name: "Rubber Plant", category: "House Plants", lighting: "🌞🌞", watering: "💧💧", user_id: user.id, latitude: 52.5200, longitude: 13.4050)
   pilea = Plant.create!( name: "Pilea Plant", category: "House Plants", lighting: "🌞", watering: "💧💧",  user_id: user.id, latitude: 52.4905, longitude: 13.3145)
   palm = Plant.create!( name: "Palm Tree", category: "Trees", lighting: "🌞🌞🌞", watering: "💧",  user_id: user.id, latitude: 52.4983, longitude: 13.4070)
@@ -75,7 +74,7 @@ puts "Emre is born!"
 
 1.times do |n|
   user = User.create!(
-    email: "elia@gmail.com",
+    email: "raphaellasidb@gmail.com",
     password: 123456,
     username: "Raphaella",
     description: "Raphaella is a plant afficianado from Colombia. She bakes awesome cookies and is the queen of CSS"
@@ -97,12 +96,11 @@ puts "Rafi is born!"
 
 1.times do |n|
   user = User.create!(
-    email: Faker::Internet.email,
+    email: "claire@queen.com",
     password: 123456,
     username: "Sprouty",
     description: "I am here simply because you guys are too cool."
   )
-
 
   mango = Plant.create!( name: "Mango", category: "Trees", lighting: "🌞🌞🌞", watering: "💧💧", user_id: user.id, latitude: 52.4349, longitude: 13.6351)
   sanseveria = Plant.create!( name: "Sanseveria", category: "House Plants", lighting: "🌞🌞🌞", watering: "💧💧", user_id: user.id, latitude: 53.0349, longitude: 14.0351)
