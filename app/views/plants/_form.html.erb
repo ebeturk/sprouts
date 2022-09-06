@@ -7,7 +7,7 @@
       <%= f.text_field :name %>
 
       <%= f.label :category %>
-      <%= f.text_field :category %>
+      <%= f.input :category, :collection => %w[Mike Nick Jason ] %>
 
       <%= f.label :lighting, class: "input input-width" %>
       <%= f.text_field :lighting, class: "input" %>
