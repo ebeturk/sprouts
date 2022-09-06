@@ -2,7 +2,7 @@
   <div>
     <h2>Sign up</h2>
   </div>
-  <div>
+
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
       <%= f.error_notification %>
 
@@ -21,17 +21,16 @@
         <%= f.input :username,
                     required: true,
                     input_html: { autocomplete: "username" } %>
+        <%= f.input :photo, as: :file %>
         <%= f.input :description,
                     required: true,
                     input_html: { autocomplete: "description" } %>
+      </div>
 
-    </div>
-  </div>
+      <div class="form-actions">
+          <%= f.button :submit, "Sign up" %>
+      </div>
+    <% end %>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
-    </div>
-  <% end %>
-
-   <% render "devise/shared/links" %>
+  <% render "devise/shared/links" %>
 </div>

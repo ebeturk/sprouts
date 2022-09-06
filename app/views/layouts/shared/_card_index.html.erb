@@ -1,8 +1,6 @@
 <div class="content">
   <%# <img  class="image" src=../assets/images/fukayamamo-BBmyspFyRWs-unsplash /> %>
   <%# <img  class="image" src="https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" /> %>
-
-
   <%# <%= cl_image_tag plant.photo.key, :transformation=>[
   {:effect=>"trim"},
   {:width=>"296", :height=>"300", :crop=>"lpad"},
@@ -18,10 +16,10 @@
     <% if !current_user.plants.include?(plant) %>
       <% if mark.present? %>
         <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
-          <i class="fa-solid fa-heart"></i>
+          <i class="fa-solid fa-heart btn"></i>
         <% end %>
       <% else %>
-        <%= simple_form_for [plant, Mark.new] do |f| %>
+        <%= simple_form_for [plant, Mark.new], html: { class: "d-inline-block" } do |f| %>
           <%= hidden_field_tag "last_action", action_name %>
           <%= f.button :button do %>
             <i class="fa-regular fa-heart"></i>
