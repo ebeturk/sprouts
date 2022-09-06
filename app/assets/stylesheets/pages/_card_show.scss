@@ -10,13 +10,13 @@
 
 .plant-card{
   width: 84%;
-    height: 101%;
-    border-radius: 24px;
-    margin-top: 19px;
-    transform-style: preserve-3d;
-    transform-origin: center right;
-    transition: transform 1s;
-    --bs-card-bg: transparent;
+  height: 101%;
+  border-radius: 24px;
+  margin-top: 19px;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+  --bs-card-bg: transparent;
 }
 
 .plant-bg{
@@ -31,14 +31,14 @@
 
 .plant-actions{
   height: 23%;
-    width: 100%;
-    background: #94AB96;
-    display: flex;
-    justify-content: center;
-    border-radius: 22px;
-    align-items: center;
-    position: relative;
-    top: -41px;
+  width: 100%;
+  background: #94AB96;
+  display: flex;
+  justify-content: center;
+  border-radius: 22px;
+  align-items: center;
+  position: relative;
+  top: -41px;
 }
 
 .name-buttons{
