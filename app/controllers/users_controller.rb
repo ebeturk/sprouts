@@ -15,7 +15,7 @@ class UsersController < ApplicationController
    private
 
   def user_params
-    params.require(:user).permit(:title, :body)
+    params.require(:user).permit(:title, :body, :photo)
   end
   def chatrooms
   end
