@@ -11,13 +11,13 @@
   border-radius: 16px;
   border-radius: 11px;
   background: #94AB96;
-  // align-items: center;
   opacity: 0.9;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 44px;
+  height: 64px;
+  position: relative;
+  top: 1px;
 
   h2 {
     // font-family: 'Playfair Display';
