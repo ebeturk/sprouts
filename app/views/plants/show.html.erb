@@ -1,65 +1,64 @@
   <%= render "layouts/shared/search-form"  %>
 
-<div class="middler">
-  <div class="plant-card">
-    <div class="plant-bg"></div>
-    <div class="plant-actions">
-      <div class="name-buttons">
-        <div class="plant-name">
-          <h2><%= @plant.name %></h2>
-        </div>
-        <div class="buttons-container">
-          <%# <i class="fa-regular fa-heart fa-3x"></i> %>
-          <% if !current_user.plants.include?(@plant) %>
-            <% if @mark.present? %>
-              <div class="icon-wrapper">
-                <%= link_to mark_path(@mark), data: {turbo_method: :delete }, class: "btn" do %>
-                  <i class="fa-solid fa-heart"></i>
-                <% end %>
-              </div>
-            <% else %>
-              <div class="icon-wrapper">
-                <%= simple_form_for [@plant, Mark.new] do |f| %>
-                  <%= f.button :button do %>
-                    <i class="fa-regular fa-heart"></i>
+  <div class="scene scene--card">
+  <div class="card">
+    <div class="card__face card__face--front">
+
+      <div class="middler">
+        <div class="plant-card">
+          <div class="plant-bg"></div>
+            <div class="plant-actions">
+              <div class="name-buttons">
+                <div class="plant-name">
+                  <h2><%= @plant.name %></h2>
+                </div>
+                <div class="buttons-container">
+                  <%# <i class="fa-regular fa-heart fa-3x"></i> %>
+                  <% if !current_user.plants.include?(@plant) %>
+                    <% if @mark.present? %>
+                      <div class="icon-wrapper">
+                        <%= link_to mark_path(@mark), data: {turbo_method: :delete }, class: "btn" do %>
+                          <i class="fa-solid fa-heart"></i>
+                        <% end %>
+                      </div>
+                    <% else %>
+                      <div class="icon-wrapper">
+                        <%= simple_form_for [@plant, Mark.new] do |f| %>
+                          <%= f.button :button do %>
+                            <i class="fa-regular fa-heart"></i>
+                          <% end %>
+                        <% end %>
+                      </div>
+                    <% end %>
                   <% end %>
-                <% end %>
-              </div>
-            <% end %>
-          <% end %>
-
-
-
-          <i class="fa-regular fa-compass fa-3x"></i>
-          <img class="avatar-bordered-marks" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+                  <i class="fa-regular fa-compass fa-3x"></i>
+                  <img class="avatar-bordered-marks" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+                </div>
+              <%# <div class="avatar-container">
+              </div> %>
+            </div>
         </div>
-      <%# <div class="avatar-container">
-      </div> %>
+      </div>
     </div>
-  </div>
-  <div class="buttons btn-back-to-plants">
-    <%# <%= link_to "Book this Beast!", new_plant_booking_path(@plant), class: "btn btn-ghost" %>
-    <%= link_to "Back to plants", plants_path, class: "btn btn-ghost" %>
+
+    <div class="card__face card__face--back">back</div>
   </div>
 </div>
 
 
-<%# flip js:
-<div class="card-scene">
-	<div class="awesome-card">
-	<div class="card-front">
-    <div class="card-name">
-    </div>
-  </div>
-  <div class="card-back">
-    Back side
-  </div>
-  </div>
-</div>%>
+<div class="buttons btn-back-to-plants">
+  <%# <%= link_to "Book this Beast!", new_plant_booking_path(@plant), class: "btn btn-ghost" %>
+  <%= link_to "Back to plants", plants_path, class: "btn btn-ghost" %>
+</div>
+
+      <div class="back">
+        <h2>Back</h2>
+      </div>
+
 
 
 <script>
-  const cards = document.querySelectorAll('.awesome-card')
+  const cards = document.querySelectorAll('.card')
 
   cards.forEach((card) => {
     console.log(card)
