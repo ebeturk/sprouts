@@ -1,54 +1,83 @@
-.input-form-new-plant{
-  height: 100vh;
-  width: 100vw;
+.input-form-new-plant {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
 }
 
-.form-column{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  align-items: center;
-  background-color: lavender;
-  width: 95%;
-  height: 70%;
+// .input-form-new-plant{
+//   height: 100vh;
+//   width: 100vw;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.form-label {
+  margin-left: 77px;
+  margin-top: 20px;
+}
+
+.form-column {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // position: absolute;
+  // align-items: center;
+  background-color: rgba(204, 215, 206, 1);
+  // width: 95%;
+  // height: 70%;
   border-radius: 25px;
   box-shadow: 0 0.5rem 1rem rgba(59, 58, 58, 0.15) !important;
+
+  overflow: hidden;
+  margin: 30px;
+  height: 750px;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // border-radius: 25px;
 }
 
-#tame_form{
+#tame_form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
 }
 
-.button-create {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  background-color: lavenderblush;
-  border-radius: 25px;
-  border-color: 1px 1px 25px 10px rgba(227, 255, 230, 0.8);
-  width: 70%;
-}
+// .button-create {
+//   display: flex;
+//   position: relative;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: lavenderblush;
+//   border-radius: 30px;
+//   border-color: 1px 1px 25px 10px rgba(227, 255, 230, 0.8);
+//   width: 70%;
+// }
 
 .my-button {
-  background-color: lavenderblush;
+  background-color: rgba(137, 157, 139, 0.8);
   border-radius: 25px;
 }
 
 .my-button i {
   font-size: 40px;
+  color: rgba(9, 20, 12, 0.8);
+}
+
+.name {
+  margin-top: 30px;
+}
+
+.p-4 label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: transparent;
 }
 
 .rating {
+  margin-top: 20px;
   display: flex;
   // flex-direction: column;
   justify-content: center;
@@ -68,6 +97,7 @@
 }
 
 .watering {
+  margin-top: 20px;
   display: flex;
   // flex-direction: column;
   justify-content: center;
@@ -88,6 +118,7 @@
 }
 
 .temperature {
+  margin-top: 20px;
   display: flex;
   // flex-direction: column;
   justify-content: center;
@@ -105,4 +136,8 @@
 .temperature input:checked + label,
 .temperature input:checked + label ~ label {
 	color: red; /* Personal color choice. Lifted from Bootstrap 4 */
+}
+
+.address {
+  margin-top: 20px;
 }
