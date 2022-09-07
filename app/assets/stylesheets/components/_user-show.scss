@@ -20,23 +20,24 @@
 // #user-name {
 //   font-weight: 200;
 // }
-.user-plants-collection{
-  margin: 20px;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-
-}
 #username {
   font-size: 30px;
   padding: 20px;
 }
 .my-collection {
 margin: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
-#user-collection {
-  margin: 15px;
-}
+// #user-collection {
+//   margin: 15px;
+// }
 
+.carousel-inner{
+  border: 5px solid #718272;
+  border-radius: 20pc;
+}
 .about-me {
  margin: 10px;
 }
