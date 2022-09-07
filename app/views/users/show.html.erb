@@ -67,15 +67,14 @@
               <% if index == 0 %>
                 <div class="carousel-item active">
                   <%= link_to plant_path(plant) do %>
-                    <%# <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %> %>
+                     <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %>
                   <% end %>
                 </div>
               <% else %>
                 <div class="carousel-item">
                   <%= link_to plant_path(plant) do %>
 
-                    <%# <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %>
-
+                     <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %>
                   <% end %>
                 </div>
               <% end %>
