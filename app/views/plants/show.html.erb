@@ -40,23 +40,20 @@
 
   <div class="backcard backcard--back">
     <div class="flipreverse">
-    <h5>description</h5>
+      <div class="plant-bg-back" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 480, width: 400, crop: :fill %>')">
+        <%# <h5>description</h5> %>
         <h3> <%= @plant.name %> </h3>
         <h4> Category: <strong><%= @plant.category %></strong></h4>
         <h5> Lighting: <%= @plant.lighting %> </h5>
         <h5> Watering: <%= @plant.watering %></h5>
         <h5> Temperature: <%= @plant.temperature %></h5>
         <h5> Location: <%= @plant.address %></h5>
+      </div>
     </div>
   </div>
-    </div>
-  </div>
-
-
-
-
 
 </div>
+
 
 
 
