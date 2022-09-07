@@ -78,7 +78,7 @@ puts "Lucine is born!"
   )
 
   file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662542188/Sprouts/20220907_111402_q9vtc7.png")
-  emre.photo.attach(io: file, filename: "emre.png", content_type: "image/jpg")
+  emre.photo.attach(io: file, filename: "emre.png", content_type: "image/png")
   emre.save
 
   red_prayer = Plant.new( name: "Maranta", category: "House Plants", lighting: "🌞🌞", watering: "💧💧",  user_id: emre.id, latitude: 52.5588, longitude: 13.2884)
