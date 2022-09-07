@@ -1,3 +1,16 @@
-<% @chatrooms.each do |chatroom| %>
-  <h2><%= chatroom.name %></h2>
-  <h2><%= chatroom.user_1 chatroom.user_2 %></h2>
+<div class="chats-container">
+  <div class="chatrooms-index-card">
+    <% @chatrooms.each do |chatroom| %>
+      <div class="card-product">
+        <i class="fa-brands fa-pagelines"></i>
+          <div class="card-product-infos">
+            <div class="chatroom-name">
+              <%= link_to chatroom.name, chatroom_path(chatroom)%>
+              <h6><%=chatroom.user_1.username%></h6>
+              <h5><%=chatroom.messages.last%></h5>
+            </div>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>

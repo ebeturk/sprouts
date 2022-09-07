@@ -1,0 +1,70 @@
+.chatrooms-index-card {
+  overflow: hidden;
+  background: #ccd7ce;
+  margin: 30px;
+  height: 750px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 25px;
+}
+
+.chats-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: #ccd7ce;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.card-product i {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  display: flex;
+  position: relative;
+  top: 29px;
+  left: 42px;
+  font-size: 60px;
+  opacity: .7;
+}
+
+.chatroom-name {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.chatroom-name h6 {
+  font-size: 16px;
+  opacity: .7;
+  margin: 10px;
+  width: 250px;
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  align-items: center;
+
+}
+
+.chatroom-name h5 {
+  font-size: 16px;
+  opacity: .7;
+  margin: 10px;
+  width: 250px;
+  font-family: 'Ubuntu', sans-serif;
+  font-style: italic;
+}
