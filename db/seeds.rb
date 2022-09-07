@@ -38,7 +38,7 @@ puts "TOTAL DESTRUCTION!"
   mango.save
 
   sansiviera = Plant.new( name: "Sansiviera", category: "House Plants", lighting: "🌞🌞🌞", watering: "💧💧", user_id: brane.id, latitude: 52.4349, longitude: 13.6351)
-  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662033354/Sprouts/image_8_lulbom.jpg")
+  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662555962/Sprouts/img_7_gksxgh.jpg")
   sansiviera.photo.attach(io: file, filename: "sansiviera.jpg", content_type: "image/jpg")
   sansiviera.save
 
