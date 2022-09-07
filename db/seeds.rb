@@ -82,7 +82,7 @@ puts "Lucine is born!"
   emre.save
 
   red_prayer = Plant.new( name: "Maranta", category: "House Plants", lighting: "🌞🌞", watering: "💧💧",  user_id: emre.id, latitude: 52.5588, longitude: 13.2884)
-  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662495214/Sprouts/image_7_of2doy.jpg")
+  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662105223/Sprouts/img_4_f9dlr5.jpg")
   red_prayer.photo.attach(io: file, filename: "maranta.jpg", content_type: "image/jpg")
   red_prayer.save
 
