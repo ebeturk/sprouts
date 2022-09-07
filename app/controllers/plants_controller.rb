@@ -11,7 +11,7 @@ class PlantsController < ApplicationController
           lat: plant.latitude,
           lng: plant.longitude,
           info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
-          image_url: helpers.asset_url("sprouts_logo")
+          image_url: helpers.asset_url("sprouts_logo.png")
         }
       end
     else
@@ -22,7 +22,7 @@ class PlantsController < ApplicationController
         lat: plant.latitude,
         lng: plant.longitude,
         info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
-        image_url: helpers.asset_url("sprouts_logo")
+        image_url: helpers.asset_url("sprouts_logo.png")
       }
       end
     end
@@ -45,7 +45,7 @@ class PlantsController < ApplicationController
         lat: plant.latitude,
         lng: plant.longitude,
         info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
-        image_url: helpers.asset_url("sprouts_logo")
+        image_url: helpers.asset_url("sprouts_logo.png")
       }
     end
   end
