@@ -48,7 +48,7 @@
 
       <div class="middler">
         <div class="plant-card">
-          <div class="plant-bg">
+          <div class="plant-bg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @plant.photo.key, height: 300, crop: :fill %>')">
             <h3> <%= @plant.name %> </h3>
             <h4> Category: <strong><%= @plant.category %></strong></h4>
             <h5> Lighting: <%= @plant.lighting %> </h5>
