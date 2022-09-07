@@ -6,7 +6,8 @@
 
       <div class="middler">
         <div class="plant-card">
-          <div class="plant-bg"></div>
+          <div class="plant-bg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @plant.photo.key, height: 300, crop: :fill %>')">
+          </div>
             <div class="plant-actions">
               <div class="name-buttons">
                 <div class="plant-name">
