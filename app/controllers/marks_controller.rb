@@ -2,6 +2,7 @@ class MarksController < ApplicationController
 
     def index
       @mark = Mark.all
+      @match = Match.all
     end
 
 
