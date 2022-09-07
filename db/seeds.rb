@@ -125,7 +125,7 @@ puts "Raphi is born!"
     email: "claire@queen.com",
     password: 123456,
     username: "Claire",
-    description: "I am super smart and I care for plants."
+    description: "I am smart and I take good care of my plants."
   )
 
   file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662499531/Sprouts/brane_swcsy8.jpg")
