@@ -26,6 +26,9 @@
     // position: absolute;
     width: 55px;
     height: 19px;
+    position: relative;
+    top: 4px;
+    left: 18px;
 
     font-family: 'Playfair Display';
     font-style: normal;
@@ -47,6 +50,11 @@
     display: flex;
     width: 30px;
     height: 30px;
+    position: relative;
+    top: -6px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
   }
 }
 
