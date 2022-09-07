@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "plants#index"
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:index, :show] do
     resources :messages, only: :create
   end
 
   get "profile", to: "pages#profile", as: :profile
-  get "chatrooms", to: "users#chatrooms"
+
 
   get "map", to: "plants#map"
 
