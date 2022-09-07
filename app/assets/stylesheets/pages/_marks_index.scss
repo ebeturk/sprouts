@@ -14,7 +14,7 @@
   height: 78%;
   /* border: 1px solid #CCC; */
   margin: 40px 0;
-  background: #94AB96;
+  background: #bdd5c1;
 
   border-radius: 100px 0 0 0;
 }
@@ -27,8 +27,10 @@
   h1 {
     position: relative;
     left: 36px;
-    font-family: 'Playfair Display SC';
+    // font-family: 'Playfair Display SC';
+    font-family: 'Ubuntu', sans-serif;
     font-size: 56px;
+    color: #222b21;
   }
 
   p {
