@@ -24,10 +24,7 @@
 
       <i class="fa-regular fa-lg fa-compass"></i>
       <%# <i class="fa-regular fa-circle-user"></i> %>
-      <img class="card-trip-user avatar-bordered"
-  style="background-image: url('<%= cl_image_path plant.user.photo.key, width: 30, height: 30, crop: :fill %>')">
-    </div>
-      <%# <%= link_to "a", plants_path %>
+      <%= link_to plant.name, user_path(plant.user) %>
     </div>
   </div>
 </div>
