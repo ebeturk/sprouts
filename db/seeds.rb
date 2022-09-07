@@ -28,7 +28,7 @@ puts "TOTAL DESTRUCTION!"
     description: "I am an enthusiastic programmer and a plant lover."
   )
 
-  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662499531/Sprouts/brane_swcsy8.jpg")
+  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662542808/Sprouts/IMG_462E0EE16731-1_nm53xu.jpg")
   brane.photo.attach(io: file, filename: "brane.jpg", content_type: "image/jpg")
   brane.save
 
@@ -38,7 +38,8 @@ puts "TOTAL DESTRUCTION!"
   mango.save
 
   sansiviera = Plant.new( name: "Sansiviera", category: "House Plants", lighting: "🌞🌞🌞", watering: "💧💧", user_id: brane.id, latitude: 52.4349, longitude: 13.6351)
-  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662033354/Sprouts/image_8_lulbom.jpg")
+
+  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662556034/Sprouts/img_7_gksxgh.jpg")
   sansiviera.photo.attach(io: file, filename: "sansiviera.jpg", content_type: "image/jpg")
   sansiviera.save
 
@@ -53,8 +54,8 @@ puts "Brane is born!"
     description: "I love my plants, coding, and meditation."
   )
 
-  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662499531/Sprouts/brane_swcsy8.jpg")
-  lucine.photo.attach(io: file, filename: "emre.jpg", content_type: "image/jpg")
+  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662541465/Sprouts/Lucine_Jaff_afcowu.jpg")
+  lucine.photo.attach(io: file, filename: "lucine.jpg", content_type: "image/jpg")
   lucine.save
 
   monstera = Plant.new( name: "Monstera", category: "House Plants", lighting: "🌞", watering: "💧", user_id: lucine.id, latitude: 51.8349, longitude: 12.9051)
@@ -77,12 +78,12 @@ puts "Lucine is born!"
     description: "Hi! This is Emre. A philosopher, musician, programmer and in love with green."
   )
 
-  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662499531/Sprouts/brane_swcsy8.jpg")
-  emre.photo.attach(io: file, filename: "emre.jpg", content_type: "image/jpg")
+  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662542188/Sprouts/20220907_111402_q9vtc7.png")
+  emre.photo.attach(io: file, filename: "emre.png", content_type: "image/png")
   emre.save
 
   red_prayer = Plant.new( name: "Maranta", category: "House Plants", lighting: "🌞🌞", watering: "💧💧",  user_id: emre.id, latitude: 52.5588, longitude: 13.2884)
-  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662495214/Sprouts/image_7_of2doy.jpg")
+  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662105223/Sprouts/img_4_f9dlr5.jpg")
   red_prayer.photo.attach(io: file, filename: "maranta.jpg", content_type: "image/jpg")
   red_prayer.save
 
@@ -104,7 +105,7 @@ puts "Emre is born! but where is Brane 👻"
     description: "Raphaella is a plant afficianado from Colombia. She bakes awesome cookies and is the queen of CSS"
   )
 
-  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662499531/Sprouts/brane_swcsy8.jpg")
+  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662542390/Sprouts/20181231_223659_va2z5i.jpg")
   raphi.photo.attach(io: file, filename: "raphi.jpg", content_type: "image/jpg")
   raphi.save
 
@@ -128,7 +129,7 @@ puts "Raphi is born!"
     description: "I am smart and I take good care of my plants."
   )
 
-  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662499531/Sprouts/brane_swcsy8.jpg")
+  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1662543131/Sprouts/gisela-carolina-ALogxO1WJk0-unsplash_cgtns1.jpg")
   claire.photo.attach(io: file, filename: "claire.jpg", content_type: "image/jpg")
   claire.save
 

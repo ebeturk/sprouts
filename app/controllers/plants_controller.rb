@@ -11,7 +11,7 @@ class PlantsController < ApplicationController
           lat: plant.latitude,
           lng: plant.longitude,
           info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
-          image_url: helpers.asset_url("sprouts_logo")
+          image_url: helpers.asset_url("sprouts_logo.png")
         }
       end
     else
@@ -22,7 +22,7 @@ class PlantsController < ApplicationController
         lat: plant.latitude,
         lng: plant.longitude,
         info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
-        image_url: helpers.asset_url("sprouts_logo")
+        image_url: helpers.asset_url("sprouts_logo.png")
       }
       end
     end
@@ -45,29 +45,23 @@ class PlantsController < ApplicationController
         lat: plant.latitude,
         lng: plant.longitude,
         info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
-        image_url: helpers.asset_url("sprouts_logo")
+        image_url: helpers.asset_url("sprouts_logo.png")
       }
     end
   end
 
   def create
     @plant = Plant.new(plant_params)
-    @plant.watering = params["watering"]
-    @plant.lighting = params["lighting"]
-    @plant.temperature = params["temperature"]
+    # @plant.watering = params["watering"]
+    # @plant.lighting = params["lighting"]
+    # @plant.temperature = params["temperature"]
     @plant.user = current_user
-    @plant.save
-    # if @plant.save
-    #   redirect_to plants_path(@plant)
-    # else
-    #   render :new
-    # end
-
     if @plant.save!
-      redirect_to plant_path(@plant)
+      redirect_to plants_path(@plant)
     else
       render :new
     end
+
 
   end
 
@@ -92,7 +86,7 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:name, :category, :lighting, :watering, :temperature, :address)
+    params.require(:plant).permit(:name, :category, :lighting, :watering, :temperature, :address, :photo)
   end
 
   def set_plant

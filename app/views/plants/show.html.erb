@@ -1,13 +1,11 @@
 <%= render "layouts/shared/search-form"  %>
 
-
-
 <div class="middler">
 
   <div class="plant-card">
     <div class="card">
       <div class="card__face card__face--front">
-        <div class="plant-bg" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= cl_image_path @plant.photo.key, height: 300, crop: :fill %>')">
+        <div class="plant-bg" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 480, width: 400, crop: :fill %>')">
         </div>
         <div class="plant-action">
           <div class="buttons-name">
@@ -40,17 +38,17 @@
   </div>
 
 
-      <div class="backcard backcard--back">
-        <div class="flipreverse">
-        <h5>description</h5>
-            <h3> <%= @plant.name %> </h3>
-            <h4> Category: <strong><%= @plant.category %></strong></h4>
-            <h5> Lighting: <%= @plant.lighting %> </h5>
-            <h5> Watering: <%= @plant.watering %></h5>
-            <h5> Temperature: <%= @plant.temperature %></h5>
-            <h5> Location: <%= @plant.address %></h5>
-        </div>
-      </div>
+  <div class="backcard backcard--back">
+    <div class="flipreverse">
+    <h5>description</h5>
+        <h3> <%= @plant.name %> </h3>
+        <h4> Category: <strong><%= @plant.category %></strong></h4>
+        <h5> Lighting: <%= @plant.lighting %> </h5>
+        <h5> Watering: <%= @plant.watering %></h5>
+        <h5> Temperature: <%= @plant.temperature %></h5>
+        <h5> Location: <%= @plant.address %></h5>
+    </div>
+  </div>
     </div>
   </div>
 

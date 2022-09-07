@@ -1,5 +1,5 @@
 <div class="content"
-  style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= cl_image_path plant.photo.key, height: 300, crop: :fill %>')">
+  style="background-image: url('<%= cl_image_path plant.photo.key, height: 240, width: 180, crop: :fill %>')">
 
   <div class="mycard" id="plant-<%= plant.id %>">
     <div class="card-name">
@@ -10,22 +10,26 @@
     <% if !current_user.plants.include?(plant) %>
       <% if mark.present? %>
         <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
-          <i class="fa-solid fa-heart btn"></i>
+          <i class="fa-solid fa-lg fa-heart btn"></i>
         <% end %>
       <% else %>
         <%= simple_form_for [plant, Mark.new], html: { class: "d-inline-block" } do |f| %>
           <%= hidden_field_tag "last_action", action_name %>
           <%= f.button :button do %>
-            <i class="fa-regular fa-heart"></i>
+            <i class="fa-regular fa-lg fa-heart"></i>
           <% end %>
         <% end %>
       <% end %>
     <% end %>
 
-      <i class="fa-regular fa-compass"></i>
+      <%= link_to map_path do %>
+        <i class="fa-regular fa-lg fa-compass"></i>
+      <% end %>
       <%# <i class="fa-regular fa-circle-user"></i> %>
-      <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
-      <%# <%= link_to "a", plants_path %>
-    </div>
+      <%= link_to user_path(plant.user) do %>
+        <img class="card-trip-user avatar-bordered" style="background-image: url('<%= cl_image_path plant.user.photo.key,width: 30, height: 30, crop: :fill %>')">
+      <% end %>
+
+      </div>
   </div>
 </div>

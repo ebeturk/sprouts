@@ -83,11 +83,11 @@ a {
   border-radius: 0 24px 24px 0;
   border: 1px solid #98AC9C;
   background: #94AB96;
-  padding: 5px;
+  padding: 10px;
 }
 
 .btn-map {
-  padding: 20px;
+  padding: 16px;
 }
 
 .fa-location-dot {
@@ -95,5 +95,11 @@ a {
 }
 
 .fa-leaf {
-  color: white;
+  color: rgb(234, 243, 237);
+  padding: 5px;
+
+}
+
+.fa-map {
+  color:rgb(7, 106, 88)
 }
