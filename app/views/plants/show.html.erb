@@ -47,7 +47,15 @@
 
       <div class="middler">
         <div class="plant-card">
-          <div class="plant-bg"></div>
+          <div class="plant-bg">
+            <h3> <%= @plant.name %> </h3>
+            <h4> Category: <strong><%= @plant.category %></strong></h4>
+            <h5> Lighting: <%= @plant.lighting %> </h5>
+            <h5> Watering: <%= @plant.watering %></h5>
+            <h5> Temperature: <%= @plant.temperature %></h5>
+            <h5> Location: <%= @plant.address %></h5>
+
+          </div>
             <div class="plant-actions">
               <div class="name-buttons">
                 <div class="plant-name">
