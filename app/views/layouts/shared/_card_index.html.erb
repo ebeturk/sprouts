@@ -24,7 +24,9 @@
 
       <i class="fa-regular fa-lg fa-compass"></i>
       <%# <i class="fa-regular fa-circle-user"></i> %>
-      <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+      <img class="card-trip-user avatar-bordered"
+  style="background-image: url('<%= cl_image_path plant.user.photo.key, width: 30, height: 30, crop: :fill %>')">
+
       <%# <%= link_to "a", plants_path %>
     </div>
   </div>
