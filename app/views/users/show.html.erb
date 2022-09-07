@@ -1,3 +1,4 @@
+
 <div class="card-trip">
   <img src="https://images.unsplash.com/photo-1551970634-747846a548cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" />
   <div class="card-trip-infos">
@@ -5,6 +6,14 @@
   style="background-image: url('<%= cl_image_path @user.photo.key, width: 100, height: 100, crop: :fill %>')">
   </div>
   <div>
+  <div class="log-out">
+      <ul style="display:flex;list-style: none">
+        <% if user_signed_in? %>
+        <li class="nav-item">
+            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            <% end %>
+        </li>
+    </div>
         <h2 id="username"><strong><%= @user.username %></strong></h2>
     </div>
     <div class="about-me">
@@ -12,7 +21,7 @@
       <p><%= @user.description %></p>
     </div>
     <div class="my-collection">
-      <h2>My Collection</h2>
+      <%# <h2>My Collection</h2> %>
       <div class="user-plants-collection">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
@@ -26,7 +35,9 @@
               <% else %>
                 <div class="carousel-item">
                   <%= link_to plant_path(plant) do %>
+
                     <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %>
+
                   <% end %>
                 </div>
               <% end %>
@@ -42,6 +53,7 @@
           </button>
         </div>
       </div>
-      <%= link_to "Add a review 📝",  new_user_review_path(@user) %>
+      <%# <%= link_to "Add a review 📝",  new_user_review_path(@user) %>
     </div>
   </div>
+</div>
