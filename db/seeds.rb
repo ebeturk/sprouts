@@ -30,6 +30,7 @@ puts "TOTAL DESTRUCTION!"
 
   file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662499531/Sprouts/brane_swcsy8.jpg")
   brane.photo.attach(io: file, filename: "brane.jpg", content_type: "image/jpg")
+  brane.save
 
   mango = Plant.new( name: "Mango", category: "Trees", lighting: "🌞🌞🌞", watering: "💧💧", user_id: brane.id, latitude: 52.4349, longitude: 13.6351)
   file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662105212/Sprouts/img_17_fsnmrp.jpg")
@@ -41,7 +42,6 @@ puts "TOTAL DESTRUCTION!"
   sansiviera.photo.attach(io: file, filename: "sansiviera.jpg", content_type: "image/jpg")
   sansiviera.save
 
-brane.save
 
 puts "Brane is born!"
 
@@ -55,6 +55,7 @@ puts "Brane is born!"
 
   file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662499531/Sprouts/brane_swcsy8.jpg")
   lucine.photo.attach(io: file, filename: "emre.jpg", content_type: "image/jpg")
+  lucine.save
 
   monstera = Plant.new( name: "Monstera", category: "House Plants", lighting: "🌞", watering: "💧", user_id: lucine.id, latitude: 51.8349, longitude: 12.9051)
   file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662495214/Sprouts/image_7_of2doy.jpg")
@@ -66,7 +67,6 @@ puts "Brane is born!"
   pothos.photo.attach(io: file, filename: "pothos.jpg", content_type: "image/jpg")
   pothos.save
 
-lucine.save
 
 puts "Lucine is born!"
 
@@ -79,6 +79,7 @@ puts "Lucine is born!"
 
   file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662499531/Sprouts/brane_swcsy8.jpg")
   emre.photo.attach(io: file, filename: "emre.jpg", content_type: "image/jpg")
+  emre.save
 
   red_prayer = Plant.new( name: "Maranta", category: "House Plants", lighting: "🌞🌞", watering: "💧💧",  user_id: emre.id, latitude: 52.5588, longitude: 13.2884)
   file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662495214/Sprouts/image_7_of2doy.jpg")
@@ -90,7 +91,6 @@ puts "Lucine is born!"
   pilea.photo.attach(io: file, filename: "pilea.jpg", content_type: "image/jpg")
   pilea.save
 
-emre.save
 puts "Emre is born!"
 
 puts "Emre is born! but where is Brane 👻"
@@ -106,6 +106,7 @@ puts "Emre is born! but where is Brane 👻"
 
   file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662499531/Sprouts/brane_swcsy8.jpg")
   raphi.photo.attach(io: file, filename: "raphi.jpg", content_type: "image/jpg")
+  raphi.save
 
   rubber_plant = Plant.new(name: "Rubber Plant", category: "House Plants", lighting: "🌞🌞", watering: "💧💧", user_id: raphi.id, latitude: 52.5200, longitude: 13.4050)
   file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662496469/Sprouts/scott-webb-eA2z1JSzZFI-unsplash_but5vv.jpg")
@@ -117,7 +118,6 @@ puts "Emre is born! but where is Brane 👻"
   nepenthes.photo.attach(io: file, filename: "nepenthes.jpg", content_type: "image/jpg")
   nepenthes.save
 
-raphi.save
 puts "Raphi is born!"
 
 # Create Sprouty
@@ -130,6 +130,9 @@ puts "Raphi is born!"
 
   file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662499531/Sprouts/brane_swcsy8.jpg")
   claire.photo.attach(io: file, filename: "claire.jpg", content_type: "image/jpg")
+  claire.save
+
+
 
   palm = Plant.new( name: "Palm Tree", category: "Trees", lighting: "🌞🌞🌞", watering: "💧",  user_id: claire.id, latitude: 52.4983, longitude: 13.4070)
   file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662496824/Sprouts/image_6_o1bfvg.jpg")
@@ -141,7 +144,6 @@ puts "Raphi is born!"
   monstera.photo.attach(io: file, filename: "monstera.jpg", content_type: "image/jpg")
   monstera.save
 
-  claire.save
 puts "Claire the Queen is born!"
 
 gingko_house = Chatroom.new(name: "Gingko House", user_1: User.first, user_2: User.last)
