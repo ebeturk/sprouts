@@ -1,13 +1,5 @@
-<%# <div class="content" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path plant.photo.key, height: 300, crop: :fill %>
-
-<div class="content">
-  <%# <img  class="image" src=../assets/images/fukayamamo-BBmyspFyRWs-unsplash /> %>
-  <%# <img  class="image" src="https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" /> %>
-  <%# <%= cl_image_tag plant.photo.key, :transformation=>[
-  {:effect=>"trim"},
-  {:width=>"296", :height=>"300", :crop=>"lpad"},
-  {:border=>"4px_solid_gold"}
-  ] %>
+<div class="content"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path plant.photo.key, height: 300, crop: :fill %>')">
 
   <div class="mycard" id="plant-<%= plant.id %>">
     <div class="card-name">
