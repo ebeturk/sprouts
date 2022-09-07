@@ -1,0 +1,38 @@
+.marks {
+  background: #94AB96;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100vw;
+  height: 100vh;
+}
+
+.my-marks {
+  display: inline-block;
+  width: 100%;
+  height: 78%;
+  /* border: 1px solid #CCC; */
+  margin: 40px 0;
+  background: #94AB96;
+
+  border-radius: 100px 0 0 0;
+}
+
+.mark-titles {
+  display: flex;
+  position: relative;
+  top: 20px;
+
+  h1 {
+    position: relative;
+    left: 36px;
+    font-family: 'Playfair Display SC';
+    font-size: 56px;
+  }
+
+  p {
+    position: relative;
+    top: 47px;
+  }
+}
