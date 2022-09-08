@@ -129,7 +129,7 @@ puts "Raphi is born!"
     description: "I am smart and I take good care of my plants."
   )
 
-  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1662543131/Sprouts/gisela-carolina-ALogxO1WJk0-unsplash_cgtns1.jpg")
+  file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662629821/Sprouts/profile_pic_900_mgn08b.png")
   claire.photo.attach(io: file, filename: "claire.jpg", content_type: "image/jpg")
   claire.save
 

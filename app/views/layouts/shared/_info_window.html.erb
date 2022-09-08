@@ -1,9 +1,9 @@
 
 <h5><%= link_to plant.name do %></h5>
-    <%= image_tag "image (1).jpg", width: 60, height: 80 %>
+    <%= cl_image_tag plant.photo.key, height: 80, width: 60, crop: :fill %>
 <% end %>
-<%= link_to user_path(current_user) do %>
-    <%= image_tag "sprouts_logo.png", width: 50, height: 50 %>
+<%= link_to user_path(plant.user) do %>
+    <%= cl_image_tag plant.user.photo.key, width: 60, height: 60, crop: :fill %>
 <% end %>
 <%# <h5><%= link_to <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />, user_path(current_user) do %>
 <%# <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" /></h5> %>
@@ -13,4 +13,4 @@
 <%# <h5><%= link_to user_path(current_user) do %>
 
 <h6><%= plant.address %></h6>
-Oh my god, what a cutie!
+<h6> <%= ["I have more plants. Check my collection!", "This plant lives in Kreuzberg, but wants to move", "Oh my god, what a cutie!", "Would you like to have this beautiful plant?", "My plant needs some love 💞", "More plants!", "Let's swap plants!", "My plant needs a date.", "Las Plantitas son vida y alegria", "Bitte tragen Sie eine Maske, wenn Sie Pflanzen tauschen möchten.", "Isn't this the most beautiful plant ever?", "This plant can be yours"].sample %> </h6>

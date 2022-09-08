@@ -6,6 +6,9 @@
 <div class="sprouts-name">
   <h1>SPROUTS</h1>
 </div>
+<%= link_to chatrooms_path do %>
+  <p class="notice row col-12 justify-content-center"><%= notice %></p>
+<% end %>
 <div class="cards">
   <% @plants.each do |plant| %>
 
