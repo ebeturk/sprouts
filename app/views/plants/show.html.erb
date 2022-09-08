@@ -32,8 +32,12 @@
                       </div>
                     <% end %>
                   <% end %>
+                <%= link_to map_path(@plant) do %>
                   <i class="fa-regular fa-compass fa-3x"></i>
-                  <img class="avatar-bordered-marks" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+                <% end %>
+                <%= link_to user_path(@plant.user) do %>
+                  <img class="avatar-bordered-marks" style="background-image: url('<%= cl_image_path @plant.user.photo.key,width: 60, height: 60, crop: :fill %>')">
+                <% end %>
                 </div>
               <%# <div class="avatar-container">
               </div> %>

@@ -1,10 +1,16 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 1px;
+  grid-gap: 15px;
+  margin: 12px;
+  margin-right: 20px;
+}
+.sprouts-name{
+  opacity: 0.3;
+  margin-left: 142px;
+  font-family: 'Ubuntu', sans-serif;
 
 }
-
 .mycard {
   // position: absolute;
   border: 1px solid #98AC9C;
@@ -24,10 +30,10 @@
     // font-size: 14px;
 
     // position: absolute;
-    width: 55px;
+    width: 100px;
     height: 19px;
 
-    font-family: 'Playfair Display';
+    font-family: 'Ubuntu', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -44,9 +50,11 @@
   }
 
   buttons-card {
-    display: flex;
     width: 30px;
     height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 }
 
