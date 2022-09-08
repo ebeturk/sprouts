@@ -1,25 +1,30 @@
 
 <div class="marks">
 
-  <div class="buttons btn-back-to-plants">
-    <%= link_to "<<", plants_path, class: "btn btn-ghost" %>
-  </div>
+  <%# <div class="buttons btn-back-to-plants">
+    <%= link_to "<< Back to plants", plants_path, class: "btn btn-ghost" %>
+  <%# </div> %>
 
   <div class="mark-titles">
     <h1>Marks & Matches</h1>
-    <p>Let's Sprouts together</p>
   </div>
+
   <div class="my-marks">
+      <% Match.all.each do |match| %>
+      <div class="match">
+
+          <%= match.user_1.username %>
+          <div class="plant-bg" style="background-image: url('<%= cl_image_path match.plant_1.photo.key, height: 320, width: 240, crop: :fill %>')">
+          </div>
+          <%= match.user_2.username %>
+          <div class="plant-bg" style="background-image: url('<%= cl_image_path match.plant_2.photo.key, height: 320, width: 240, crop: :fill %>')">
+          </div>
+          
+        </div>
+      <% end %>
+
     <div class="carousel-marks">
       <div>
-        <h2>Marks</h2>
-        <%# <h2><%= Mark.first.plant.name</h2> %>
-
-        <%# <% @marks.each do |mark| %>
-          <%= User.last.plants.name %>
-
-        <%# <% end %>
-
 
       </div>
 
