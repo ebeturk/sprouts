@@ -28,7 +28,7 @@ class MarksController < ApplicationController
               @chatroom = Chatroom.create(user_1: current_user, user_2: @user)
             else
               redirect_to plant_path(@plant), notice: "💚 Your plant's got a match! 💚"
-              @chatroom = Chatroom.create(user_1: current_user, user_2: @user)
+              @chatroom = Chatroom.create(name: "Maple Tree", user_1: current_user, user_2: @user)
             end
 
           else
