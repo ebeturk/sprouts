@@ -5,12 +5,15 @@
   <div class="plant-card">
     <div class="card">
       <div class="card__face card__face--front">
+
         <div class="plant-bg" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 480, width: 400, crop: :fill %>')">
         </div>
+
         <div class="plant-action">
           <div class="buttons-name">
             <h6><%= @plant.name %></h6>
           </div>
+
           <div class="icons">
             <% if !current_user.plants.include?(@plant) %>
               <% if @mark.present? %>
@@ -27,18 +30,31 @@
                     <% end %>
                   <% end %>
 
-                <%= link_to map_path(@plant) do %>
-                  <i class="fa-regular fa-compass fa-3x"></i>
-                <% end %>
-                <%= link_to user_path(@plant.user) do %>
-                  <img class="avatar-bordered-marks" style="background-image: url('<%= cl_image_path @plant.user.photo.key,width: 60, height: 60, crop: :fill %>')">
-                <% end %>
-
                 </div>
               <% end %>
             <% end %>
-            <i class="fa-regular fa-compass fa-3x"></i>
-            <img class="avatar-bordered-marks" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+            <%= link_to map_path(@plant) do %>
+              <i class="fa-regular fa-compass fa-3x"></i>
+            <% end %>
+            <%= link_to user_path(@plant.user) do %>
+              <img class="avatar-bordered-marks" style="background-image: url('<%= cl_image_path @plant.user.photo.key,width: 60, height: 60, crop: :fill %>')">
+            <% end %>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="backcard backcard--back">
+        <div class="flipreverse">
+          <div class="plant-bg-back" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 480, width: 400, crop: :fill %>')">
+          </div>
+          <div class="backcard-description">
+            <h3> <%= @plant.name %> </h3>
+            <h4> Category: <strong><%= @plant.category %></strong></h4>
+            <h5> Lighting: <%= @plant.lighting %> </h5>
+            <h5> Watering: <%= @plant.watering %></h5>
+            <h5> Temperature: <%= @plant.temperature %></h5>
+            <h5> Location: <%= @plant.address %></h5>
           </div>
         </div>
       </div>
@@ -46,19 +62,6 @@
   </div>
 
 
-  <div class="backcard backcard--back">
-    <div class="flipreverse">
-      <div class="plant-bg-back" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 480, width: 400, crop: :fill %>')">
-        <%# <h5>description</h5> %>
-        <h3> <%= @plant.name %> </h3>
-        <h4> Category: <strong><%= @plant.category %></strong></h4>
-        <h5> Lighting: <%= @plant.lighting %> </h5>
-        <h5> Watering: <%= @plant.watering %></h5>
-        <h5> Temperature: <%= @plant.temperature %></h5>
-        <h5> Location: <%= @plant.address %></h5>
-      </div>
-    </div>
-  </div>
 
 </div>
 

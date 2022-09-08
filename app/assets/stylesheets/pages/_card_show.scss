@@ -90,9 +90,9 @@
 }
 
 .icon-wrapper {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
+  display: flex;
+  // // flex-direction: column;
+  justify-content: center;
   // align-items: center;
 
   i, a, form, .btn {
@@ -177,16 +177,25 @@
 }
 
 .plant-bg-back{
-  height: 88%;
-  width: 100%;
+  width: 355px;
+  height: 588px;
   // background-image: url("https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80");
   background-size: cover;
   background-position: center;
   border-radius: 20px 20px 0 0;
-  height: 81%;
   background-position: center;
   background-repeat: none;
   background-size: cover;
+  opacity: 0.9;
+
+
+}
+
+.backcard-description {
+  position: relative;
+  left: 22px;
+  top: -424px;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .plant-action{
@@ -285,9 +294,9 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  position: relative;
-  top: 95px;
-  right: 114px;
+  // position: relative;
+  // top: 95px;
+  // right: 114px;
 
   h3, h4, h5 {
     color: rgb(34, 43, 33);

@@ -23,7 +23,8 @@
   justify-content: flex-start;
   height: 64px;
   position: relative;
-  top: 3px;
+  // top: 3px;
+  top: 242px;
 
   h2 {
 
@@ -38,27 +39,38 @@
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
+    color: rgb(34, 43, 33);
 
   }
 
-  .card-name {
-    position: relative;
-    left: 8px;
-    top: 4px;
-  }
+}
 
-  .buttons-card {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
-    right: 5px;
+.card-name {
+  position: relative;
+  left: 18px;
+  top: 1px;
+}
+
+.buttons-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  right: 5px;
+  bottom: 5px;
+
+    .fa-heart {
+      color: rgb(34, 43, 33);
+    }
+
+    .fa-compass {
+      color: rgb(34, 43, 33);
   }
 }
 
 
 a {
-  color: black;
+  color: rgb(34, 43, 33);
   text-decoration: none;
 }
 
@@ -71,6 +83,13 @@ a {
   display: flex;
   flex-direction: column-reverse;
   border: 1px solid #98AC9C;
+
+  .img-card {
+    width: 178px;
+    border-radius: 16px;
+    position: relative;
+    top: 1px;
+  }
 
 }
 
@@ -109,9 +128,12 @@ a {
 }
 
 .fa-map {
-  color:rgb(7, 106, 88)
+  color: rgb(7, 106, 88);
 }
 
-.body-container {
+.body-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-bottom: 100px;
 }
