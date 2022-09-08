@@ -11,16 +11,12 @@
 
   <div class="my-marks">
       <% Match.all.each do |match| %>
-      <div class="match">
-
           <%= match.user_1.username %>
           <div class="plant-bg" style="background-image: url('<%= cl_image_path match.plant_1.photo.key, height: 320, width: 240, crop: :fill %>')">
           </div>
           <%= match.user_2.username %>
           <div class="plant-bg" style="background-image: url('<%= cl_image_path match.plant_2.photo.key, height: 320, width: 240, crop: :fill %>')">
           </div>
-          
-        </div>
       <% end %>
 
     <div class="carousel-marks">
