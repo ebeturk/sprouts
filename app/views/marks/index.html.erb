@@ -11,16 +11,18 @@
   </div>
   <div class="my-marks">
     <div class="carousel-marks">
-      <div>
-        <h2>Marks</h2>
+      <div class="description-marks">
+        <h2>Matches</h2>
         <%# <h2><%= Mark.first.plant.name</h2> %>
 
-        <%# <% @marks.each do |mark| %>
-          <%= User.last.plants.name %>
-
-        <%# <% end %>
-
-
+        <% @matches.each do |match| %>
+          <%= match.user_1.username %>
+          <div class="plant-bg" style="background-image: url('<%= cl_image_path match.plant_1.photo.key, height: 320, width: 240, crop: :fill %>')">
+          </div>
+          <%= match.user_2.username %>
+          <div class="plant-bg" style="background-image: url('<%= cl_image_path match.plant_2.photo.key, height: 320, width: 240, crop: :fill %>')">
+          </div>
+        <% end %>
       </div>
 
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -29,14 +31,13 @@
             <% if index == 0 %>
               <div class="carousel-item active">
                 <%= link_to mark_path(mark) do %>
-                    <%# <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %>
+                  <%= cl_image_tag mark.plant.photo.key, height: 280, width: 280, crop: :fill %>
                 <% end %>
               </div>
             <% else %>
               <div class="carousel-item">
                 <%= link_to mark_path(mark) do %>
-
-                    <%# <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %>
+                  <%= cl_image_tag mark.plant.photo.key, height: 280, width: 280, crop: :fill %>
                 <% end %>
               </div>
             <% end %>
