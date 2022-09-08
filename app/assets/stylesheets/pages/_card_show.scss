@@ -8,83 +8,92 @@
   background: transparent;
 }
 
-.plant-card{
-  width: 84%;
-  height: 101%;
-  border-radius: 24px;
-  margin-top: 19px;
-  transform-style: preserve-3d;
-  transform-origin: center right;
-  transition: transform 1s;
-  --bs-card-bg: transparent;
-}
+// .plant-card{
+//   width: 84%;
+//   height: 101%;
+//   border-radius: 24px;
+//   margin-top: 19px;
+//   transform-style: preserve-3d;
+//   transform-origin: center right;
+//   transition: transform 1s;
+//   --bs-card-bg: transparent;
+// }
 
-.plant-bg{
-  height: 77%;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-image: url("https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80");
-  border-radius: 24px;
+// .plant-bg{
+//   height: 77%;
+//   width: 100%;
+//   background-size: cover;
+//   background-position: center;
+//   background-image: url("https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80");
+//   border-radius: 24px;
 
-}
+// }
 
-.plant-actions{
-  height: 23%;
-  width: 100%;
-  background: #94AB96;
-  display: flex;
-  justify-content: center;
-  border-radius: 22px;
-  align-items: center;
-  position: relative;
-  top: -41px;
-}
+// .plant-actions{
+//   height: 23%;
+//   width: 100%;
+//   background: #94AB96;
+//   display: flex;
+//   justify-content: center;
+//   border-radius: 22px;
+//   align-items: center;
+//   position: relative;
+//   top: -41px;
+// }
 
-.name-buttons{
-  width: 74%;
-  height: 99%;
-  display: flex;
-  justify-content: flex-start;
-  // align-items: center;
-  flex-direction: column;
-}
+// .name-buttons{
+//   width: 74%;
+//   height: 99%;
+//   display: flex;
+//   justify-content: flex-start;
+//   // align-items: center;
+//   flex-direction: column;
+// }
 
-.plant-name, h2 {
-  font-size: 35px;
-  font-family: 'Playfair Display SC';
-  color: #222b21;
-  margin-right: 22px;
-  align-items: center;
-  position: relative;
-  top: 5px;
-}
+// .plant-name, h2 {
+//   font-size: 35px;
+//   font-family: 'Playfair Display SC';
+//   color: #222b21;
+//   margin-right: 22px;
+//   align-items: center;
+//   position: relative;
+//   top: 5px;
+// }
 
-.buttons-container {
-  display: flex;
-  justify-content: space-between;
-  align-content: flex-end;
-  align-items: center;
-  // margin-bottom: 20px;
+// .buttons-container {
+//   display: flex;
+//   justify-content: space-between;
+//   align-content: flex-end;
+//   align-items: center;
+//   // margin-bottom: 20px;
 
-  .fa-heart {
-    color: rgb(34, 43, 33);
-  }
+//   .fa-heart {
+//     color: rgb(34, 43, 33);
+//   }
 
-  .fa-compass {
-    color: rgb(34, 43, 33);
-  }
-}
+//   .fa-compass {
+//     color: rgb(34, 43, 33);
+//   }
+// }
 
 .search-form {
   display: flex;
+  align-items: center;
+
+  .fa-map {
+    color: #6d7d70;
+  }
+
+  .fa-leaf {
+    font-size: 20px;
+  }
 }
 
 .icon-wrapper {
   display: flex;
-  flex-direction: column;
+  // // flex-direction: column;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
 
   i, a, form, .btn {
     height: 45px !important;
@@ -100,39 +109,197 @@
   }
 }
 
-// flipping card stuff
+.middler{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  width: 100vw;
+  height: 100vh;
+}
 
-.card-scene {
+.plant-card {
   display: inline-block;
-  width: 180px;
-  height: 241px;
-  perspective: 600px;
+  width: 73%;
+  height: 79%;
+/*   border: 1px solid #CCC; */
+  margin-bottom: 90px;
+
+
 }
 
 .card {
-  // position: relative;
-  // width: 100%;
-  // height: 100%;
-  // transform-style: preserve-3d;
-  // transform-origin: center right;
-  // transition: transform 1s;
-  // --bs-card-bg: transparent;
-  --bs-card-bg:
+  position: relative;
+  right: 21px;
+  bottom: -11px;
+  width: 113%;
+  height: 80%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.is-flipped {
+.card.is-flipped {
   transform: translateX(-100%) rotateY(-180deg);
 }
 
-.front {
+.backcard{
   position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
   backface-visibility: hidden;
-  background-image: url(https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80);
+  background-color: blue;
 }
 
-.back {
+.card__face {
   position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
   backface-visibility: hidden;
+}
+
+.plant-bg {
+  height: 88%;
+  width: 100%;
+  // background-image: url("https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px 20px 0 0;
+  height: 81%;
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+}
+
+.plant-bg-back{
+  width: 355px;
+  height: 588px;
+  // background-image: url("https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px 20px 0 0;
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  opacity: 0.9;
+
+
+}
+
+.backcard-description {
+  position: relative;
+  left: 22px;
+  top: -424px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.plant-action{
+  width: 100%;
+  height: 12%;
+  display: flex;
+  align-items: center;
+
+
+  position: absolute;
+  border: 1px solid #98AC9C;
+  border-radius: 24px;
+  background: #94AB96;
+  // opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 64px;
+  position: relative;
+  bottom: 23px;
+
+  // height: 23%;
+  // width: 100%;
+  // background: #94AB96;
+  // display: flex;
+  // justify-content: center;
+  // border-radius: 22px;
+  // align-items: center;
+  // position: relative;
+  // top: -41px;
+
+}
+
+.buttons-name{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 10px;
+
+  h6 {
+    font-size: 35px;
+    font-family: 'Playfair Display SC';
+    color: rgb(34, 43, 33);
+  }
+}
+
+.icons{
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 11px;
+
+    .fa-heart {
+    color: rgb(34, 43, 33);
+    font-size: 48px;
+
+  }
+
+  .fa-compass {
+    color: rgb(34, 43, 33);
+    font-size: 48px;
+  }
+}
+
+// .user-avatar{
+//   width: 30%;
+//   height: 100%;
+// }
+
+.card__face--front {
+  background: #94AB96;
+}
+
+.backcard--back {
+  background: #94AB96;
   transform: rotateY(180deg);
-  background-color: blue;
+
+}
+
+.transform{
+  transform: none;
+}
+
+
+.flipreverse{
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  // position: relative;
+  // top: 95px;
+  // right: 114px;
+
+  h3, h4, h5 {
+    color: rgb(34, 43, 33);
+    font-size: 35px;
+  }
 }

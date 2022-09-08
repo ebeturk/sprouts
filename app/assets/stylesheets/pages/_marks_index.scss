@@ -23,7 +23,18 @@
   .carousel-marks {
     position: relative;
     top: 190px;
+
+
+    .description-marks {
+      position: relative;
+      bottom: 106px;
+      left: 58px;
+    }
   }
+}
+
+#carouselExampleControls {
+  bottom: 85px;
 }
 
 .mark-titles {

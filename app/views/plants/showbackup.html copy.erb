@@ -1,0 +1,119 @@
+<%= render "layouts/shared/search-form"  %>
+
+  <div class="scene scene--card">
+  <div class="card">
+    <div class="card__face front">
+
+      <div class="middler">
+        <div class="plant-card">
+          <div class="plant-bg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @plant.photo.key, height: 300, crop: :fill %>')">
+          </div>
+            <div class="plant-actions">
+              <div class="name-buttons">
+                <div class="plant-name">
+                  <h2><%= @plant.name %></h2>
+                </div>
+                <div class="buttons-container">
+                  <%# <i class="fa-regular fa-heart fa-3x"></i> %>
+                  <% if !current_user.plants.include?(@plant) %>
+                    <% if @mark.present? %>
+                      <div class="icon-wrapper">
+                        <%= link_to mark_path(@mark), data: {turbo_method: :delete }, class: "btn" do %>
+                          <i class="fa-solid fa-heart fa-3x"></i>
+                        <% end %>
+                      </div>
+                    <% else %>
+                      <div class="icon-wrapper">
+                        <%= simple_form_for [@plant, Mark.new] do |f| %>
+                          <%= f.button :button do %>
+                            <i class="fa-regular fa-heart fa-3x"></i>
+                          <% end %>
+                        <% end %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                  <i class="fa-regular fa-compass fa-3x"></i>
+                  <img class="avatar-bordered-marks" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+                </div>
+              <%# <div class="avatar-container">
+              </div> %>
+            </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="card__face back">
+
+      <div class="middler">
+        <div class="plant-card">
+          <div class="plant-bg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @plant.photo.key, height: 300, crop: :fill %>')">
+            <h3> <%= @plant.name %> </h3>
+            <h4> Category: <strong><%= @plant.category %></strong></h4>
+            <h5> Lighting: <%= @plant.lighting %> </h5>
+            <h5> Watering: <%= @plant.watering %></h5>
+            <h5> Temperature: <%= @plant.temperature %></h5>
+            <h5> Location: <%= @plant.address %></h5>
+
+          </div>
+            <div class="plant-actions">
+              <div class="name-buttons">
+                <div class="plant-name">
+                  <h2><%= @plant.name %></h2>
+                </div>
+                <div class="buttons-container">
+                  <%# <i class="fa-regular fa-heart fa-3x"></i> %>
+                  <% if !current_user.plants.include?(@plant) %>
+                    <% if @mark.present? %>
+                      <div class="icon-wrapper">
+                        <%= link_to mark_path(@mark), data: {turbo_method: :delete }, class: "btn" do %>
+                          <i class="fa-solid fa-heart fa-3x"></i>
+                        <% end %>
+                      </div>
+                    <% else %>
+                      <div class="icon-wrapper">
+                        <%= simple_form_for [@plant, Mark.new] do |f| %>
+                          <%= f.button :button do %>
+                            <i class="fa-regular fa-heart fa-3x"></i>
+                          <% end %>
+                        <% end %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                  <i class="fa-regular fa-compass fa-3x"></i>
+                  <img class="avatar-bordered-marks" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+                </div>
+              <%# <div class="avatar-container">
+              </div> %>
+            </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+<%# <div class="buttons btn-back-to-plants">
+  <%= link_to "Back to plants", plants_path, class: "btn btn-ghost" %>
+<%# </div> %>
+
+      <div class="back">
+        <h2>Back</h2>
+      </div>
+
+
+
+<script>
+  const cards = document.querySelectorAll('.plant-card')
+
+  cards.forEach((card) => {
+    console.log(card)
+    card.addEventListener('click', (event) => {
+      console.log('event listener added')
+      card.classList.toggle('is-flipped')
+    })
+  })
+</script>
