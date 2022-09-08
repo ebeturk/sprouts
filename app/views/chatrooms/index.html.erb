@@ -6,7 +6,7 @@
           <div class="card-product-infos">
             <div class="chatroom-name">
               <%= link_to chatroom.name, chatroom_path(chatroom)%>
-              <h6><%=chatroom.user_1.username%></h6>
+              <h6><%=chatroom.user_2.username%></h6>
               <% if chatroom.messages.last.present? %>
                 <h5><%=chatroom.messages.last.content%></h5>
               <% else %>
