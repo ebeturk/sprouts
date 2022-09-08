@@ -13,6 +13,7 @@ class PlantsController < ApplicationController
           info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
           image_url: helpers.asset_url("sprouts_logo.png")
         }
+      # @chatrooms = Chatroom.where(user_1_id: current_user.id)
       end
     else
       @plants = Plant.all
