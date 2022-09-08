@@ -26,6 +26,14 @@
                       <i class="fa-regular fa-heart fa-3x"></i>
                     <% end %>
                   <% end %>
+
+                <%= link_to map_path(@plant) do %>
+                  <i class="fa-regular fa-compass fa-3x"></i>
+                <% end %>
+                <%= link_to user_path(@plant.user) do %>
+                  <img class="avatar-bordered-marks" style="background-image: url('<%= cl_image_path @plant.user.photo.key,width: 60, height: 60, crop: :fill %>')">
+                <% end %>
+
                 </div>
               <% end %>
             <% end %>

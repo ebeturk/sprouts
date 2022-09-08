@@ -7,7 +7,11 @@
             <div class="chatroom-name">
               <%= link_to chatroom.name, chatroom_path(chatroom)%>
               <h6><%=chatroom.user_1.username%></h6>
-              <h5><%=chatroom.messages.last%></h5>
+              <% if chatroom.messages.last.present? %>
+                <h5><%=chatroom.messages.last.content%></h5>
+              <% else %>
+                <h5>No messages yet.</h5>
+              <% end %>
             </div>
           </div>
       </div>

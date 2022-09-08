@@ -2,9 +2,10 @@
   <div class="form-column">
 
   <%= simple_form_for(plant, html: { id: :tame_form })  do |f| %>
+      <div class="name">
       <%= f.label :name  %>
+      </div>
       <%= f.text_field :name %>
-      <%= f.label :category %>
       <%= f.input :category, :collection => ["Cactus and Succulents", "House Plants", "Seeds", "Trees", "Climbers", "Herbs", "Flowers", "Other"] %>
       <%= f.label :lighting, class: "input input-width" %>
       <div class="rating" style="width: 20rem">
@@ -22,7 +23,7 @@
         <input id="watering-3" type="radio" name="watering" value="💧💧💧"/><label for="watering-3"><i class="fas fa-2x fa-droplet"></i></label>
         <input id="watering-2" type="radio" name="watering" value="💧💧"/><label for="watering-2"><i class="fas fa-2x fa-droplet"></i></label>
         <input id="watering-1" type="radio" name="watering" value="💧"/><label for="watering-1"><i class="fas fa-2x fa-droplet"></i></label>
-    </div>
+      </div>
 
       <%= f.label :temperature, class: "input input-width" %>
       <div class="temperature" style="width: 20rem">
@@ -33,16 +34,21 @@
         <input id="temperature-1" type="radio" name="temperature" value="🌡"/><label for="temperature-1"><i class="fas fa-2x fa-light fa-temperature-empty "></i></label>
       </div>
 
+      <div class="address">
       <%= f.label :address, class: "input input-width" %>
+      </div>
       <%= f.text_field :address, class: "input" %>
 
       <div class="p-4 mt-6 d-flex justify-content-center">
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photo, class: "photo", as: :file %>
       </div>
 
       <div class="p-4 justify-content-center">
         <%# <%= f.submit class: "btn button-create fa-solid fa-tree" %>
-        <%= f.submit :button, class: "my-button" do %>
+        <%# <%= f.submit :button, class: "my-button" do %>
+          <%# <i class="fa-solid fa-tree"></i>
+        <% end %>
+        <%= f.button :button, class: "my-button" do %>
           <i class="fa-solid fa-tree"></i>
         <% end %>
       </div>
