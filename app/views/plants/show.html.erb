@@ -14,7 +14,7 @@
             <h6><%= @plant.name %></h6>
           </div>
 
-          <div class="icons">
+          <div class="icons w-100 justify-content-around px-4 py-1">
             <% if !current_user.plants.include?(@plant) %>
               <% if @mark.present? %>
                 <div class="icon-wrapper">
@@ -37,7 +37,8 @@
               <i class="fa-regular fa-compass fa-3x"></i>
             <% end %>
             <%= link_to user_path(@plant.user) do %>
-              <img class="avatar-bordered-marks" style="background-image: url('<%= cl_image_path @plant.user.photo.key,width: 60, height: 60, crop: :fill %>')">
+              <%# <img class="avatar-bordered-marks" style="background-image: url('<%= cl_image_path @plant.user.photo.key,width: 60, height: 60, crop: :fill %>
+              <%= cl_image_tag @plant.user.photo.key,width: 60, height: 60, crop: :fill, class:"card-trip-user avatar-bordered-marks" %>
             <% end %>
           </div>
 
