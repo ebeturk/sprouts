@@ -2,7 +2,7 @@ class MarksController < ApplicationController
 
     def index
       @mark = Mark.all
-      @match = Match.all
+      @matches = Match.where(user_1_id: current_user.id).or(Match.where(user_2_id: current_user.id))
     end
 
 

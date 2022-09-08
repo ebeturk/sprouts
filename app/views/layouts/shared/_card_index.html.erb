@@ -1,5 +1,8 @@
-<div class="content"
-  style="background-image: url('<%= cl_image_path plant.photo.key, height: 240, width: 180, crop: :fill %>')">
+<div class="content">
+  <%# style="background-image: url('<%= cl_image_path plant.photo.key, height: 240, width: 180, crop: :fill %>
+  <%= link_to user_path(plant.user) do %>
+    <%= cl_image_tag plant.photo.key, height: 240, width: 180, crop: :fill, class:"img-card" %>
+  <% end %>
 
   <div class="mycard" id="plant-<%= plant.id %>">
     <div class="card-name">
