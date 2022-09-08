@@ -10,25 +10,27 @@
   </div>
 
   <div class="my-marks">
-    <div><h1>This are your latets </h1></div>
+    <div class="mark-tittle"><h1>This are your latest matches:  </h1></div>
     <div class="matches-disp">
       <% if @matches.first.nil? %>
         <p>Test</p>
       <% else %>
         <% @matches.uniq.each do |match| %>
             <div class="d-flex">
-              <div class="plant-mark" style="background-image: url('<%= cl_image_path match.plant_1.photo.key, height: 220, width: 140, crop: :fill %>')">
-                <h5><%= match.plant_1.name %></h5>
+              <div class="plant-mark-1" style="background-image: url('<%= cl_image_path match.plant_1.photo.key, height: 220, width: 140, crop: :fill %>')">
+                <%# <h5><strong><%= match.plant_1.name %>
+                <i class="fa-solid fa-infinity fa-2x"></i>
               </div>
-              <div class="plant-mark" style="background-image: url('<%= cl_image_path match.plant_2.photo.key, height: 220, width: 140, crop: :fill %>')">
-                <%= match.plant_2.name %>
+              <div class="plant-mark-2" style="background-image: url('<%= cl_image_path match.plant_2.photo.key, height: 220, width: 140, crop: :fill %>')">
+                <%# <h5><strong><%= match.plant_2.name %>
+                <%# <i class="fa-solid fa-infinity fa-2x"></i> %>
               </div>
             </div>
         <% end %>
 
       <% end %>
     </div>
-
+    <div class="mark-tittle-2"><h1>Your Marks:  </h1></div>
     <div class="carousel-marks">
 
       <div id="carouselMarks" class="carousel slide" data-bs-ride="carousel">
