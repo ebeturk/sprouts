@@ -1,36 +1,58 @@
-<h1>Marks#index</h1>
-<div class="Plant Matches">
-      <%# <h2>My Collection</h2> %>
-      <div class="user-plants-collection">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <% Match.all.where(id:current_user).each_with_index do |plant, index| %>
-              <% if index == 0 %>
-                <div class="carousel-item active">
-                  <%= link_to plant_path(match.plant_1) do %>
-                    <%= cl_image_tag plant_1.photo.key, height: 280, width: 280, crop: :fill %>
-                  <% end %>
-                </div>
-              <% else %>
-                <div class="carousel-item">
-                  <%= link_to plant_path(plant) do %>
 
-                    <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %>
+<div class="marks">
 
-                  <% end %>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+  <div class="buttons btn-back-to-plants">
+    <%= link_to "<< Back to plants", plants_path, class: "btn btn-ghost" %>
+  </div>
+
+  <div class="mark-titles">
+    <h1>Marks & Matches</h1>
+    <p>Let's Sprouts together</p>
+  </div>
+  <div class="my-marks">
+    <div class="carousel-marks">
+      <div>
+        <h2>Marks</h2>
+        <%# <h2><%= Mark.first.plant.name</h2> %>
+
+        <%# <% @marks.each do |mark| %>
+          <%= User.last.plants.name %>
+
+        <%# <% end %>
+
+
       </div>
-      <%# <%= link_to "Add a review 📝",  new_user_review_path(@user) %>
+
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <% current_user.marks.each_with_index do |mark, index| %>
+            <% if index == 0 %>
+              <div class="carousel-item active">
+                <%= link_to mark_path(mark) do %>
+                    <%# <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="carousel-item">
+                <%= link_to mark_path(mark) do %>
+
+                    <%# <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
     </div>
+
+  </div>
+</div>
