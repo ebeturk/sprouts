@@ -30,7 +30,7 @@
       <% end %>
       <%# <i class="fa-regular fa-circle-user"></i> %>
       <%= link_to user_path(plant.user) do %>
-        <%= cl_image_path plant.user.photo.key, class="card-trip-user avatar-bordered", width: 30, height: 30, crop: :fill %>
+        <%= cl_image_tag plant.user.photo.key, class: "card-trip-user avatar-bordered", width: 30, height: 30, crop: :fill %>
       <% end %>
 
       </div>
