@@ -12,7 +12,14 @@
     <div class="carousel-marks">
       <div>
         <h2>Marks</h2>
-        <%# <h2><%= Mark.first.plant.name</h2> %> %>
+        <%# <h2><%= Mark.first.plant.name</h2> %>
+
+        <%# <% @marks.each do |mark| %>
+          <%= User.last.plants.name %>
+
+        <%# <% end %>
+
+
       </div>
 
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -21,14 +28,14 @@
             <% if index == 0 %>
               <div class="carousel-item active">
                 <%= link_to mark_path(mark) do %>
-                    <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %>
+                    <%# <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %>
                 <% end %>
               </div>
             <% else %>
               <div class="carousel-item">
                 <%= link_to mark_path(mark) do %>
 
-                    <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %>
+                    <%# <%= cl_image_tag plant.photo.key, height: 280, width: 280, crop: :fill %>
                 <% end %>
               </div>
             <% end %>
@@ -45,9 +52,6 @@
       </div>
 
     </div>
-
-
-
 
   </div>
 </div>
