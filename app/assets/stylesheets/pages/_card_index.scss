@@ -68,7 +68,6 @@
   }
 }
 
-
 a {
   color: rgb(34, 43, 33);
   text-decoration: none;
@@ -83,6 +82,7 @@ a {
   display: flex;
   flex-direction: column-reverse;
   border: 1px solid #98AC9C;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
   .img-card {
     width: 178px;
