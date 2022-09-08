@@ -24,10 +24,10 @@ class MarksController < ApplicationController
           if matching_mark.present?
             Match.create(user_1: current_user, user_2: @user, plant_1: @plant, plant_2: matching_mark.plant)
             if params[:last_action] == "index"
-              redirect_to plants_path(anchor: "plant-#{@plant.id}"), notice: "💚 Your plant's got a match! 💚"
+              redirect_to plants_path(anchor: "plant-#{@plant.id}"), notice: "💚 Your plant has a match! 💚"
               @chatroom = Chatroom.create(user_1: current_user, user_2: @user)
             else
-              redirect_to plant_path(@plant), notice: "💚 Your plant's got a match! 💚"
+              redirect_to plant_path(@plant), notice: "💚 Your plant has a match! 💚"
               @chatroom = Chatroom.create(name: "Maple Tree", user_1: current_user, user_2: @user)
             end
 
