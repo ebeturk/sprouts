@@ -1,6 +1,6 @@
 <%= render "layouts/shared/search-form"  %>
 <%= link_to chatroom_path(Chatroom.last) do %>
-  <p class="notice row col-12 justify-content-center"><%= notice %></p>
+  <p class="notice-match row col-12 justify-content-center"><%= notice %></p>
 <% end %>
 <div class="middler">
 
@@ -39,8 +39,8 @@
               <i class="fa-regular fa-compass fa-3x"></i>
             <% end %>
             <%= link_to user_path(@plant.user) do %>
-              <%# <img class="avatar-bordered-marks" style="background-image: url('<%= cl_image_path @plant.user.photo.key,width: 60, height: 60, crop: :fill %>
-              <%= cl_image_tag @plant.user.photo.key,width: 60, height: 60, crop: :fill, class:"card-trip-user avatar-bordered-marks" %>
+
+              <% cl_image_tag @plant.user.photo.key, class:"avatar-bordered-marks", width: 60, height: 60, crop: :fill %>
             <% end %>
           </div>
 

@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: space-between;
   font-family: 'Ubuntu', sans-serif;
+  font-size: larger;
+  border-radius: 15px;
 }
 
 // .input-form-new-plant{
@@ -15,8 +17,8 @@
 // }
 
 .form-label {
-  margin-left: 77px;
-  margin-top: 20px;
+  margin-left: 55px;
+  padding: 5px;
 }
 
 .form-column {
@@ -36,6 +38,24 @@
   height: 750px;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // border-radius: 25px;
+}
+
+.form-select {
+  border-radius: 15px;
+}
+
+.input-size {
+  width: 220px;
+  height: 36px;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.input-size-location {
+  width: 220px;
+  height: 36px;
+  text-align: center;
+  margin: 30px auto 0px auto;
 }
 
 #tame_form {

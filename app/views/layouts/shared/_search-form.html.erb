@@ -12,9 +12,6 @@
         <i class="fa-solid fa-leaf fa-1.5x"></i>
       </button>
     <% end %>
-    <% if params[:query] %>
-        <h2 class="text-center"><%= "Mark the plants you would like to grow at home" %></h2>
-    <% end %>
 
   </div>
   <div class="btn-map">
@@ -23,3 +20,8 @@
     <% end %>
   </div>
 </div>
+
+<br>
+    <% if params[:query] %>
+        <h4 class="text-center"><%= "Did you find your new plant?" %></h4>
+    <% end %>
