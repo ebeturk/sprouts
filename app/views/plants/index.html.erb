@@ -3,8 +3,9 @@
   <%= render "layouts/shared/search-form"  %>
 
 </div>
-<div class="sprouts-name">
-  <h1>SPROUTS</h1>
+<div class="sprouts-name d-flex justify-content-start align-items-end">
+  <%= image_tag "monstera.png" %>
+  <h1 class="ps-2">SPROUTS </h1>
 </div>
 <%= link_to chatroom_path(Chatroom.last) do %>
   <p class="notice-match row col-12 justify-content-center"><%= notice %></p>
