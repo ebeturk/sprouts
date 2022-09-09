@@ -140,6 +140,7 @@
   transition: transform 1s;
   border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .card.is-flipped {
@@ -186,7 +187,7 @@
   background-position: center;
   background-repeat: none;
   background-size: cover;
-  opacity: 0.9;
+  opacity: 0.5;
 
 
 }
@@ -194,7 +195,7 @@
 .backcard-description {
   position: relative;
   left: 22px;
-  top: -424px;
+  top: -493px;
   font-family: 'Ubuntu', sans-serif;
 }
 
