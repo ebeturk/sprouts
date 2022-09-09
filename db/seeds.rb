@@ -43,7 +43,7 @@ puts "TOTAL DESTRUCTION!"
   sansiviera.photo.attach(io: file, filename: "sansiviera.jpg", content_type: "image/jpg")
   sansiviera.save
 
-  monstera_br = Plant.new( name: "Monstera", category: "House Plants", lighting: "🌞", watering: "💧", user_id: claire.id, latitude: 52.4983, longitude: 13.4070)
+  monstera_br = Plant.new( name: "Monstera", category: "House Plants", lighting: "🌞", watering: "💧", user_id: brane.id, latitude: 52.4983, longitude: 13.4070)
   file = URI.open("https://res.cloudinary.com/dzk0qfl8v/image/upload/v1662645850/Sprouts/IMG_0740_uspnb9.jpg")
   monstera_br.photo.attach(io: file, filename: "monstera.jpg", content_type: "image/jpg")
   monstera_br.save
