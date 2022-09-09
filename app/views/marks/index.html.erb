@@ -1,5 +1,5 @@
 
-<div class="marks">
+<div class="marks overflow-scroll">
 
   <%# <div class="buttons btn-back-to-plants">
     <%= link_to "<< Back to plants", plants_path, class: "btn btn-ghost" %>
@@ -10,10 +10,10 @@
   </div>
 
   <div class="my-marks">
-    <div class="mark-tittle"><h1>This are your latest matches:  </h1></div>
+    <div class="mark-tittle"><h1>Your matches  </h1></div>
     <div class="matches-disp">
       <% if @matches.first.nil? %>
-        <p>Test</p>
+        <p>Sorry, you have no matches...yet!</p>
       <% else %>
         <% @matches.uniq.each do |match| %>
             <div class="d-flex">
@@ -30,7 +30,7 @@
 
       <% end %>
     </div>
-    <div class="mark-tittle-2"><h1>Your Marks:  </h1></div>
+    <div class="mark-tittle-2"><h1>Your Marks  </h1></div>
     <div class="carousel-marks">
 
       <div id="carouselMarks" class="carousel slide" data-bs-ride="carousel">
