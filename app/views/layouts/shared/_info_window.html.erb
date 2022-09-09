@@ -1,5 +1,5 @@
 
-<h5><%= link_to plant.name do %></h5>
+<%= link_to plant_path(plant) do %>
     <%= cl_image_tag plant.photo.key, height: 80, width: 60, crop: :fill %>
 <% end %>
 <%= link_to user_path(plant.user) do %>
