@@ -16,7 +16,7 @@
             <h6><%= @plant.name %></h6>
           </div>
 
-          <div class="icons">
+          <div class="icons w-100 justify-content-around px-4 py-1">
             <% if !current_user.plants.include?(@plant) %>
               <% if @mark.present? %>
                 <div class="icon-wrapper">
@@ -39,7 +39,8 @@
               <i class="fa-regular fa-compass fa-3x"></i>
             <% end %>
             <%= link_to user_path(@plant.user) do %>
-              <img class="avatar-bordered-marks" style="background-image: url('<%= cl_image_path @plant.user.photo.key,width: 60, height: 60, crop: :fill %>')">
+              <%# <img class="avatar-bordered-marks" style="background-image: url('<%= cl_image_path @plant.user.photo.key,width: 60, height: 60, crop: :fill %>
+              <%= cl_image_tag @plant.user.photo.key,width: 60, height: 60, crop: :fill, class:"card-trip-user avatar-bordered-marks" %>
             <% end %>
           </div>
 
@@ -51,7 +52,7 @@
           <div class="plant-bg-back" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 480, width: 400, crop: :fill %>')">
           </div>
           <div class="backcard-description">
-            <h3> <%= @plant.name %> </h3>
+            <h3> <strong><%= @plant.name %> </strong></h3>
             <h4> Category: <strong><%= @plant.category %></strong></h4>
             <h5> Lighting: <%= @plant.lighting %> </h5>
             <h5> Watering: <%= @plant.watering %></h5>

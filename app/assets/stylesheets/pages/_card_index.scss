@@ -83,6 +83,7 @@ a {
   display: flex;
   flex-direction: column-reverse;
   border: 1px solid #98AC9C;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
   .img-card {
     width: 178px;
@@ -136,4 +137,9 @@ a {
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 100px;
+  background: #ccd7ce;
+}
+
+body {
+  background: #d2ded4;
 }

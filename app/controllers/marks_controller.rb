@@ -3,6 +3,7 @@ class MarksController < ApplicationController
     def index
       @mark = Mark.all
       @matches = Match.where(user_1_id: current_user.id).or(Match.where(user_2_id: current_user.id))
+
     end
 
 
@@ -47,7 +48,9 @@ class MarksController < ApplicationController
       @mark = Mark.find(params[:id])
       @mark.destroy
       if Match.find(@mark.plant_id)
+
         @mark.destroy
+        Match.find(@mark.plant_id).destroy
         respond_to do |format|
           format.html { redirect_to plants_path(@mark.plant), notice: "Your Match was cancelled", status: :see_other }
           format.json { head :no_content }
@@ -58,11 +61,6 @@ class MarksController < ApplicationController
     end
 
     private
-
-    def mark_params
-      params.require(:mark).permit()
-      end
-    end
 
     def marked?
       Mark.where(user_id: current_user.id, plant_id: params[:plant_id]).exists?
@@ -81,4 +79,4 @@ class MarksController < ApplicationController
     #     end
     #   end
     # end
-  # end
+end

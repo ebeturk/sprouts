@@ -10,31 +10,30 @@
   </div>
 
   <div class="my-marks">
-      <% Match.all.each do |match| %>
-          <%= match.user_1.username %>
-          <div class="plant-bg" style="background-image: url('<%= cl_image_path match.plant_1.photo.key, height: 320, width: 240, crop: :fill %>')">
-          </div>
-          <%= match.user_2.username %>
-          <div class="plant-bg" style="background-image: url('<%= cl_image_path match.plant_2.photo.key, height: 320, width: 240, crop: :fill %>')">
-          </div>
-      <% end %>
-
-    <div class="carousel-marks">
-      <div class="description-marks">
-        <h2>Matches</h2>
-        <%# <h2><%= Mark.first.plant.name</h2> %>
-
-        <% @matches.each do |match| %>
-          <%= match.user_1.username %>
-          <div class="plant-bg" style="background-image: url('<%= cl_image_path match.plant_1.photo.key, height: 320, width: 240, crop: :fill %>')">
-          </div>
-          <%= match.user_2.username %>
-          <div class="plant-bg" style="background-image: url('<%= cl_image_path match.plant_2.photo.key, height: 320, width: 240, crop: :fill %>')">
-          </div>
+    <div class="mark-tittle"><h1>This are your latest matches:  </h1></div>
+    <div class="matches-disp">
+      <% if @matches.first.nil? %>
+        <p>Test</p>
+      <% else %>
+        <% @matches.uniq.each do |match| %>
+            <div class="d-flex">
+              <div class="plant-mark-1" style="background-image: url('<%= cl_image_path match.plant_1.photo.key, height: 220, width: 140, crop: :fill %>')">
+                <%# <h5><strong><%= match.plant_1.name %>
+                <h1><i class="fa-solid fa-infinity fa-2x"></i></h1>
+              </div>
+              <div class="plant-mark-2" style="background-image: url('<%= cl_image_path match.plant_2.photo.key, height: 220, width: 140, crop: :fill %>')">
+                <%# <h5><strong><%= match.plant_2.name %>
+                <%# <i class="fa-solid fa-infinity fa-2x"></i> %>
+              </div>
+            </div>
         <% end %>
-      </div>
 
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <% end %>
+    </div>
+    <div class="mark-tittle-2"><h1>Your Marks:  </h1></div>
+    <div class="carousel-marks">
+
+      <div id="carouselMarks" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <% current_user.marks.each_with_index do |mark, index| %>
             <% if index == 0 %>
@@ -52,11 +51,11 @@
             <% end %>
           <% end %>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMarks" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselMarks" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
