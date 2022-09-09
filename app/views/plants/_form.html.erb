@@ -3,10 +3,10 @@
 
   <%= simple_form_for(plant, html: { id: :tame_form })  do |f| %>
       <div class="name">
-      <%= f.label :name  %>
+
       </div>
-      <%= f.text_field :name %>
-      <%= f.input :category, :collection => ["Cactus and Succulents", "House Plants", "Seeds", "Trees", "Climbers", "Herbs", "Flowers", "Other"] %>
+      <%= f.text_field :name, placeholder: "Name of the plant", class: "input input-size" %>
+      <%= f.input :category, :collection => ["Cactus and Succulents", "House Plants", "Seeds", "Trees", "Climbers", "Herbs", "Flowers", "Other"], placeholder: "Pick a category", class: "input input-size" %>
       <%= f.label :lighting, class: "input input-width" %>
       <div class="rating" style="width: 20rem">
         <input id="rating-5" type="radio" name="lighting" value="🌞🌞🌞🌞🌞"/><label for="rating-5"><i class="fas fa-2x fa-sun"></i></label>
@@ -34,16 +34,14 @@
         <input id="temperature-1" type="radio" name="temperature" value="🌡"/><label for="temperature-1"><i class="fas fa-2x fa-light fa-temperature-empty "></i></label>
       </div>
 
-      <div class="address">
-      <%= f.label :address, class: "input input-width" %>
-      </div>
-      <%= f.text_field :address, class: "input" %>
+
+      <%= f.text_field :address, placeholder: "Plant Current Location", class: "input input-size-location" %>
 
       <div class="p-4 mt-6 d-flex justify-content-center">
       <%= f.input :photo, class: "photo", as: :file %>
       </div>
 
-      <div class="p-4 justify-content-center">
+
         <%# <%= f.submit class: "btn button-create fa-solid fa-tree" %>
         <%# <%= f.submit :button, class: "my-button" do %>
           <%# <i class="fa-solid fa-tree"></i>
