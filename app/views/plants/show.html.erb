@@ -79,10 +79,17 @@ let backcard = document.querySelector('.backcard--back')
 console.log(backcard)
 
 cards.forEach((card)=>{
-  card.addEventListener( 'click', function() {
+  card.firstElementChild.firstElementChild.addEventListener( 'click', function() {
     card.classList.toggle('is-flipped');
     setTimeout(() => {
-       backcard.classList.toggle("transform")
+      backcard.classList.toggle("transform")
+    }, 300);
+
+  });
+  card.lastElementChild.addEventListener( 'click', function() {
+    card.classList.toggle('is-flipped');
+    setTimeout(() => {
+      backcard.classList.toggle("transform")
     }, 300);
 
   });
