@@ -1,12 +1,12 @@
 <div class="navbar navbar-sprouts navbar-expand-sm navbar-default navbar-lewagon">
-  <div class="container-fluid" style="width: 100vw;display: flex;justify-content: center;">
+  <div class="container-fluid" style="width: 100vw; display: flex; justify-content: center;">
     <%# <%= link_to root_path, class: "navbar-brand" do %>
       <%# <%= image_tag "sprouts_logo.jpg" %>
     <%# <% end %>
 
 
 
-    <div class="">
+
       <ul style="display:flex;list-style: none">
         <% if user_signed_in? %>
           <li class="nav-item active" style="margin:5px;">
@@ -53,6 +53,6 @@
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         <% end %>
       </ul>
-    </div>
+    
   </div>
 </div>
