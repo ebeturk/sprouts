@@ -1,0 +1,5 @@
+<div class="swiper-slide">
+      <%= link_to plant_path(plant) do %>
+        <%= cl_image_tag plant.photo.key, height: 400, width: 300, crop: :fill %>
+      <% end %>
+</div>

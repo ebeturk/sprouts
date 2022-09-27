@@ -12,14 +12,28 @@
 <% end %>
 <div class="cards">
   <% @plants.each do |plant| %>
-
-  <% mark = @marks.to_a.find{ |mark| mark.plant_id == plant.id } %>
-  <%= render "layouts/shared/card_index", mark: mark, plant: plant  %>
-
+    <% mark = @marks.to_a.find{ |mark| mark.plant_id == plant.id } %>
+    <%= render "layouts/shared/card_index", mark: mark, plant: plant  %>
   <% end %>
 </div>
 
-    <%# <% data-controller="map" %>
-  <%# data-map-markers-value="<%= @markers.to_json %>
-  <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
-<%# </div> %>
+<div class="swiper">
+  <!-- Additional required wrapper -->
+    <!-- Slides -->
+  <div class="swiper-wrapper">
+    <% @plants.each do |plant| %>
+        <% mark = @marks.to_a.find{ |mark| mark.plant_id == plant.id } %>
+        <%= render "layouts/shared/card_swiper", mark: mark, plant: plant %>
+
+  <!-- If we need pagination -->
+    <% end %>
+  </div>
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>

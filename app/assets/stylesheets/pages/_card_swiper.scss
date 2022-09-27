@@ -1,0 +1,16 @@
+.swiper-wrapper {
+  width: 360px;
+  height: 480px;
+  .swiper-slide {
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.swiper {
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+}
