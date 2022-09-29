@@ -1,40 +1,40 @@
 <div class="content">
   <%# style="background-image: url('<%= cl_image_path plant.photo.key, height: 240, width: 180, crop: :fill %>
-  <%= link_to plant_path(plant) do %>
+  <div class="grid-image">
+    <%= link_to plant_path(plant) do %>
     <%= cl_image_tag plant.photo.key, height: 240, width: 180, crop: :fill, class:"img-card" %>
   <% end %>
+  </div>
 
+  <div class="swipe-button"><i class="fa-solid fa-right-left fa-lg"></i></div>
   <div class="mycard" id="plant-<%= plant.id %>">
     <div class="card-name">
       <h2><%=link_to plant.name, plant_path(plant)%></h2>
     </div>
     <%# inline if  statement to hide mark for the user %>
     <div class="buttons-card">
-    <% if !current_user.plants.include?(plant) %>
-      <% if mark.present? %>
-        <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
-          <i class="fa-solid fa-lg fa-heart btn"></i>
-        <% end %>
-      <% else %>
-        <%= simple_form_for [plant, Mark.new], html: { class: "d-inline-block" } do |f| %>
-          <%= hidden_field_tag "last_action", action_name %>
-          <%= f.button :button do %>
-            <i class="fa-regular fa-lg fa-heart"></i>
+      <% if !current_user.plants.include?(plant) %>
+        <% if mark.present? %>
+          <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
+            <i class="fa-solid fa-lg fa-heart btn"></i>
+          <% end %>
+        <% else %>
+          <%= simple_form_for [plant, Mark.new], html: { class: "d-inline-block" } do |f| %>
+            <%= hidden_field_tag "last_action", action_name %>
+            <%= f.button :button do %>
+              <i class="fa-regular fa-lg fa-heart"></i>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
-    <% end %>
 
       <%= link_to map_path do %>
         <i class="fa-regular fa-lg fa-compass"></i>
       <% end %>
       <%# <i class="fa-regular fa-circle-user"></i> %>
       <%= link_to user_path(plant.user) do %>
-
-        <%= cl_image_tag plant.user.photo.key, class: "card-trip-user avatar-bordered", width: 30, height: 30, crop: :fill %>
-
+      <%= cl_image_tag plant.user.photo.key, class: "card-trip-user avatar-bordered", width: 30, height: 30, crop: :fill %>
       <% end %>
-
-      </div>
+    </div>
   </div>
 </div>

@@ -7,8 +7,9 @@
 }
 .sprouts-name{
   opacity: 0.5;
-  margin-left: 142px;
+  margin: 0 auto;
   font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 20px;
 
 }
 
@@ -21,7 +22,6 @@
 
 }
 .mycard {
-  position: absolute;
   border: 1px solid #98AC9C;
   border-radius: 16px;
   border-radius: 11px;
@@ -32,8 +32,7 @@
   justify-content: flex-start;
   height: 64px;
   position: relative;
-  // top: 3px;
-  top: 242px;
+  top: 265px;
 
   h2 {
 
@@ -77,11 +76,20 @@
   }
 }
 
+.toggle-buttons {
 
+}
 
+.swipe-button {
+  position: relative;
+  top: 32px;
+  left: 12px;
+  /* margin: 0 auto; */
+  color: whitesmoke;
+}
 
 a {
-  color: rgb(34, 43, 33);
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
@@ -152,7 +160,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   background: #ccd7ce;
 }
 

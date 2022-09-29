@@ -22,6 +22,11 @@
     <%= render "layouts/shared/navbar" %>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
+
+  const swiper = new Swiper(...)
+</script>
     <script>
       const swiper = new Swiper('.swiper', {
       // Optional parameters
