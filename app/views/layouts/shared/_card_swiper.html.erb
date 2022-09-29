@@ -1,0 +1,40 @@
+<div class="swiper-slide">
+      <%= link_to plant_path(plant) do %>
+        <%= cl_image_tag plant.photo.key, height: 400, width: 300, crop: :fill, class: "swiper-image" %>
+      <% end %>
+      <div class="swiper-pagination swiper-custom-pagination"></div>
+      <div class="grid-button"><i class="fa fa-th-large fa-xl"></i></div>
+
+  <div class="my-swipe-card" id="plant-<%= plant.id %>">
+    <div class="swipe-card-name">
+      <h2><%=link_to plant.name, plant_path(plant)%></h2>
+    </div>
+    <div class="swiper-buttons-card">
+    <% if !current_user.plants.include?(plant) %>
+      <% if mark.present? %>
+        <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>
+          <i class="fa-solid fa-2x fa-heart btn"></i>
+        <% end %>
+      <% else %>
+        <%= simple_form_for [plant, Mark.new], html: { class: "d-inline-block" } do |f| %>
+          <%= hidden_field_tag "last_action", action_name %>
+          <%= f.button :button do %>
+            <i class="fa-regular fa-2x fa-heart"></i>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+      <%= link_to map_path do %>
+        <i class="fa-regular fa-2x fa-compass"></i>
+      <% end %>
+      <%# <i class="fa-regular fa-circle-user"></i> %>
+      <%= link_to user_path(plant.user) do %>
+
+        <%= cl_image_tag plant.user.photo.key, class: "card-trip-user avatar-bordered-sw", width: 33, height: 33, crop: :fill %>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
