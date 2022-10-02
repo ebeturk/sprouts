@@ -9,35 +9,35 @@
 
       <ul style="display:flex;list-style: none">
         <% if user_signed_in? %>
-          <li class="nav-item active" style="margin:5px;">
+          <li class="nav-item active" inlstyle="margin:5px 0px 0px;">
             <%= link_to plants_path, class: "navbar-brand" do %>
               <%# <%= image_tag "home.png" %>
               <i class="fa-solid fa-house fa-lg"></i>
             <% end %>
           </li>
 
-          <li class="nav-item active" style="margin:5px;">
+          <li class="nav-item active" inlstyle="margin:5px 0px;">
             <%= link_to chatrooms_path(current_user), class: "navbar-brand" do %>
               <%# <%= image_tag "chat.png" %>
               <i class="fa-solid fa-comments fa-lg"></i>
             <% end %>
           </li>
 
-          <li class="nav-item active" style="margin:5px;">
+          <li class="nav-item active" inlstyle="margin:5px 0px;">
             <%= link_to new_plant_path, class: "navbar-brand" do %>
               <%# <%= image_tag "post.png" %>
               <i class="fa-solid fa-seedling fa-lg"></i>
             <% end %>
           </li>
 
-          <li class="nav-item active" style="margin:5px;">
+          <li class="nav-item active" inlstyle="margin:5px 0px;">
             <%= link_to marks_path, class: "navbar-brand" do %>
               <%# <%= image_tag "mark.png" %>
               <i class="fa-solid fa-heart fa-lg"></i>
             <% end %>
           </li>
 
-          <li class="nav-item active" style="margin:5px;">
+          <li class="nav-item active" inlstyle="margin:5px 0px;">
             <%= link_to user_path(current_user), class: "navbar-brand" do %>
               <%# <%= image_tag "profile.png" %>
               <i class="fa-solid fa-user fa-lg"></i>
@@ -53,6 +53,6 @@
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         <% end %>
       </ul>
-    
+
   </div>
 </div>
