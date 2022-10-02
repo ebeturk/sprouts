@@ -6,7 +6,7 @@ import Swiper from 'swiper';
   // import Swiper styles
   import 'swiper/css';
 
-  const swiper = new Swiper(...);
+  // const swiper = new Swiper(...);
 
 import Swiper, { Navigation, Pagination } from 'swiper';
   // import Swiper and modules styles
@@ -27,4 +27,4 @@ import Swiper, { Navigation, Pagination } from 'swiper';
   import 'swiper/css/bundle';
 
   // init Swiper:
-  const swiper = new Swiper(...);
+  // const swiper = new Swiper(...);

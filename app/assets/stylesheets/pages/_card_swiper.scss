@@ -12,6 +12,7 @@
 }
 
 .swiper {
+  display: inline-block;
   width: 300px;
   height: 400px;
   margin: 0 auto;
@@ -60,6 +61,8 @@
   .swiper-custom-pagination {
     top: 20px;
     height: 60px;
+    width: 180px !important;
+    left: auto !important;
   }
 
   div.swiper-button-prev, div.swiper-button-next {
@@ -102,7 +105,7 @@
     border: white 3px solid;
   }
 
-  .grid-button {
+  .button-grid {
     position: absolute;
     top: 12px;
     right: 12px;

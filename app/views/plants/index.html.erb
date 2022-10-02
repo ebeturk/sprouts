@@ -14,7 +14,7 @@
 
 
 
-  <div class="swiper">
+  <div class="swiper" style="display:inline-block;">
     <div class="swiper-wrapper">
 
 
@@ -33,9 +33,38 @@
     <%# <div class="swiper-scrollbar"></div> %>
   </div>
 
-  <div class="cards">
+  <div class="cards" style="display:none;">
     <% @plants.each do |plant| %>
     <% mark = @marks.to_a.find{ |mark| mark.plant_id == plant.id } %>
     <%= render "layouts/shared/card_index", mark: mark, plant: plant  %>
     <% end %>
   </div>
+
+<script>
+  var buttonGrid = document.querySelector('.button-grid');
+  var buttonSwipe = document.querySelectorAll('.button-swipe');
+  var swipeView = document.querySelector('.swiper');
+  var cardsView = document.querySelector('.cards');
+
+  buttonGrid.addEventListener('click', function() {
+    if(swipeView.style.display === 'inline-block'){
+      cardsView.style.display = 'grid';
+      swipeView.style.display = 'none'
+    }else{
+      swipeView.style.display = 'inline-block'
+      cardsView.style.display = 'none';
+    }
+  })
+
+  buttonSwipe.forEach(function (item) {
+    item.addEventListener('click', function () {
+    if(cardsView.style.display === 'grid'){
+      cardsView.style.display = 'none'
+      swipeView.style.display = 'inline-block'
+    }else{
+      cardsView.style.display = 'grid';
+      swipeView.style.display = 'none';
+    }
+  })})
+
+</script>
