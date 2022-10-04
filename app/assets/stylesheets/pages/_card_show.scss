@@ -79,6 +79,7 @@
 .search-form {
   display: flex;
   align-items: center;
+  margin: 10px 10px;
 
   .fa-map {
     color: #6d7d70;
@@ -130,6 +131,7 @@
 
 .card {
   position: relative;
+  background-color: #ccd7ce;;
   right: 21px;
   bottom: -11px;
   width: 113%;
@@ -251,16 +253,17 @@
   display: flex;
   align-items: center;
   position: relative;
-  top: 11px;
+  top: 3px;
+  --bs-btn-border-width: 0px;
 
     .fa-heart {
-      color: #063131;
+      color: whitesmoke;
     font-size: 48px;
 
   }
 
   .fa-compass {
-    color: #063131;
+    color: whitesmoke;
     font-size: 48px;
   }
 }
