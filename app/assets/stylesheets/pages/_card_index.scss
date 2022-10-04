@@ -165,5 +165,11 @@ a {
 }
 
 body {
-  background: #d2ded4;
+  background: #ccd7ce;
+  min-height: max-content;
+}
+
+html {
+  height: 100%;
+  background: #ccd7ce;
 }

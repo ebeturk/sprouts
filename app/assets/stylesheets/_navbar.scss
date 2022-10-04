@@ -12,6 +12,7 @@
   position: fixed;
   width: 100vw;
   bottom: 0px;
+  --bs-navbar-brand-margin-end: 0 !important;
 }
 
 .wrapper {
@@ -20,13 +21,25 @@
   min-height: 100vh;
 }
 
-ul li {
-  margin:5px;
+li {
+  margin:3px !important;
   padding: 0;
+  text-align: -webkit-match-parent;
+}
+
+ul {
+  padding: 10px;
+  width: 400px;
+  margin: 0 auto;
+  justify-content: space-around;
+
 }
 
 .nav-item {
   .fa-solid {
-    color: #053f3f;
+    color: whitesmoke;
+    margin: 2px;
+    --bs-gutter-x: 0.5rem;
+    font-size: x-large;
   }
 }
