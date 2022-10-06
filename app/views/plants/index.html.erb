@@ -41,12 +41,13 @@
   </div>
 
 <script>
-  var buttonGrid = document.querySelector('.button-grid');
+  var buttonGrid = document.querySelectorAll('.button-grid');
   var buttonSwipe = document.querySelectorAll('.button-swipe');
   var swipeView = document.querySelector('.swiper');
   var cardsView = document.querySelector('.cards');
 
-  buttonGrid.addEventListener('click', function() {
+  buttonGrid.forEach(function (item) {
+    item.addEventListener('click', function() {
     if(swipeView.style.display === 'inline-block'){
       cardsView.style.display = 'grid';
       swipeView.style.display = 'none'
@@ -54,7 +55,7 @@
       swipeView.style.display = 'inline-block'
       cardsView.style.display = 'none';
     }
-  })
+  })})
 
   buttonSwipe.forEach(function (item) {
     item.addEventListener('click', function () {
