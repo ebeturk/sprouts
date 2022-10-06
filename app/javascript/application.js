@@ -8,11 +8,11 @@ import Swiper from 'swiper';
 
   // const swiper = new Swiper(...);
 
-import Swiper, { Navigation, Pagination } from 'swiper';
-  // import Swiper and modules styles
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import 'swiper/css/pagination';
+// import Swiper, { Navigation, Pagination } from 'swiper';
+//   // import Swiper and modules styles
+//   import 'swiper/css';
+//   import 'swiper/css/navigation';
+//   import 'swiper/css/pagination';
 
   // init Swiper:
   const swiper = new Swiper('.swiper', {
@@ -21,7 +21,7 @@ import Swiper, { Navigation, Pagination } from 'swiper';
     ...
   });
 
-  import Swiper from 'swiper/bundle';
+  // import Swiper from 'swiper/bundle';
 
   // import styles bundle
   import 'swiper/css/bundle';
