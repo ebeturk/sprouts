@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :matches
-
 
   devise_for :users
   root to: "plants#index"
@@ -11,24 +9,19 @@ Rails.application.routes.draw do
 
   get "profile", to: "pages#profile", as: :profile
 
-
   get "map", to: "plants#map"
-
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  # Defines the root path route ("/")
-  # root "articles#indexc
-
-  #resources :reviews, only: [:new, :create, :destroy]
 
   resources :users, only: [:index, :show] do
     resources :reviews, only: [:new, :create]
   end
+
   resources :reviews, only: [:destroy]
 
   resources :plants do
     resources :marks, only: [:create, :edit, :update]
   end
+  
   resources :marks, only: [:index, :show, :destroy]
+  resources :matches
 
 end

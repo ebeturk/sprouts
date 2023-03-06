@@ -19,19 +19,18 @@ class PlantsController < ApplicationController
       @plants = Plant.all
     #  The `geocoded` scope filters only plants with coordinates
       @markers = @plants.geocoded.map do |plant|
-      {
-        lat: plant.latitude,
-        lng: plant.longitude,
-        info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
-        image_url: helpers.asset_url("sprouts_logo.png")
-      }
+        {
+          lat: plant.latitude,
+          lng: plant.longitude,
+          info_window: render_to_string(partial: "layouts/shared/info_window", locals: { plant: plant }),
+          image_url: helpers.asset_url("sprouts_logo.png")
+        }
       end
     end
     @marks = current_user.marks
   end
 
   def show
-    @plant = Plant.find(params[:id])
     @mark = Mark.where(user: current_user, plant: @plant).first
   end
 
@@ -93,5 +92,4 @@ class PlantsController < ApplicationController
   def set_plant
     @plant = Plant.find(params[:id])
   end
-
 end

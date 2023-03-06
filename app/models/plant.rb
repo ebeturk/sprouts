@@ -4,7 +4,6 @@ class Plant < ApplicationRecord
   has_one_attached :photo
   has_many :marks
   has_many :matches
-  # has_many :reviews
 
   validates :name, :category, presence: true
   validates :category, inclusion: { in: ["Cactus and Succulents", "House Plants", "Seeds", "Trees", "Climbers", "Herbs", "Flowers", "Other"] }
