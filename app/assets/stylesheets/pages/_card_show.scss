@@ -1,3 +1,7 @@
+.search-container {
+  height: 12vh;
+}
+
 .middler{
   display: flex;
   justify-content: space-evenly;
@@ -8,87 +12,28 @@
   background: transparent;
 }
 
-// .plant-card{
-//   width: 84%;
-//   height: 101%;
-//   border-radius: 24px;
-//   margin-top: 19px;
-//   transform-style: preserve-3d;
-//   transform-origin: center right;
-//   transition: transform 1s;
-//   --bs-card-bg: transparent;
-// }
-
-// .plant-bg{
-//   height: 77%;
-//   width: 100%;
-//   background-size: cover;
-//   background-position: center;
-//   background-image: url("https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80");
-//   border-radius: 24px;
-
-// }
-
-// .plant-actions{
-//   height: 23%;
-//   width: 100%;
-//   background: #94AB96;
-//   display: flex;
-//   justify-content: center;
-//   border-radius: 22px;
-//   align-items: center;
-//   position: relative;
-//   top: -41px;
-// }
-
-// .name-buttons{
-//   width: 74%;
-//   height: 99%;
-//   display: flex;
-//   justify-content: flex-start;
-//   // align-items: center;
-//   flex-direction: column;
-// }
-
-// .plant-name, h2 {
-//   font-size: 35px;
-//   font-family: 'Playfair Display SC';
-//   color: #222b21;
-//   margin-right: 22px;
-//   align-items: center;
-//   position: relative;
-//   top: 5px;
-// }
-
-// .buttons-container {
-//   display: flex;
-//   justify-content: space-between;
-//   align-content: flex-end;
-//   align-items: center;
-//   // margin-bottom: 20px;
-
-//   .fa-heart {
-//     color: rgb(34, 43, 33);
-//   }
-
-//   .fa-compass {
-//     color: rgb(34, 43, 33);
-//   }
-// }
-
 .search-form {
   display: flex;
   align-items: center;
-  margin: 10px 10px;
+  margin: 16px auto;
+  width: 70vw;
 
   .fa-map {
     color: #6d7d70;
   }
 
   .fa-leaf {
-    font-size: 20px;
+    font-size: 24px;
+  }
+
+  h3 {
+    font-family: 'Ubuntu', sans-serif;
   }
 }
+
+
+
+
 
 .icon-wrapper {
   display: flex;
@@ -207,7 +152,6 @@
   display: flex;
   align-items: center;
 
-
   position: absolute;
   border: 1px solid #98AC9C;
   border-radius: 24px;
@@ -219,17 +163,6 @@
   height: 64px;
   position: relative;
   bottom: 23px;
-
-  // height: 23%;
-  // width: 100%;
-  // background: #94AB96;
-  // display: flex;
-  // justify-content: center;
-  // border-radius: 22px;
-  // align-items: center;
-  // position: relative;
-  // top: -41px;
-
 }
 
 .buttons-name{

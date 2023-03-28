@@ -1,5 +1,4 @@
-<div class="container">
-
+<div class="container search-container">
     <%= render "layouts/shared/search-form"  %>
     <%= link_to chatroom_path(Chatroom.last) do %>
     <p class="notice-match row col-12 justify-content-center"><%= notice %></p>
@@ -12,12 +11,9 @@
   <h1 class="ps-2">SPROUTS </h1>
 </div>
 
-
-
+<div class="swiper-container">
   <div class="swiper" style="display:inline-block;">
     <div class="swiper-wrapper">
-
-
     <!-- Additional required wrapper -->
       <!-- Slides -->
       <% @plants.each do |plant| %>
@@ -32,6 +28,7 @@
     <!-- If we need scrollbar -->
     <%# <div class="swiper-scrollbar"></div> %>
   </div>
+</div>
 
   <div class="cards" style="display:none;">
     <% @plants.each do |plant| %>

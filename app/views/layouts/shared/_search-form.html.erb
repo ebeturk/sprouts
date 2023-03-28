@@ -1,6 +1,5 @@
-<br>
 <div class="search-form">
-  <div class="container row justify-content-center search-custome">
+  <div class="container row justify-content-center">
     <%= form_with url: plants_path, method: :get, class: "d-flex col-12 py-3" do %>
       <%= text_field_tag :query,
         params[:query],
@@ -21,7 +20,6 @@
   </div>
 </div>
 
-<br>
     <% if params[:query] %>
         <h4 class="text-center"><%= "Did you find your new plant?" %></h4>
     <% end %>

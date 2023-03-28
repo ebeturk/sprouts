@@ -1,15 +1,16 @@
 .cards {
+  padding: 60px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 15px;
-  margin: 12px;
-  margin-right: 20px;
+  justify-items: center;
+  gap-bottom: 30px;
 }
 .sprouts-name{
   opacity: 0.5;
+  color: rgb(21, 125, 111);
   margin: 0 auto;
   font-family: 'Ubuntu', sans-serif;
-  margin-bottom: 20px;
+  padding: 12px;
 
 }
 
@@ -139,7 +140,8 @@ a {
 }
 
 .btn-map {
-  padding: 16px;
+  padding: 6px 6px;
+  height: 44px;
 }
 
 .fa-location-dot {
@@ -152,21 +154,24 @@ a {
 
 }
 
-.fa-map {
-  color: rgb(7, 106, 88);
-}
-
-.body-container{
+.body-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 60px;
+  justify-content: flex-start;
   background: #ccd7ce;
+}
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  width: 600px;
+  grid-template-rows: 1fr auto;
+  margin: 0 auto;
 }
 
 body {
   background: #ccd7ce;
-  min-height: max-content;
+  // min-height: max-content;
 }
 
 html {
