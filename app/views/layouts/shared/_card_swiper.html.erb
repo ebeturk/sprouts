@@ -3,7 +3,7 @@
         <%= cl_image_tag plant.photo.key, height: 400, width: 300, crop: :fill, class: "swiper-image" %>
       <% end %>
       <div class="swiper-pagination swiper-custom-pagination"></div>
-      <div class="button-grid"><i class="fa fa-th-large fa-xl"></i></div>
+      <div class="button-grid"><i class="fa fa-th-large fa-xl icon-auto-color"></i></div>
 
   <div class="my-swipe-card" id="plant-<%= plant.id %>">
     <div class="swipe-card-name">
@@ -42,28 +42,27 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" ></script>
   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var swiper = new Swiper('.swiper', {
+      // Optional parameters
+      // direction: 'vertical',
+        loop: true,
 
-    var swiper = new Swiper('.swiper', {
-    // Optional parameters
-    // direction: 'vertical',
-    loop: true,
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
 
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
 
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+      });
+    });
   </script>
-
-

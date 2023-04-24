@@ -1,0 +1,52 @@
+.search-form-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+
+.search-input::placeholder {
+  font-family: Dosis;
+  font-size: 14px;
+  color: #999;
+}
+
+.btn-map {
+  padding: 6px 6px;
+  height: 44px;
+}
+
+
+.search-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 40%; /* Adjust the width based on your preference */
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px auto;
+  width: auto;
+  margin-bottom: 5px;
+
+  .fa-map {
+    color: #6d7d70;
+  }
+
+  .fa-leaf {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-family: 'Ubuntu', sans-serif;
+  }
+}

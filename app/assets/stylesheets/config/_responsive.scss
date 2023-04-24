@@ -38,6 +38,7 @@
     width: 400px;
     height: 532px;
   }
+
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -61,20 +62,10 @@
     height: 720px;
   }
 
-  .search-input {
-    padding: 6px 12px;
-    font-size: 14px;
-    max-width: 500px;
-
-  }
   .search-input::placeholder {
     font-size: 14px;
   }
 
-  .search-form-inner {
-    width: 100%;
-    max-width: 60%;
-  }
 }
 
 @media (min-width: 1200px) {

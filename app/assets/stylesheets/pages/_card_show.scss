@@ -1,8 +1,4 @@
-.search-container {
-  height: 12vh;
-  padding: 5px 0;
 
-}
 
 .middler{
   display: flex;
@@ -13,34 +9,6 @@
   width: 100vw;
   background: transparent;
 }
-
-.search-form {
-  display: flex;
-  justify-content: center; /* Add this line */
-  align-items: center;
-  margin: 16px auto;
-  width: auto; /* Change from 70vw to auto */
-  margin-bottom: 5px;
-
-  .fa-map {
-    color: #6d7d70;
-  }
-
-  .fa-leaf {
-    font-size: 24px;
-  }
-
-  h3 {
-    font-family: 'Ubuntu', sans-serif;
-  }
-}
-
-.search-group {
-  display: flex;
-  align-items: center;
-}
-
-
 
 .icon-wrapper {
   display: flex;
