@@ -1,5 +1,7 @@
 .search-container {
   height: 12vh;
+  padding: 5px 0;
+
 }
 
 .middler{
@@ -14,9 +16,11 @@
 
 .search-form {
   display: flex;
+  justify-content: center; /* Add this line */
   align-items: center;
   margin: 16px auto;
-  width: 70vw;
+  width: auto; /* Change from 70vw to auto */
+  margin-bottom: 5px;
 
   .fa-map {
     color: #6d7d70;
@@ -31,7 +35,10 @@
   }
 }
 
-
+.search-group {
+  display: flex;
+  align-items: center;
+}
 
 
 

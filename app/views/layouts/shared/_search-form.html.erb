@@ -1,22 +1,23 @@
 <div class="search-form">
-  <div class="container row justify-content-center">
-    <%= form_with url: plants_path, method: :get, class: "d-flex col-12 py-3" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "We grow together!"
-      %>
-      <%# <%= submit_tag "🌿", class: "btn-sprouts fa-solid" %>
-      <button class="btn-sprouts">
-        <i class="fa-solid fa-leaf fa-1.5x"></i>
-      </button>
-    <% end %>
-
-  </div>
-  <div class="btn-map">
-    <%= link_to map_path do %>
-      <i class="far fa-map fa-2x"></i>
-    <% end %>
+  <div class="search-group"> <!-- Add this div -->
+    <div class="container row justify-content-center">
+      <%= form_with url: plants_path, method: :get, class: "d-flex col-12 py-3 search-form-inner" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-input",
+          placeholder: "We grow together!"
+        %>
+        <%# <%= submit_tag "🌿", class: "btn-sprouts fa-solid" %>
+        <button class="btn-sprouts">
+          <i class="fa-solid fa-leaf fa-1.5x"></i>
+        </button>
+      <% end %>
+    </div>
+    <div class="btn-map"> <!-- Move this div inside the new search-group div -->
+      <a href="/map">
+        <i class="far fa-map fa-2x"></i>
+      </a>
+    </div>
   </div>
 </div>
 

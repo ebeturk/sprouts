@@ -1,0 +1,106 @@
+// Here I add some customized responsiveness to some of the components:
+
+@media (max-width: 375px) {
+  .navbar {
+    padding: 8px 12px;
+  }
+  .navbar-brand {
+    font-size: 18px;
+  }
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .search-input {
+    padding: 2px 4px;
+    font-size: 12px;
+
+  }
+  .search-input::placeholder {
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .swiper-wrapper {
+    width: 400px;
+    height: 532px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .swiper-wrapper {
+    width: 450px;
+    height: 600px;
+  }
+}
+
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .swiper-wrapper {
+    width: 540px;
+    height: 720px;
+  }
+
+  .search-input {
+    padding: 6px 12px;
+    font-size: 14px;
+    max-width: 500px;
+
+  }
+  .search-input::placeholder {
+    font-size: 14px;
+  }
+
+  .search-form-inner {
+    width: 100%;
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-input {
+    padding: 6px 12px;
+    font-size: 16px;
+  }
+  .search-input::placeholder {
+    font-size: 16px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(6, 1fr);
+
+  }
+
+  .swiper-wrapper {
+    width: 80%;
+    height: 80%;
+  }
+
+}
+
+@media (min-width: 1400px) {
+  .swiper-wrapper {
+    width: 660px; /* Adjust the pixel value as needed */
+    height: 880px; /* Adjust the pixel value as needed */
+  }
+}

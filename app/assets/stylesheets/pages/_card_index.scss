@@ -126,6 +126,24 @@ a {
 .form-control {
   border-radius: 24px 0 0 24px;
   font-family: Dosis;
+  height: 36px;
+  padding: 6px 12px;
+}
+
+.search-input {
+  padding: 4px 8px;
+  font-size: 14px;
+  max-width: 250px;
+}
+
+.search-form-inner {
+  width: 100%;
+}
+
+.search-input::placeholder {
+  font-family: Dosis;
+  font-size: 14px;
+  color: #999;
 }
 
 .text-center {
@@ -133,10 +151,14 @@ a {
 }
 
 .btn-sprouts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 0 24px 24px 0;
   border: 1px solid #98AC9C;
   background: #94AB96;
-  padding: 10px;
+  padding: 6px 12px;
+  height: 36px;
 }
 
 .btn-map {
@@ -164,10 +186,11 @@ a {
 .page-container {
   display: grid;
   min-height: 100vh;
-  width: 600px;
+  width: 100%; // change from 600px to 100%
   grid-template-rows: 1fr auto;
   margin: 0 auto;
 }
+
 
 body {
   background: #ccd7ce;
