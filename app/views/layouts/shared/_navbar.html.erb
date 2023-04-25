@@ -7,10 +7,10 @@
       <ul style="display:flex;list-style: none">
         <% if user_signed_in? %>
           <li class="nav-item active" inlstyle="margin:5px 0px 0px;">
-            <%= link_to plants_path, class: "navbar-brand" do %>
-              <%# <%= image_tag "home.png" %>
-              <i class="fa-solid fa-house fa-lg"></i>
-            <% end %>
+            <%= link_to plants_path, class: "navbar-brand", onclick: "toggleViews()" do %>
+            <i class="fa-solid fa-house fa-lg"></i>
+          <% end %>
+
           </li>
 
           <li class="nav-item active" inlstyle="margin:5px 0px;">

@@ -16,14 +16,25 @@
 <div class="swiper-container">
   <div class="swiper" style="display:inline-block;">
     <div class="swiper-wrapper">
-    <!-- Additional required wrapper -->
-      <!-- Slides -->
-      <% @plants.each do |plant| %>
-          <% mark = @marks.to_a.find{ |mark| mark.plant_id == plant.id } %>
-          <%= render "layouts/shared/card_swiper", mark: mark, plant: plant %>
-          <!-- If we need pagination -->
-      <% end %>
+  <!-- Additional required wrapper -->
+  <!-- Slides -->
+  <% if @plants.empty? %>
+    <div class="swiper-slide">
+      <div class="content-card">
+        <div class="card-body text-center">
+          <h4>🤷🏼 No results found 🤷🏾‍♀️</h4>
+          <p>Try a different search query or explore other plants!</p>
+        </div>
+      </div>
     </div>
+  <% else %>
+    <% @plants.each do |plant| %>
+      <% mark = @marks.to_a.find{ |mark| mark.plant_id == plant.id } %>
+      <%= render "layouts/shared/card_swiper", mark: mark, plant: plant %>
+    <% end %>
+  <% end %>
+</div>
+
     <!-- If we need navigation buttons -->
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
@@ -32,40 +43,87 @@
   </div>
 </div>
 
-  <div class="cards grid-cards" style="display:none;">
+<div class="cards grid-cards" style="display:none;">
+  <% if @plants.empty? %>
+    <div class="no-results-found">
+      <h2 class="text-center">
+        🤷🏾‍♀️ No results found 🤷🏼.
+        <br>
+        Try a different search.
+      </h2>
+    </div>
+  <% else %>
     <% @plants.each do |plant| %>
       <% mark = @marks.to_a.find{ |mark| mark.plant_id == plant.id } %>
       <%= render "layouts/shared/card_index", mark: mark, plant: plant  %>
     <% end %>
-  </div>
+  <% end %>
+</div>
 
 <script>
   var buttonGrid = document.querySelectorAll('.button-grid');
-  var buttonSwipe = document.querySelectorAll('.button-swipe');
-  var swipeView = document.querySelector('.swiper');
-  var cardsView = document.querySelector('.cards');
-  var sproutsToggle = document.getElementById('sprouts-toggle');
+var buttonSwipe = document.querySelectorAll('.button-swipe');
+var swipeView = document.querySelector('.swiper');
+var cardsView = document.querySelector('.cards');
+var sproutsToggle = document.getElementById('sprouts-toggle');
+var swiper;
 
-  function toggleViews() {
-    if (swipeView.style.display === 'inline-block') {
-      cardsView.style.display = 'grid';
-      swipeView.style.display = 'none';
-    } else {
-      swipeView.style.display = 'inline-block';
-      cardsView.style.display = 'none';
-    }
+function initializeSwiper() {
+  if (!swiper) {
+    swiper = new Swiper('.swiper', {
+      // Optional parameters
+      loop: true,
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
   }
+}
 
-  buttonGrid.forEach(function (item) {
-    item.addEventListener('click', toggleViews);
-  });
+function destroySwiper() {
+  if (swiper) {
+    swiper.destroy();
+    swiper = null;
+  }
+}
 
-  buttonSwipe.forEach(function (item) {
-    item.addEventListener('click', toggleViews);
-  });
+function toggleViews() {
+  if (swipeView.style.display === 'inline-block') {
+    destroySwiper();
+    cardsView.style.display = 'grid';
+    swipeView.style.display = 'none';
+  } else {
+    swipeView.style.display = 'inline-block';
+    cardsView.style.display = 'none';
+    initializeSwiper();
+  }
+}
 
-  sproutsToggle.addEventListener('click', function (event) {
-    event.preventDefault();
-    toggleViews();
-  });
+buttonGrid.forEach(function (item) {
+  item.addEventListener('click', toggleViews);
+});
+
+buttonSwipe.forEach(function (item) {
+  item.addEventListener('click', toggleViews);
+});
+
+sproutsToggle.addEventListener('click', function (event) {
+  event.preventDefault();
+  toggleViews();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  initializeSwiper();
+});
+
 </script>

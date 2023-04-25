@@ -8,6 +8,25 @@
   margin: 0 auto;
 }
 
+.no-results-found {
+  grid-column: 1 / span 2;
+  width: 100%;
+}
+
+.no-results-found h2 {
+  margin: 0 auto;
+  color: rgb(172, 20, 219);
+
+}
+
+.content-card {
+
+  background-color: #94AB96;
+}
+.card-body {
+  background-color: #94AB96;
+}
+
 .sprouts-name{
   opacity: 0.5;
   color: rgb(21, 125, 111);
