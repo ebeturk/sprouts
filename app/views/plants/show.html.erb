@@ -4,7 +4,7 @@
 <% end %>
 <div class="middler">
 
-    <!-- Add this new div to create a side menu -->
+    <!-- side menu -->
 <div class="side-menu side-menu-collapsible">
   <div class="buttons-name">
     <h6><%= @plant.name %></h6>
@@ -63,46 +63,4 @@
   </div>
 
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Get the side menu and card elements
-    var sideMenu = document.querySelector(".side-menu");
-    var card = document.querySelector(".card");
-
-    // Function to show the side menu
-    function showSideMenu() {
-      sideMenu.style.left = "0";
-      sideMenu.style.opacity = "1";
-    }
-
-    // Function to hide the side menu
-    function hideSideMenu() {
-      sideMenu.style.left = "-170px";
-      sideMenu.style.opacity = "0";
-    }
-
-    // Check if the window width is less than or equal to 767px
-    if (window.innerWidth <= 767) {
-      // Add event listeners for mouseenter and mouseleave events on the card
-      card.addEventListener("mouseenter", showSideMenu);
-      card.addEventListener("mouseleave", hideSideMenu);
-    }
-
-    // Add a listener for window resize event
-    window.addEventListener("resize", function() {
-      if (window.innerWidth <= 767) {
-        // Add event listeners for mouseenter and mouseleave events on the card
-        card.addEventListener("mouseenter", showSideMenu);
-        card.addEventListener("mouseleave", hideSideMenu);
-      } else {
-        // Remove the event listeners and reset the side menu styles
-        card.removeEventListener("mouseenter", showSideMenu);
-        card.removeEventListener("mouseleave", hideSideMenu);
-        sideMenu.style.left = "";
-        sideMenu.style.opacity = "";
-      }
-    });
-  });
-</script>
 
