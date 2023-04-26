@@ -2,6 +2,8 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+import './plant_card'
+
 
 
 import Swiper, { Navigation, Pagination } from 'swiper';

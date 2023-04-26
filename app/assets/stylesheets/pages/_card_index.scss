@@ -1,11 +1,13 @@
 .grid-cards {
-  padding: 40px;
+  padding: 40px 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  gap: 20px;
+  gap: 24px;
   width: 70%;
   margin: 0 auto;
+  margin-bottom: 48px;
+
 }
 
 .no-results-found {
@@ -28,11 +30,9 @@
 }
 
 .sprouts-name{
-  opacity: 0.5;
-  color: rgb(21, 125, 111);
+  opacity: 0.7;
   margin: 0 auto;
-  font-family: 'Ubuntu', sans-serif;
-  padding: 12px;
+  font-family: 'Nunito';
 
 }
 
@@ -46,8 +46,8 @@
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
+  padding: 8px 0;
+  max-width: 200px;
 }
 
 .logo-image {
@@ -56,8 +56,9 @@
 }
 
 .sprouts-text {
-  color:rgb(10, 106, 88);
+  color:rgb(10, 126, 126);
   font-weight: 500;
+  padding-left: 8px;
 
 }
 
@@ -122,9 +123,9 @@
 }
 
 .button-swipe {
-  position: relative;
-  top: 32px;
-  left: 12px;
+  position: absolute;
+  top: 22px;
+  right: 12px;
   /* margin: 0 auto; */
   color: whitesmoke;
 }

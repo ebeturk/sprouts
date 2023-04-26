@@ -4,47 +4,46 @@
 <% end %>
 <div class="middler">
 
-  <div class="plant-card">
-    <div class="card">
-      <div class="card__face card__face--front">
+    <!-- Add this new div to create a side menu -->
+<div class="side-menu side-menu-collapsible">
+  <div class="buttons-name">
+    <h6><%= @plant.name %></h6>
+  </div>
 
-        <div class="plant-bg" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 480, width: 400, crop: :fill %>')">
-        </div>
+  <% if !current_user.plants.include?(@plant) %>
+    <% if @mark.present? %>
+      <div class="icon-wrapper">
+        <%= link_to mark_path(@mark), data: {turbo_method: :delete }, class: "btn" do %>
+          <i class="fa-solid fa-heart fa-4x"></i>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="icon-wrapper">
+        <%= simple_form_for [@plant, Mark.new] do |f| %>
+          <%= f.button :button do %>
+            <i class="fa-regular fa-heart fa-4x"></i>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+  <%= link_to map_path(@plant) do %>
+    <i class="fa-regular fa-compass fa-4x"></i>
+  <% end %>
+  <%= link_to user_path(@plant.user) do %>
+    <% cl_image_tag @plant.user.photo.key, class:"avatar-bordered-marks", width: 80, height: 80, crop: :fill %>
+  <% end %>
+</div>
 
-        <div class="plant-action">
-          <div class="buttons-name">
-            <h6><%= @plant.name %></h6>
-          </div>
+  <div class="card">
+    <div class="card__face card__face--front">
 
-          <div class="icons w-100 justify-content-around px-4 py-1">
-            <% if !current_user.plants.include?(@plant) %>
-              <% if @mark.present? %>
-                <div class="icon-wrapper">
-                  <%= link_to mark_path(@mark), data: {turbo_method: :delete }, class: "btn" do %>
-                    <i class="fa-solid fa-heart fa-3x"></i>
-                  <% end %>
-                </div>
-              <% else %>
-                <div class="icon-wrapper">
-                  <%= simple_form_for [@plant, Mark.new] do |f| %>
-                    <%= f.button :button do %>
-                      <i class="fa-regular fa-heart fa-3x"></i>
-                    <% end %>
-                  <% end %>
+      <div class="plant-bg" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 480, width: 400, crop: :fill %>')">
+      </div>
 
-                </div>
-              <% end %>
-            <% end %>
-            <%= link_to map_path(@plant) do %>
-              <i class="fa-regular fa-compass fa-3x"></i>
-            <% end %>
-            <%= link_to user_path(@plant.user) do %>
 
-              <% cl_image_tag @plant.user.photo.key, class:"avatar-bordered-marks", width: 60, height: 60, crop: :fill %>
-            <% end %>
-          </div>
 
-        </div>
+      </div>
 
       </div>
       <div class="backcard backcard--back">
@@ -61,37 +60,49 @@
           </div>
         </div>
       </div>
-    </div>
   </div>
-
-
 
 </div>
 
-
-
-
-
 <script>
-var cards = document.querySelectorAll('.card');
-var backcard = document.querySelector('.backcard--back')
+  document.addEventListener("DOMContentLoaded", function() {
+    // Get the side menu and card elements
+    var sideMenu = document.querySelector(".side-menu");
+    var card = document.querySelector(".card");
 
-console.log(backcard)
+    // Function to show the side menu
+    function showSideMenu() {
+      sideMenu.style.left = "0";
+      sideMenu.style.opacity = "1";
+    }
 
-cards.forEach((card)=>{
-  card.firstElementChild.firstElementChild.addEventListener( 'click', function() {
-    card.classList.toggle('is-flipped');
-    setTimeout(() => {
-      backcard.classList.toggle("transform")
-    }, 300);
+    // Function to hide the side menu
+    function hideSideMenu() {
+      sideMenu.style.left = "-170px";
+      sideMenu.style.opacity = "0";
+    }
 
+    // Check if the window width is less than or equal to 767px
+    if (window.innerWidth <= 767) {
+      // Add event listeners for mouseenter and mouseleave events on the card
+      card.addEventListener("mouseenter", showSideMenu);
+      card.addEventListener("mouseleave", hideSideMenu);
+    }
+
+    // Add a listener for window resize event
+    window.addEventListener("resize", function() {
+      if (window.innerWidth <= 767) {
+        // Add event listeners for mouseenter and mouseleave events on the card
+        card.addEventListener("mouseenter", showSideMenu);
+        card.addEventListener("mouseleave", hideSideMenu);
+      } else {
+        // Remove the event listeners and reset the side menu styles
+        card.removeEventListener("mouseenter", showSideMenu);
+        card.removeEventListener("mouseleave", hideSideMenu);
+        sideMenu.style.left = "";
+        sideMenu.style.opacity = "";
+      }
+    });
   });
-  card.lastElementChild.addEventListener( 'click', function() {
-    card.classList.toggle('is-flipped');
-    setTimeout(() => {
-      backcard.classList.toggle("transform")
-    }, 300);
-
-  });
-});
 </script>
+
