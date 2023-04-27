@@ -1,81 +1,29 @@
 
-
-.middler{
+.middler {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  height: 68vh;
   flex-direction: column;
-  width: 100vw;
-  background: transparent;
-}
-
-.icon-wrapper {
-  display: flex;
-  // // flex-direction: column;
-  justify-content: center;
-  // align-items: center;
-
-  i, a, form, .btn {
-    height: 45px !important;
-    width: 50px !important;
-  }
-
-  .fa-regular {
-    transform: translateY(-4px);
-  }
-
-  .btn {
-    padding: 0 !important;
-  }
-}
-
-.middler{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
-  width: 100vw;
-  height: 100vh;
-}
-
-.plant-card {
-  display: inline-block;
-  width: 73%;
-  height: 79%;
-/*   border: 1px solid #CCC; */
-  margin-bottom: 90px;
-
-
+  width: 360px;
+  height: 480px;
+  margin: 0 auto;
+  margin-bottom: 10vh;
+  position: relative;
 }
 
 .card {
   position: relative;
-  background-color: #ccd7ce;;
-  right: 21px;
-  bottom: -11px;
-  width: 113%;
-  height: 80%;
+  background-color: #ccd7ce;
+  margin: 0 auto;
+  width: 360px;
+  height: 480px;
   cursor: pointer;
   transform-style: preserve-3d;
   transform-origin: center right;
   transition: transform 1s;
-  border-radius: 20px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.card.is-flipped {
-  transform: translateX(-100%) rotateY(-180deg);
-}
-
-.backcard{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  color: white;
-  backface-visibility: hidden;
-  background-color: blue;
+  box-shadow: 0 0 15px rgba(7, 86, 12, 0.2);
 }
 
 .card__face {
@@ -86,39 +34,101 @@
   backface-visibility: hidden;
 }
 
+.card__face--front {
+  background: #94ab96;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+
+  i, a, form, .btn {
+    margin: 0 5px;
+  }
+
+  .fa-regular {
+    transform: translateY(-4px);
+    color: whitesmoke;
+  }
+
+  .fa-solid {
+    color: green;
+  }
+
+  .btn {
+    padding: 0 !important;
+  }
+}
+
+
+.plant-card {
+  display: inline-block;
+  width: 73%;
+  height: 79%;
+  /*   border: 1px solid #CCC; */
+  margin-bottom: 90px;
+
+
+}
+
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card.is-flipped .side-menu {
+  pointer-events: auto;
+}
+
+.backcard {
+  position: absolute;
+  width: 360px;
+  height: 480px;
+  color: white;
+  backface-visibility: hidden;
+  background-color: #94ab96;
+  z-index: 1;
+}
+
+.backcard--back {
+  background: #94ab96;
+  transform: rotateY(180deg);
+}
+
 .plant-bg {
-  height: 88%;
+  height: 100%;
   width: 100%;
   // background-image: url("https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80");
   background-size: cover;
   background-position: center;
-  border-radius: 20px 20px 0 0;
-  height: 81%;
-  background-position: center;
+  border-radius: 12px 12px 0 0;
   background-repeat: none;
-  background-size: cover;
 }
 
-.plant-bg-back{
-  width: 355px;
-  height: 588px;
+.plant-bg-back {
+  width: 360px;
+  height: 480px;
   // background-image: url("https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80");
   background-size: cover;
   background-position: center;
-  border-radius: 20px 20px 0 0;
+  border-radius: 12px 12px 0 0;
   background-position: center;
   background-repeat: none;
   background-size: cover;
   opacity: 0.5;
-
-
 }
+
+
 
 .backcard-description {
   position: relative;
-  left: 22px;
-  top: -493px;
-  font-family: 'Ubuntu', sans-serif;
+  left: 20px;
+  top: -200px;
+  font-family: "Nunito";
+
+}
+
+.backcard-description h5 {
+    font-size: 20px;
 }
 
 .plant-action{
@@ -140,39 +150,35 @@
   bottom: 23px;
 }
 
-.buttons-name{
-  width: 70%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  top: 10px;
+.buttons-name {
+  text-align: center;
+  width: 100%;
+  padding: 0 10px;
+  margin-bottom: 15px;
 
   h6 {
-    font-size: 35px;
-    font-family: 'Playfair Display SC';
-    color: rgb(34, 43, 33);
+    font-size: 24px;
+    font-family: "Nunito";
+    color: rgb(143, 25, 143);
+    word-wrap: break-word;
   }
 }
 
-.icons{
+.icons {
   display: flex;
   align-items: center;
-  position: relative;
-  top: 3px;
   --bs-btn-border-width: 0px;
 
-    .fa-heart {
-      color: whitesmoke;
-    font-size: 48px;
-
+  .fa-heart {
+    color: whitesmoke;
+    font-size: 42px;
+    transform: translateY(-4px);
   }
 
   .fa-compass {
     color: whitesmoke;
-    font-size: 48px;
+    font-size: 42px;
+    transform: translateY(-4px);
   }
 }
 
@@ -181,20 +187,10 @@
 //   height: 100%;
 // }
 
-.card__face--front {
-  background: #94AB96;
-}
-
-.backcard--back {
-  background: #94AB96;
-  transform: rotateY(180deg);
-
-}
 
 .transform{
   transform: none;
 }
-
 
 .flipreverse{
   -moz-transform: scale(-1, 1);
@@ -206,12 +202,70 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  // position: relative;
+  position: absolute;
+  background-color: rgba(176, 230, 187, 0.5);
   // top: 95px;
   // right: 114px;
 
-  h3, h4, h5 {
-    color: rgb(34, 43, 33);
-    font-size: 35px;
+  h3,
+  h4,
+  h5 {
+    color: rgb(145, 7, 108);
+    font-size: 20px;
   }
+}
+
+.side-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 128px;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px 0;
+  z-index: 2;
+  left: -148px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.side-menu-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+  color: #ab0fbc;
+  font-size: 24px;
+}
+
+.side-menu-btn:hover {
+  color: #ccc;
+  color: #ab0fbc;
+}
+
+.side-menu-btn:focus {
+  outline: none;
+  color: #ab0fbc;
+}
+
+.side-menu.on-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%; /* Adjust the width of the side menu on smaller screens */
+  max-width: 128px; /* Set a maximum width for the side menu on smaller screens */
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 9; /* Add z-index to ensure the side menu is positioned below the button */
+}
+
+.side-menu-collapsible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
