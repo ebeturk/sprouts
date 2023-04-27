@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var menuButton = document.querySelector('.side-menu-btn');
   var sideMenu = document.querySelector('.side-menu');
 
+  function flipCard(card, backcard) {
+    card.classList.toggle('is-flipped');
+    backcard.classList.toggle('is-flipped');
+  }
+
   function toggleSideMenu() {
     sideMenu.classList.toggle('side-menu-collapsible');
   }
