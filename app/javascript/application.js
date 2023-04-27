@@ -4,6 +4,7 @@
 import "./controllers"
 import "bootstrap"
 import './plant_card.js';
+import './flipcard.js'
 
 
 

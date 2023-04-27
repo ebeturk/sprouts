@@ -89,7 +89,7 @@
 }
 
 .card.is-flipped .side-menu {
-  pointer-events: auto; 
+  pointer-events: auto;
 }
 
 .backcard {
@@ -199,6 +199,10 @@
   visibility: visible;
   opacity: 1;
   transition: opacity 0.3s ease;
+}
+
+.transform {
+  transform: none;
 }
 
 .flipreverse {

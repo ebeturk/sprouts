@@ -1,39 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
-  var cards = document.querySelectorAll('.card');
-  var backcard = document.querySelector('.backcard');
-  var menuButton = document.querySelector('.side-menu-btn');
-  var sideMenu = document.querySelector('.side-menu');
+var cards = document.querySelectorAll('.card');
+var backcard = document.querySelector('.backcard');
+var menuButton = document.querySelector('.side-menu-btn');
+var sideMenu = document.querySelector('.side-menu');
 
-  function flipCard(card, backcard) {
-    card.classList.toggle('is-flipped');
-    setTimeout(() => {
-      card.classList.toggle("flipreverse")
-    }, 300);
-
-    backcard.classList.toggle('is-flipped');
-    setTimeout(() => {
-      backcard.classList.toggle("flipreverse")
-    }, 300);
-  };
-
-  if (cards && backcard) {
-    cards.forEach((card) => {
-      card.firstElementChild.firstElementChild.addEventListener('click', function () {
-        flipCard(card, backcard);
-      });
-
-      card.lastElementChild.addEventListener('click', function () {
-        flipCard(card, backcard);
-      });
-    });
-
-    backcard.addEventListener('click', function () {
-      flipCard(cards[0], backcard);
-    });
-  };
-
-
-  function toggleSideMenu() {
+    function toggleSideMenu() {
     sideMenu.classList.toggle('side-menu-collapsible');
   };
 
@@ -60,5 +30,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
   checkScreenSize(); // Check the screen size when the page loads
   window.addEventListener('resize', checkScreenSize); // Check the screen size when the window is resized
-
-});
