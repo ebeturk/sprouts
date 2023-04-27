@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   var cards = document.querySelectorAll('.card');
-  var backcard = document.querySelector('.backcard--back');
+  var backcard = document.querySelector('.backcard');
   var menuButton = document.querySelector('.side-menu-btn');
   var sideMenu = document.querySelector('.side-menu');
 
@@ -44,18 +44,3 @@ document.addEventListener('DOMContentLoaded', function () {
   checkScreenSize(); // Check the screen size when the page loads
   window.addEventListener('resize', checkScreenSize); // Check the screen size when the window is resized
 });
-
-function flipCard(card, backcard) {
-  if (card.classList.contains('is-flipped')) {
-    card.classList.remove('is-flipped');
-    setTimeout(() => {
-      backcard.classList.remove('transform');
-    }, 300);
-  } else {
-    card.classList.add('is-flipped');
-    setTimeout(() => {
-      backcard.classList.add('transform');
-    }, 300);
-  }
-}
-
