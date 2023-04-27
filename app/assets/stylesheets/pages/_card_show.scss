@@ -25,6 +25,8 @@
   box-shadow: 0 0 15px rgba(7, 86, 12, 0.2);
 }
 
+
+
 .card__face {
   position: absolute;
   width: 100%;
@@ -53,7 +55,7 @@
   // background-image: url("https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80");
   background-size: cover;
   background-position: center;
-  border-radius: 20px 20px 0 0;
+  border-radius: 12px 12px 0 0;
   background-position: center;
   background-repeat: none;
   background-size: cover;
@@ -98,7 +100,7 @@
   height: 480px;
   color: white;
   backface-visibility: hidden;
-  background-color: blue;
+  background-color: #94ab96;
   z-index: 1;
 }
 
@@ -209,6 +211,13 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  // -moz-transform: scale(-1, 1);
+  // -webkit-transform: scale(-1, 1);
+  // -o-transform: scale(-1, 1);
+  // -ms-transform: scale(-1, 1);
+  // transform: scale(-1, 1);
+  // transform: rotateY(180deg);
+
   // position: relative;
   // top: 95px;
   // right: 114px;
@@ -216,7 +225,7 @@
   h3,
   h4,
   h5 {
-    color: rgb(34, 43, 33);
-    font-size: 32px;
+    color: rgb(145, 7, 108);
+    font-size: 28px;
   }
 }
