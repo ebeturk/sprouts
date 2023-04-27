@@ -1,3 +1,6 @@
+var cards = document.querySelectorAll('.card');
+var backcard = document.querySelector('.backcard');
+
 function flipCard(card, backcard) {
   card.classList.toggle('is-flipped');
   setTimeout(() => {

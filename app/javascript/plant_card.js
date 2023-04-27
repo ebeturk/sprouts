@@ -3,8 +3,9 @@ var backcard = document.querySelector('.backcard');
 var menuButton = document.querySelector('.side-menu-btn');
 var sideMenu = document.querySelector('.side-menu');
 
-    function toggleSideMenu() {
-    sideMenu.classList.toggle('side-menu-collapsible');
+    function toggleSideMenu(event) {
+      sideMenu.classList.toggle('side-menu-collapsible');
+      event.stopImmediatePropagation();
   };
 
   if (menuButton && sideMenu) {
@@ -24,8 +25,11 @@ var sideMenu = document.querySelector('.side-menu');
   // Create and add the "Actions" button to the card
   var sideMenuButton = document.createElement('button');
   sideMenuButton.classList.add('side-menu-btn');
-  sideMenuButton.innerHTML = '<i class="fas fa-bars"></i>'; // Replace 'Actions' text with a Font Awesome icon
-  sideMenuButton.addEventListener('click', toggleSideMenu);
+  sideMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
+  sideMenuButton.addEventListener('click', function(event) {
+    toggleSideMenu(event);
+  });
+
   cards[0].appendChild(sideMenuButton);
 
   checkScreenSize(); // Check the screen size when the page loads
