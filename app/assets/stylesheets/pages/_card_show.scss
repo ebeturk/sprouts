@@ -88,6 +88,10 @@
   transform: translateX(-100%) rotateY(-180deg);
 }
 
+.card.is-flipped .side-menu {
+  pointer-events: auto; 
+}
+
 .backcard {
   position: absolute;
   width: 360px;
@@ -95,6 +99,7 @@
   color: white;
   backface-visibility: hidden;
   background-color: blue;
+  z-index: 1;
 }
 
 .backcard--back {
@@ -156,6 +161,7 @@
   z-index: 2;
   left: -148px;
   opacity: 0;
+  pointer-events: none;
 }
 
 .side-menu-btn {
@@ -193,10 +199,6 @@
   visibility: visible;
   opacity: 1;
   transition: opacity 0.3s ease;
-}
-
-.transform {
-  transform: none;
 }
 
 .flipreverse {

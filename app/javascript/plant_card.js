@@ -6,16 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function flipCard(card, backcard) {
     card.classList.toggle('is-flipped');
+    setTimeout(() => {
+      card.classList.toggle("flipreverse")
+    }, 300);
+
     backcard.classList.toggle('is-flipped');
-  }
-
-  function toggleSideMenu() {
-    sideMenu.classList.toggle('side-menu-collapsible');
-  }
-
-  if (menuButton && sideMenu) {
-    menuButton.addEventListener('click', toggleSideMenu);
-  }
+    setTimeout(() => {
+      backcard.classList.toggle("flipreverse")
+    }, 300);
+  };
 
   if (cards && backcard) {
     cards.forEach((card) => {
@@ -27,7 +26,20 @@ document.addEventListener('DOMContentLoaded', function () {
         flipCard(card, backcard);
       });
     });
-  }
+
+    backcard.addEventListener('click', function () {
+      flipCard(cards[0], backcard);
+    });
+  };
+
+
+  function toggleSideMenu() {
+    sideMenu.classList.toggle('side-menu-collapsible');
+  };
+
+  if (menuButton && sideMenu) {
+    menuButton.addEventListener('click', toggleSideMenu);
+  };
 
   function checkScreenSize() {
     if (window.innerWidth <= 767) {
@@ -36,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       sideMenu.classList.remove('on-card');
       sideMenu.classList.add('side-menu-collapsible');
-    }
-  }
+    };
+  };
 
   // Create and add the "Actions" button to the card
   var sideMenuButton = document.createElement('button');
@@ -48,4 +60,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
   checkScreenSize(); // Check the screen size when the page loads
   window.addEventListener('resize', checkScreenSize); // Check the screen size when the window is resized
+
 });
