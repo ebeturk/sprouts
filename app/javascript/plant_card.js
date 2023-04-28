@@ -1,7 +1,13 @@
+function init() {
+
 var cards = document.querySelectorAll('.card');
 var backcard = document.querySelector('.backcard');
 var menuButton = document.querySelector('.side-menu-btn');
 var sideMenu = document.querySelector('.side-menu');
+
+if (!sideMenu) {
+  return;
+}
 
     function toggleSideMenu(event) {
       sideMenu.classList.toggle('side-menu-collapsible');
@@ -30,7 +36,22 @@ var sideMenu = document.querySelector('.side-menu');
     toggleSideMenu(event);
   });
 
-  cards[0].appendChild(sideMenuButton);
+  if (cards.length > 0) {
+    cards[0].appendChild(sideMenuButton);
+  }
+
 
   checkScreenSize(); // Check the screen size when the page loads
   window.addEventListener('resize', checkScreenSize); // Check the screen size when the window is resized
+
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('readystatechange', function () {
+    if (document.readyState === 'interactive') {
+      init();
+    }
+  });
+} else {
+  init();
+}
