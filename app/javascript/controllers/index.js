@@ -21,3 +21,6 @@ application.register("flipcard", FlipcardController);
 
 import SwiperController from "./swiper_controller";
 application.register("swiper", SwiperController);
+
+import SearchController from "./search_controller";
+application.register("search", SearchController);

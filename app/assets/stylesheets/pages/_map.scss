@@ -1,8 +1,15 @@
 #map-card {
+  height: calc(100vh - 250px); /* Subtract the height of any headers or footers */
+  width: 100%;
   display: flex;
-  width: 402.188px;
-  height: 610px;
   position: relative;
-  left: 20px;
-  top: 40px;
+  margin: 20px auto;
+  border: 6px solid transparent;
+  border-image: linear-gradient(to bottom right, #84d59c, #5d9967) 10 round;
+}
+
+.mapbox {
+  margin: 20px auto;
+  width: 90%; /* Take up the entire width of the parent container */
+  height: 70vh;
 }

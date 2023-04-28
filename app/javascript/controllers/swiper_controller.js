@@ -3,7 +3,7 @@ import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
 
 export default class extends Controller {
   connect() {
-    console.log("SWIPER CONTROLLER CONNECTED");
+    // console.log("SWIPER CONTROLLER CONNECTED");
 
     Swiper.use([Navigation, Pagination, Scrollbar]);
 
