@@ -1,4 +1,3 @@
-console.log("MESSAGE HERE")
 import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
 Swiper.use([Navigation, Pagination, Scrollbar]);
 

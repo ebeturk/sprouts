@@ -19,12 +19,21 @@ export default class extends Controller {
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+    const targetLat = parseFloat(this.data.get('targetLatValue'))
+    const targetLng = parseFloat(this.data.get('targetLngValue'))
+    if (targetLat && targetLng) {
+      this.#zoomToLocation(targetLat, targetLng)
+    }
   }
 
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+  }
+
+  #zoomToLocation(lat, lng) {
+    this.map.easeTo({ center: [lng, lat], zoom: 15 })
   }
 
   #addMarkersToMap() {

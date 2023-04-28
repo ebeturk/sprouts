@@ -25,7 +25,7 @@
       <% end %>
     <% end %>
 
-      <%= link_to map_path do %>
+      <%= link_to map_path(plant, lat: plant.latitude, lng: plant.longitude) do %>
         <i class="fa-regular fa-2x fa-compass"></i>
       <% end %>
       <%# <i class="fa-regular fa-circle-user"></i> %>

@@ -48,6 +48,8 @@ class PlantsController < ApplicationController
         image_url: helpers.asset_url("sprouts_logo.png")
       }
     end
+    @target_lat = params[:lat]
+    @target_lng = params[:lng]
   end
 
   def create
