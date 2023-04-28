@@ -12,3 +12,15 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import PlantCardController from "./plant_card_controller";
+application.register("plant-card", PlantCardController);
+
+import FlipcardController from "./flipcard_controller";
+application.register("flipcard", FlipcardController);
+
+import SwiperController from "./swiper_controller";
+application.register("swiper", SwiperController);
+
+import SearchController from "./search_controller";
+application.register("search", SearchController);
