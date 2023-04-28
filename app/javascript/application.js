@@ -5,8 +5,4 @@ import "./controllers"
 import "bootstrap"
 import './plant_card.js';
 import './flipcard.js'
-
-
-
-import Swiper, { Navigation, Pagination } from 'swiper';
-// import Swiper and modules styles
+import './swiper.js'
