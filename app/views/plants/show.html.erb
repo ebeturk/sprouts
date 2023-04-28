@@ -35,7 +35,7 @@
   <% end %>
 </div>
 
-  <div class="plant-card">
+  <div class="plant-card" data-controller="plant-card flipcard">
     <div class="card">
       <div class="card__face card__face--front">
         <div class="plant-bg" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 480, width: 400, crop: :fill %>')">

@@ -1,4 +1,7 @@
+import { Controller } from "stimulus";
 
+export default class extends Controller {
+  connect() {
 
   var cards = document.querySelectorAll('.card');
   var backcard = document.querySelector('.backcard');
@@ -30,3 +33,5 @@
       flipCard(cards[0], backcard);
     });
   };
+  }
+}

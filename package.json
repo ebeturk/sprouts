@@ -12,6 +12,7 @@
     "@rails/webpacker": "5.4.4",
     "bootstrap": "^5.2.0",
     "bootstrap-icons": "^1.9.1",
+    "stimulus": "^3.2.1",
     "swiper": "^8.4.2",
     "tinycolor2": "^1.6.0",
     "webpack": "^4.46.0",
