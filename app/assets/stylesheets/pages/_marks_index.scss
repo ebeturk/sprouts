@@ -18,15 +18,19 @@
   box-sizing: border-box;
 }
 
+.matches-container {
+  align-items: flex-end;
+}
+
 .mm-container {
   display: grid;
   grid-template-rows: 1fr 1fr;
   width: 100%;
   height: calc(100% - 100px);
-  margin: 80px 0 0 0;
+  margin: 60px 0 0 0;
   padding: 30px 50px;
   background: #d3ded4;
-  border-radius: 100px;
+  border-radius: 100px 0 0 0;
 
   .carousel-marks {
     // position: relative;
@@ -118,8 +122,10 @@
 }
 
 #your-marks h1 {
-  float: right;
+  float: left;
 }
+
+
 
 .matches-disp {
   display: flex;
@@ -131,11 +137,12 @@
 #carouselMarks {
   height: 180px;
   width: 180px;
-  float: right;
+  float: left;
 }
 
 .m-title {
 
   color: rgb(174, 37, 174);
   font-family: 'Ubuntu', sans-serif;
+  float: right;
 }
