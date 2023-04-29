@@ -4,25 +4,33 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-
-  height: 100vh;
-  // background-image: url("https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80");
-
+  height: calc(100vh - 70px);
 }
 
-.my-marks {
-  display: inline-block;
-  width: 100%;
-  height: 78%;
-  /* border: 1px solid #CCC; */
-  margin: 40px 0;
-  background: #d3ded4;
 
-  border-radius: 100px 0 0 0;
+.marks-container,
+.matches-container {
+  display: flex;
+  flex-direction: column;
+  background: #d3ded4;
+  border-radius: 100px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mm-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: calc(100% - 100px);
+  margin: 80px 0 0 0;
+  padding: 30px 50px;
+  background: #d3ded4;
+  border-radius: 100px;
 
   .carousel-marks {
-    position: relative;
-    top: 190px;
+    // position: relative;
+    // top: 190px;
 
 
     .description-marks {
@@ -37,7 +45,7 @@
 //   bottom: 85px;
 // }
 
-.mark-titles {
+.mm-title {
   display: flex;
   position: relative;
   top: 20px;
@@ -45,10 +53,11 @@
   h1 {
     position: relative;
     left: 36px;
+    top: 12px;
     // font-family: 'Playfair Display SC';
     font-family: 'Ubuntu', sans-serif;
-    font-size: 56px;
-    color: #112525;
+    font-size: 46px;
+    color: whitesmoke;
   }
 
   p {
@@ -108,38 +117,25 @@
   }
 }
 
+#your-marks h1 {
+  float: right;
+}
+
 .matches-disp {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
-  position: relative;
-  top: 69px;
-  left: -22px;
+  margin-bottom: 30px;
 }
 
 #carouselMarks {
-  position: relative;
-  top: -33px;
-  left: 63px;
-  /* height: 173px; */
-  width: 292px;
+  height: 180px;
+  width: 180px;
+  float: right;
 }
 
-.mark-tittle {
-  position: relative;
-  top: 37px;
-  left: 58px;
-  /* height: 22px; */
-  width: 200px;
-  color: #112525;
-  font-family: 'Ubuntu', sans-serif;
-}
+.m-title {
 
-.mark-tittle-2 {
-  position: relative;
-  top: 142px;
-  left: 58px;
-  color: #112525;
+  color: rgb(174, 37, 174);
   font-family: 'Ubuntu', sans-serif;
 }
