@@ -1,19 +1,17 @@
 <div class="chats-container">
   <div class="chatrooms-index-card">
     <% @chatrooms.each do |chatroom| %>
-      <div class="card-product">
+      <div class="chatroom-infos">
         <i class="fa-brands fa-pagelines"></i>
-          <div class="card-product-infos">
-            <div class="chatroom-name">
-              <%= link_to chatroom.name, chatroom_path(chatroom)%>
-              <h6><%=chatroom.user_2.username%></h6>
-              <% if chatroom.messages.last.present? %>
-                <h5><%=chatroom.messages.last.content%></h5>
-              <% else %>
-                <h5>No messages yet.</h5>
-              <% end %>
-            </div>
-          </div>
+        <div class="chatroom-name">
+          <%= link_to chatroom.name, chatroom_path(chatroom)%>
+        </div>
+        <h6><%=chatroom.user_2.username%></h6>
+        <% if chatroom.messages.last.present? %>
+          <h5><%=chatroom.messages.last.content%></h5>
+        <% else %>
+          <h5>No messages yet.</h5>
+        <% end %>
       </div>
     <% end %>
   </div>
