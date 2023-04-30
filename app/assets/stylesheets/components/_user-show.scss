@@ -28,7 +28,6 @@ ul{
   font-size: 12px;
 }
 #username {
-  font-size: 30px;
   padding: 10px;
 }
 .my-collection {
@@ -48,16 +47,21 @@ align-items: center;
 .about-me {
  margin: 10px;
 }
+
 .card-trip {
   overflow: hidden;
+  overflow-y: auto;
   background: rgba(204, 215, 206, 1);
   margin: 30px auto;
   padding: 20px 20px;
   max-width: 80vw;
-  height: 80vh;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: calc(100vh - 120px);
+  min-height: 400px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 16px;
+  box-sizing: border-box;
 }
+
 
 .card-trip > img {
   height: 200px;
@@ -67,17 +71,26 @@ align-items: center;
 }
 
 .card-trip h2 {
-  font-size: 20px;
   font-weight: bold;
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
-
+  color: rgb(174, 37, 174)
 }
+
+.card-trip h3 {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  color: white;
+}
+
 
 .card-trip p {
   font-size: 16px;
   opacity: .7;
   font-family: 'Ubuntu', sans-serif;
+  padding: 3px 0;
+  width: 70%;
+  h2font-family: 'Helvetica';
 
 }
 
@@ -98,4 +111,45 @@ align-items: center;
   height: 100px;
   border-radius: 40%;
   border: whitesmoke solid 3px;
+}
+
+.grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  // gap: 2rem;
+  max-width: calc(100px * 3 + 2rem);
+  margin: 0 auto;
+}
+
+@media (min-width: 420px) {
+  .grid-gallery {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+}
+
+.grid-item {
+  width: 100px;
+  height: 100px;
+  margin: 0 5px;
+}
+
+.row-item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.thumbnail-border {
+  border: 2px solid #8bc34a;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 2px;
+  background-color: #fff;
+}
+
+.thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
 }
