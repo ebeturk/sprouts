@@ -2,7 +2,9 @@
   <div class="chatrooms-index-card">
     <% @chatrooms.each do |chatroom| %>
       <div class="chatroom-infos">
-        <i class="fa-brands fa-pagelines"></i>
+        <%= link_to chatroom_path(chatroom) do %>
+          <i class="fa-brands fa-pagelines"></i>
+        <% end %>
         <div class="chatroom-name">
           <%= link_to chatroom.name, chatroom_path(chatroom)%>
         </div>

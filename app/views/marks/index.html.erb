@@ -21,11 +21,11 @@
         <% else %>
           <% @matches.uniq.each do |match| %>
             <div class="d-flex">
-              <div class="plant-mark-1" style="background-image: url('<%= cl_image_path match.plant_1.photo.key, height: 220, width: 140, crop: :fill %>')">
+              <div class="plant-mark-1" style="background-image: url('<%= cl_image_path match.plant_1.photo.key, height: 200, width: 150, crop: :fill %>')">
                 <%# <h5><strong><%= match.plant_1.name %>
                 <h1><i class="fa-solid fa-infinity fa-2x"></i></h1>
               </div>
-              <div class="plant-mark-2" style="background-image: url('<%= cl_image_path match.plant_2.photo.key, height: 220, width: 140, crop: :fill %>')">
+              <div class="plant-mark-2" style="background-image: url('<%= cl_image_path match.plant_2.photo.key, height: 200, width: 150, crop: :fill %>')">
                 <%# <h5><strong><%= match.plant_2.name %>
                 <%# <i class="fa-solid fa-infinity fa-2x"></i> %>
               </div>
@@ -52,26 +52,26 @@
               <% if index == 0 %>
                 <div class="carousel-item active">
                   <%= link_to mark_path(mark) do %>
-                    <%= cl_image_tag mark.plant.photo.key, height: 240, width: 180, crop: :fill %>
+                    <%= cl_image_tag mark.plant.photo.key, height: 200, width: 150, crop: :fill %>
                   <% end %>
                 </div>
               <% else %>
                 <div class="carousel-item">
                   <%= link_to mark_path(mark) do %>
-                    <%= cl_image_tag mark.plant.photo.key, height: 240, width: 180, crop: :fill %>
+                    <%= cl_image_tag mark.plant.photo.key, height: 200, width: 150, crop: :fill %>
                   <% end %>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselMarks" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselMarks" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
               <% end %>
             <% end %>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselMarks" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselMarks" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
       <% end %>
       </div>

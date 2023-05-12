@@ -24,16 +24,25 @@
   width: 100%;
 }
 
-.chatroom-infos i {
-  height: 100%;
-  padding: 0 3%;
-  object-fit: cover;
-  display: flex;
-  align-items: center;
-  font-size: 48px;
-  opacity: .7;
-  color: green;
-}
+  .chatroom-infos i {
+    height: 100%;
+    padding: 0 3%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    font-size: 48px;
+    opacity: .7;
+    color: green;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  .chatroom-infos i:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
 
 .chatroom-name {
   font-family: 'Ubuntu', sans-serif;
