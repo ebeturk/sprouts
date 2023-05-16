@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "plants#index"
 
-  resources :chatrooms, only: [:index, :show] do
+  resources :chatrooms, only: [:index, :show, :destroy] do
     resources :messages, only: :create
   end
 
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :plants do
     resources :marks, only: [:create, :edit, :update]
   end
-  
+
   resources :marks, only: [:index, :show, :destroy]
   resources :matches
 

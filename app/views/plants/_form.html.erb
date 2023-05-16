@@ -1,57 +1,44 @@
 <div class="input-form-new-plant">
   <div class="form-column">
-
-  <%= simple_form_for(plant, html: { id: :tame_form })  do |f| %>
-      <div class="name">
-
-      </div>
+    <%= simple_form_for(plant, html: { id: :tame_form })  do |f| %>
+      <h3>🪴 Add Your Plant! 🪴</h3>
       <%= f.text_field :name, placeholder: "Name of the plant", class: "input input-size" %>
-      <%= f.input :category, :collection => ["Cactus and Succulents", "House Plants", "Seeds", "Trees", "Climbers", "Herbs", "Flowers", "Other"], placeholder: "Pick a category", class: "input input-size" %>
-      <%= f.label :lighting, class: "input input-width" %>
-      <div class="rating" style="width: 20rem">
-        <input id="rating-5" type="radio" name="lighting" value="🌞🌞🌞🌞🌞"/><label for="rating-5"><i class="fas fa-2x fa-sun"></i></label>
-        <input id="rating-4" type="radio" name="lighting" value="🌞🌞🌞🌞" checked /><label for="rating-4"><i class="fas fa-2x fa-sun"></i></label>
-        <input id="rating-3" type="radio" name="lighting" value="🌞🌞🌞"/><label for="rating-3"><i class="fas fa-2x fa-sun"></i></label>
-        <input id="rating-2" type="radio" name="lighting" value="🌞🌞"/><label for="rating-2"><i class="fas fa-2x fa-sun"></i></label>
-        <input id="rating-1" type="radio" name="lighting" value="🌞"/><label for="rating-1"><i class="fas fa-2x fa-sun"></i></label>
-      </div>
+      <%= f.input :category, collection: ["Cactus and Succulents", "House Plants", "Seeds", "Trees", "Climbers", "Herbs", "Flowers", "Other"], prompt: "Pick a category", label: false, class: "input input-size" %>
 
-      <%= f.label :watering, class: "input input-width" %>
-      <div class="watering" style="width: 20rem">
-        <input id="watering-5" type="radio" name="watering" value="💧💧💧💧💧"/><label for="watering-5"><i class="fas fa-2x fa-droplet"></i></label>
-        <input id="watering-4" type="radio" name="watering" value="💧💧💧💧" checked /><label for="watering-4"><i class="fas fa-2x fa-droplet"></i></label>
-        <input id="watering-3" type="radio" name="watering" value="💧💧💧"/><label for="watering-3"><i class="fas fa-2x fa-droplet"></i></label>
-        <input id="watering-2" type="radio" name="watering" value="💧💧"/><label for="watering-2"><i class="fas fa-2x fa-droplet"></i></label>
-        <input id="watering-1" type="radio" name="watering" value="💧"/><label for="watering-1"><i class="fas fa-2x fa-droplet"></i></label>
-      </div>
+          <%= f.label :lighting, class: "input input-width" %>
+        <div class="rating">
+          <input id="rating-5" type="radio" name="lighting" value="🌞🌞🌞🌞🌞"/><label for="rating-5"><i class="fas fa-2x fa-sun"></i></label>
+          <input id="rating-4" type="radio" name="lighting" value="🌞🌞🌞🌞" checked /><label for="rating-4"><i class="fas fa-2x fa-sun"></i></label>
+          <input id="rating-3" type="radio" name="lighting" value="🌞🌞🌞"/><label for="rating-3"><i class="fas fa-2x fa-sun"></i></label>
+          <input id="rating-2" type="radio" name="lighting" value="🌞🌞"/><label for="rating-2"><i class="fas fa-2x fa-sun"></i></label>
+          <input id="rating-1" type="radio" name="lighting" value="🌞"/><label for="rating-1"><i class="fas fa-2x fa-sun"></i></label>
+        </div>
 
-      <%= f.label :temperature, class: "input input-width" %>
-      <div class="temperature" style="width: 20rem">
-        <input id="temperature-5" type="radio" name="temperature" value="🌡🌡🌡🌡🌡"/><label for="temperature-5"><i class="fas fa-2x fa-light fa-temperature-full "></i></label>
-        <input id="temperature-4" type="radio" name="temperature" value="🌡🌡🌡🌡" checked /><label for="temperature-4"><i class="fas fa-2x fa-light fa-temperature-three-quarters "></i></label>
-        <input id="temperature-3" type="radio" name="temperature" value="🌡🌡🌡"/><label for="temperature-3"><i class="fas fa-2x fa-light fa-temperature-half"></i></label>
-        <input id="temperature-2" type="radio" name="temperature" value="🌡🌡"/><label for="temperature-2"><i class="fas fa-2x fa-light fa-temperature-quarter"></i></label>
-        <input id="temperature-1" type="radio" name="temperature" value="🌡"/><label for="temperature-1"><i class="fas fa-2x fa-light fa-temperature-empty "></i></label>
-      </div>
+          <%= f.label :watering, class: "input input-width" %>
+        <div class="watering">
+          <input id="watering-5" type="radio" name="watering" value="💧💧💧💧💧"/><label for="watering-5"><i class="fas fa-2x fa-droplet"></i></label>
+          <input id="watering-4" type="radio" name="watering" value="💧💧💧💧" checked /><label for="watering-4"><i class="fas fa-2x fa-droplet"></i></label>
+          <input id="watering-3" type="radio" name="watering" value="💧💧💧"/><label for="watering-3"><i class="fas fa-2x fa-droplet"></i></label>
+          <input id="watering-2" type="radio" name="watering" value="💧💧"/><label for="watering-2"><i class="fas fa-2x fa-droplet"></i></label>
+          <input id="watering-1" type="radio" name="watering" value="💧"/><label for="watering-1"><i class="fas fa-2x fa-droplet"></i></label>
+        </div>
 
+          <%= f.label :temperature, class: "input input-width" %>
+        <div class="temperature">
+          <input id="temperature-5" type="radio" name="temperature" value="🌡🌡🌡🌡🌡"/><label for="temperature-5"><i class="fas fa-2x fa-light fa-temperature-full "></i></label>
+          <input id="temperature-4" type="radio" name="temperature" value="🌡🌡🌡🌡" checked /><label for="temperature-4"><i class="fas fa-2x fa-light fa-temperature-three-quarters "></i></label>
+          <input id="temperature-3" type="radio" name="temperature" value="🌡🌡🌡"/><label for="temperature-3"><i class="fas fa-2x fa-light fa-temperature-half"></i></label>
+          <input id="temperature-2" type="radio" name="temperature" value="🌡🌡"/><label for="temperature-2"><i class="fas fa-2x fa-light fa-temperature-quarter"></i></label>
+          <input id="temperature-1" type="radio" name="temperature" value="🌡"/><label for="temperature-1"><i class="fas fa-2x fa-light fa-temperature-empty "></i></label>
+        </div>
 
       <%= f.text_field :address, placeholder: "Plant Current Location", class: "input input-size-location" %>
-
-      <div class="p-4 mt-6 d-flex justify-content-center">
-      <%= f.input :photo, class: "photo", as: :file %>
-      </div>
-
-
-        <%# <%= f.submit class: "btn button-create fa-solid fa-tree" %>
-        <%# <%= f.submit :button, class: "my-button" do %>
-          <%# <i class="fa-solid fa-tree"></i>
-        <% end %>
+        <div class="photo-container">
+          <%= f.input :photo, class: "plant-photo", as: :file %>
+        </div>
         <%= f.button :button, class: "my-button" do %>
-          <i class="fa-solid fa-tree"></i>
+          <i class="fa-solid fa-seedling"></i>
         <% end %>
-      </div>
-
-  <% end %>
-
+    <% end %>
   </div>
 </div>

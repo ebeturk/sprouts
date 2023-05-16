@@ -8,6 +8,11 @@
         <div class="chatroom-name">
           <%= link_to chatroom.name, chatroom_path(chatroom)%>
         </div>
+        <div class="delete-button">
+          <%= button_to chatroom_path(chatroom), method: :delete, data: { 'confirm-delete': 'Your message histroy in the room will be deleted. Are you sure?' }, class: 'delete-button', form: {class: 'delete-form'} do %>
+            <i class="fa fa-times"></i>
+          <% end %>
+        </div>
         <h6><%=chatroom.user_2.username%></h6>
         <% if chatroom.messages.last.present? %>
           <h5><%=chatroom.messages.last.content%></h5>

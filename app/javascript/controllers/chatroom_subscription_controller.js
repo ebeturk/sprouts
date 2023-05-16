@@ -46,3 +46,16 @@ export default class extends Controller {
     form.reset()
   }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  var deleteForms = document.querySelectorAll('.delete-form');
+  deleteForms.forEach(function(form) {
+    form.addEventListener('submit', function(event) {
+      var message = form.querySelector('.delete-button').dataset.confirmDelete;
+      if (!window.confirm(message)) {
+        event.preventDefault();
+      }
+    });
+  });
+});
+
