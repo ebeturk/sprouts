@@ -65,13 +65,11 @@
 
   border: 1px solid #98AC9C;
   border-radius: 16px;
-  border-radius: 11px;
   background: rgba(70, 121, 70, 0.3);
   // opacity: 0.9;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 64px;
   backdrop-filter: blur(2px);
 
   h2 {
@@ -131,6 +129,10 @@
 a {
   color: rgb(255, 255, 255);
   text-decoration: none;
+}
+
+a:hover .fa-compass {
+  color: whitesmoke;
 }
 
 .card-content {
@@ -222,6 +224,7 @@ a {
   flex-direction: column;
   justify-content: flex-start;
   background: #ccd7ce;
+  z-index: 0;
 }
 
 .page-container {

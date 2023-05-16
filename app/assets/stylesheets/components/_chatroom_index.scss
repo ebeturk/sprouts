@@ -33,9 +33,9 @@
     font-size: 48px;
     opacity: .7;
     color: green;
-    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     transition: background-color 0.3s, box-shadow 0.3s;
+    padding: 4px;
   }
 
   .chatroom-infos i:hover {

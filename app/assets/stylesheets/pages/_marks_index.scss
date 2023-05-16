@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 40px);
 }
 
 
@@ -45,9 +45,6 @@
   }
 }
 
-// #carouselExampleControls {
-//   bottom: 85px;
-// }
 
 .mm-title {
   display: flex;
@@ -68,10 +65,6 @@
     position: relative;
     top: 47px;
   }
-}
-
-.match {
-
 }
 
 .plant-mark-1 {
@@ -125,8 +118,6 @@
   float: left;
 }
 
-
-
 .matches-disp {
   display: flex;
   align-items: center;
@@ -134,8 +125,25 @@
   margin-bottom: 30px;
 }
 
+.carousel {
+  overflow: hidden;
+  width: 150px;
+}
+
+
+
 #carouselMarks {
   float: left;
+}
+
+.carousel-item .active {
+  overflow: hidden;
+  width: 150px;
+}
+
+.carousel-item {
+  overflow: hidden;
+  width: 150px;
 }
 
 .m-title {

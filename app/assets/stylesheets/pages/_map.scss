@@ -4,12 +4,26 @@
   display: flex;
   position: relative;
   margin: 20px auto;
-  border: 6px solid transparent;
-  border-image: linear-gradient(to bottom right, #84d59c, #5d9967) 10 round;
+  border: 6px solid #84d59c;
 }
 
 .mapbox {
-  margin: 20px auto;
+  margin: 0 auto;
   width: 90%; /* Take up the entire width of the parent container */
   height: 70vh;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 12px 2px;
+}
+
+.nav-buttons a {
+  width: 250px;
+  padding: 6px 6px;
+  background-color: rgba(132, 213, 156, 0.456);
+  color: whitesmoke;
+  font-family: 'Ubuntu', sans-serif;
 }

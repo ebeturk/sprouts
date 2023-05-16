@@ -39,4 +39,8 @@
       data-map-target-lng-value="<%= @target_lng %>">
     </div>
   </div>
+  <div class="nav-buttons">
+  <%= link_to "🌱 BACK 🌱", request.referer || root_path %>
+  <%= link_to "🪴 BACK HOME 🪴", root_path %>
+  </div>
 </div>
