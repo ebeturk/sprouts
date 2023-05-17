@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   get "map", to: "plants#map"
 
-  resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :edit, :update]
+get 'users/:id', to: 'users#show', constraints: { id: /\d+/ }
+
 
   resources :plants do
     resources :marks, only: [:create, :edit, :update]

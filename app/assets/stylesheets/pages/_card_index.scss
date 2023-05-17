@@ -31,16 +31,18 @@
   opacity: 0.7;
   margin: 0 auto;
   font-family: 'Nunito';
+  h3 {
+    font-family: 'Ubuntu', sans-serif;
+  }
 
 }
 
 .logo-sprouts {
-  margin: 60px auto;
+  margin: 30px auto;
   color:rgb(11, 79, 66);
   text-align: center;
   font-size: larger;
   font-weight: bold;
-
 }
 
 .logo-container {
@@ -247,4 +249,32 @@ body {
 html {
   height: 100%;
   background: #ccd7ce;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-login {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 6px solid green;
+  background-color: rgba(0, 128, 0, 0.2);
+  color: rgb(2, 71, 2);
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+}
+
+.btn-login:hover {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 6px solid rgb(6, 147, 6);
+  background-color: rgba(0, 128, 0, 0.257);
+  color: rgb(2, 71, 2);
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.devise-links {
+  margin: 10px auto;
 }

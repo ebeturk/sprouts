@@ -1,30 +1,37 @@
 
-<div class="sprouts-name logo-sprouts">
-  <h1>SPROUTS</h1>
-  <h3>We grow together </h3>
-</div>
-
-<div class="login-page">
-  <div>
-    <h2></h2>
+<div class="login-all">
+  <div class="sprouts-name logo-sprouts">
+    <h1>SPROUTS</h1>
+    <h3>We grow together </h3>
   </div>
 
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :email,
+  <div class="login-page-main">
+    <div>
+      <h2></h2>
+    </div>
+
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
                     required: false,
                     autofocus: true,
-                    input_html: { autocomplete: "email" } %>
+                    input_html: { autocomplete: "email" },
+                    placeholder: 'Your email',
+                    label: false %>
         <%= f.input :password,
                     required: false,
-                    input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-      </div>
+                    input_html: { autocomplete: "current-password" },
+                    placeholder: 'Your password',
+                    label: false %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Log in" %>
-      </div>
-    <% end %>
+        <div class="form-actions">
+          <%= f.button :submit, "LOG IN", class:"btn-login" %>
+        </div>
+      <% end %>
+    <div class="devise-links">
+    <%= render "devise/shared/links" %>
+    </div>
   </div>
-
-<%= render "devise/shared/links" %>
+</div>
