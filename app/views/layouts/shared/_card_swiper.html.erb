@@ -6,10 +6,10 @@
       <div class="button-grid"><i class="fa fa-th-large fa-xl icon-auto-color"></i></div>
 
   <div class="my-swipe-card" id="plant-<%= plant.id %>">
-    <div class="swipe-card-name">
-      <h2><%=link_to plant.name, plant_path(plant)%></h2>
-    </div>
     <div class="swiper-buttons-card">
+      <div class="swipe-card-name">
+        <h2><%=link_to plant.name, plant_path(plant)%></h2>
+      </div>
     <% if !current_user.plants.include?(plant) %>
       <% if mark.present? %>
         <%= link_to mark_path(mark), data: {turbo_method: :delete } do %>

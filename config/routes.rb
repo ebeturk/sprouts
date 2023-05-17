@@ -11,11 +11,7 @@ Rails.application.routes.draw do
 
   get "map", to: "plants#map"
 
-  resources :users, only: [:index, :show] do
-    resources :reviews, only: [:new, :create]
-  end
-
-  resources :reviews, only: [:destroy]
+  resources :users, only: [:index, :show, :edit, :update]
 
   resources :plants do
     resources :marks, only: [:create, :edit, :update]

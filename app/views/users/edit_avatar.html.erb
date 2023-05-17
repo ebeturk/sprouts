@@ -1,0 +1,14 @@
+<div class="modal" id="avatarModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <turbo-frame id="avatar_form">
+          <%= form_for @user, url: update_avatar_user_path(@user), data: { turbo_frame: 'avatar_form' }, method: :patch do |f| %>
+            <%= f.file_field :photo %>
+            <%= f.submit "Change Avatar" %>
+          <% end %>
+        </turbo-frame>
+      </div>
+    </div>
+  </div>
+</div>

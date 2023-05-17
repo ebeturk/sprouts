@@ -31,7 +31,7 @@ ul{
   padding: 10px;
 }
 .my-collection {
-margin: 10px;
+margin: 10px auto;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -48,6 +48,22 @@ align-items: center;
 .about-me {
  margin: 10px;
 }
+
+.about-me-edit {
+  margin: 10px 0;
+  h3 {
+    padding: 6px 12px;
+  }
+ }
+
+.btn-success {
+  border-radius: 6px;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  background-color: #0b4e2f;
+  margin: 0px auto;
+}
+
 
 .card-trip {
   overflow: hidden;
@@ -85,14 +101,18 @@ align-items: center;
 }
 
 
-.card-trip p {
+.card-trip {
+  p {
   font-size: 16px;
   opacity: .7;
   font-family: 'Ubuntu', sans-serif;
   padding: 3px 0;
   width: 70%;
-  h2font-family: 'Helvetica';
+  }
+  h2 {
+    font-family: 'Helvetica';
 
+  }
 }
 
 .card-trip .card-trip-infos {
@@ -112,6 +132,23 @@ align-items: center;
   height: 100px;
   border-radius: 40%;
   border: whitesmoke solid 3px;
+}
+
+.card-trip-infos .list-inline {
+  display: flex;
+  align-items: center;
+}
+
+.list-inline i {
+  font-size: 24px;
+  padding: 10px 2px;
+  color: grey;
+}
+
+.list-inline i:hover {
+  font-size: 24px;
+  padding: 10px 2px;
+  color: whitesmoke;
 }
 
 .grid-gallery {
@@ -153,4 +190,65 @@ align-items: center;
   height: 100%;
   object-fit: cover;
   border-radius: 3px;
+}
+
+.btn-sunny {
+  padding: 1px 0px;
+  border-radius: 12px 12px 100% 100%;
+  width: 84px;
+  margin: 0 auto;
+  height: 28px;
+  background-color: rgba(255, 183, 0, 0.245);
+  font-family: 'Ubunto', sans-serif;
+  font-size: 16px;
+  /* float: right; */
+  position: absolute;
+  bottom: 0px;
+  left: 4px;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.btn-sunny:hover {
+  padding: 1px 0px;
+    border-radius: 12px 12px 100% 100%;
+    width: 84px;
+    margin: 0 auto;
+    height: 28px;
+    background-color: rgba(239, 202, 110, 0.362);
+    font-family: 'Ubunto', sans-serif;
+    font-size: 16px;
+    /* float: right; */
+    position: absolute;
+    bottom: 0px;
+    left: 4px;
+    text-align: center;
+    color: white;
+}
+
+textarea .form-control {
+  height: 200px;
+  width: 300px;
+}
+
+
+.form-control-description {
+  border-radius: 24px 0 0 24px;
+  font-family: 'Ubuntu';
+  height: 200px;
+  width: 300px;
+  padding: 6px 12px;
+}
+
+.form-control-username {
+  border-radius: 24px 36px 0 24px;
+  font-family: 'Ubuntu';
+  height: 36px;
+  padding: 6px 12px;
+  width: 180px;
+  border: none;
+}
+
+#add-plant-button {
+  margin: 12px auto;
 }
