@@ -1,24 +1,22 @@
-.notice {
-  margin: 5px auto;
-  text-align: center;
-  color: rgb(13, 141, 66);
-  font-size: 12px;
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 600;
-  justify-content: center;
-  background-color: whitesmoke;
-  width: 360px;
+@keyframes fadeout {
+  from {opacity: 1;}
+  to {opacity: 0;}
 }
 
-.notice-match {
+.notice-match, .notice {
   margin: 5px auto;
   border-radius: 8px;
   text-align: center;
-  color: rgb(13, 141, 66);
+  color: #0d8d42;
   font-size: 18px;
   font-family: 'Font Awesome 6 Free';
   font-weight: 600;
   justify-content: center;
   width: 360px;
-  background-color: whitesmoke;
+  background-color: transparent;
+  /* New rules for animation */
+  animation-name: fadeout;
+  animation-delay: 3s;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
 }
