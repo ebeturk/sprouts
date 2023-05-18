@@ -51,13 +51,21 @@
             <% current_user.marks.each_with_index do |mark, index| %>
               <% if index == 0 %>
                 <div class="carousel-item active">
-                  <%= link_to mark_path(mark) do %>
+                  <%= link_to plant_path(mark.plant) do %>
                     <%= cl_image_tag mark.plant.photo.key, height: 200, width: 150, crop: :fill %>
                   <% end %>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselMarks" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselMarks" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="false"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
               <% else %>
                 <div class="carousel-item">
-                  <%= link_to mark_path(mark) do %>
+                  <%= link_to plant_path(mark.plant) do %>
                     <%= cl_image_tag mark.plant.photo.key, height: 200, width: 150, crop: :fill %>
                   <% end %>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselMarks" data-bs-slide="prev">

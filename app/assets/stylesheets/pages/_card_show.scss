@@ -5,8 +5,7 @@
   flex-direction: column;
   width: 360px;
   height: 480px;
-  margin: 0 auto;
-  margin-bottom: 10vh;
+  margin: 6vh auto 6vh auto;
   position: relative;
 }
 
@@ -24,6 +23,20 @@
   overflow: hidden;
   box-shadow: 0 0 15px rgba(7, 86, 12, 0.2);
 }
+
+@media (max-width: 420px) {
+  .card {
+    width: 90vw;
+    height: calc(90vw * 4 / 3);
+  }
+
+  .middler {
+    width: 92vw;
+    height: calc(92vw * 4 / 3);
+    margin: 6vh auto 6vh auto;
+  }
+}
+
 
 .card__face {
   position: absolute;

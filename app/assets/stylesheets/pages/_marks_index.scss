@@ -130,8 +130,6 @@
   width: 150px;
 }
 
-
-
 #carouselMarks {
   float: left;
 }
@@ -151,4 +149,11 @@
   color: rgb(174, 37, 174);
   font-family: 'Ubuntu', sans-serif;
   float: right;
+}
+
+
+.carousel-control-prev, .carousel-control-next {
+  width: 20%;
+  opacity: 0.8;
+  right: 8px;
 }
