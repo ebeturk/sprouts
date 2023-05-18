@@ -93,12 +93,12 @@
   height: 480px;
   color: white;
   backface-visibility: hidden;
-  background-color: #94ab96;
+  // background-color: #94ab96;
   z-index: 1;
 }
 
 .backcard--back {
-  background: #94ab96;
+  // background: #94ab96;
   transform: rotateY(180deg);
 }
 
@@ -122,7 +122,7 @@
   background-position: center;
   background-repeat: none;
   background-size: cover;
-  opacity: 0.5;
+  opacity: 0;
 }
 
 
@@ -211,7 +211,7 @@
   align-items: flex-start;
   flex-direction: column;
   position: absolute;
-  background-color: rgba(176, 230, 187, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   // top: 95px;
   // right: 114px;
 
