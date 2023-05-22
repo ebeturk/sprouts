@@ -1,16 +1,16 @@
 #map-card {
-  height: calc(100vh - 250px); /* Subtract the height of any headers or footers */
+  height: 63vh; /* Subtract the height of any headers or footers */
   width: 100%;
   display: flex;
   position: relative;
-  margin: 20px auto;
+  margin: 16px auto;
   border: 6px solid #84d59c;
 }
 
 .mapbox {
   margin: 0 auto;
   width: 90%; /* Take up the entire width of the parent container */
-  height: 70vh;
+  height: 63vh;
 }
 
 .nav-buttons {
@@ -22,6 +22,7 @@
 
 .nav-buttons a {
   width: 250px;
+  margin: 20px auto;
   padding: 6px 6px;
   background-color: rgba(132, 213, 156, 0.456);
   color: whitesmoke;
