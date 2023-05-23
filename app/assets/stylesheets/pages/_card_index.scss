@@ -45,6 +45,10 @@
   font-weight: bold;
 }
 
+.login-logo {
+  margin: 12px auto;
+}
+
 .logo-container {
   padding: 8px 0;
   max-width: 200px;
@@ -55,6 +59,11 @@
   transform: scaleX(1) rotate(45deg);
 }
 
+.logo-image-login {
+  margin-bottom: 10px;
+  transform: scaleX(1) rotate(45deg);
+  padding-left: 16px;
+}
 .sprouts-text {
   color:rgb(10, 126, 126);
   font-weight: 500;

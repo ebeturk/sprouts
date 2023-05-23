@@ -9,6 +9,28 @@
   border: rgb(3, 105, 3);
 }
 
+.sign-up-page {
+  margin: 8px auto;
+  padding: 16px;
+  font-family: 'Ubuntu', sans-serif;
+  background: #ccd7ce;
+  border-radius: 25px;
+  width: 300px;
+  height: 600px;
+  border: #036903;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#new_user {
+  margin: 0 auto;
+}
+
+#sign-up {
+  width: 240px;
+}
+
 .login-all {
   border: 6px solid rgba(0, 128, 0, 0.309);
   border-radius: 16px;

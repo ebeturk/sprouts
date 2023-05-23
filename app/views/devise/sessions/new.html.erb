@@ -1,7 +1,10 @@
 
 <div class="login-all">
-  <div class="sprouts-name logo-sprouts">
-    <h1>SPROUTS</h1>
+  <div class="sprouts-name logo-sprouts login-logo">
+    <%= image_tag "monstera.png", class: "logo-image-login" %>
+    <%= link_to plants_path, class: "sprouts-name", id: "sprouts-toggle" do %>
+    <h1 class="sprouts-text">SPROUTS </h1>
+  <% end %>
     <h3>We grow together </h3>
   </div>
 
