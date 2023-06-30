@@ -45,7 +45,7 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
   config.action_cable.url = 'wss://www.oursprouts.com/cable'
   config.action_cable.allowed_request_origins = ['http://www.oursprouts.com', 'https://www.oursprouts.com']
-  config.action_cable.adapter = :redis
+  # config.action_cable.adapter = :redis
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
