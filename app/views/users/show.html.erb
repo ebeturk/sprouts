@@ -30,6 +30,9 @@
                   <%= link_to plant_path(plant) do %>
                     <%= cl_image_tag plant.photo.key, height: 100, width: 100, crop: :fill, class: "thumbnail-img" %>
                   <% end %>
+                  <%= button_to plant_path(plant), method: :delete, data: { 'confirm': 'Are you sure you want to delete this plant?' }, class: 'delete-btn', remote: true do %>
+                    <i class="fas fa-trash"></i>
+                  <% end %>
                 </div>
               </div>
             <% end %>
@@ -45,3 +48,5 @@
     <% end %>
   </div>
 </div>
+
+

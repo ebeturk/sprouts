@@ -58,13 +58,11 @@ class PlantsController < ApplicationController
     # @plant.lighting = params["lighting"]
     # @plant.temperature = params["temperature"]
     @plant.user = current_user
-    if @plant.save!
+    if @plant.save
       redirect_to plants_path(@plant)
     else
       render :new
     end
-
-
   end
 
   def profile

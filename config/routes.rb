@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "map", to: "plants#map"
 
   resources :users, only: [:index, :edit, :update]
-get 'users/:id', to: 'users#show', constraints: { id: /\d+/ }
+    get 'users/:id', to: 'users#show', constraints: { id: /\d+/ }
 
 
   resources :plants do

@@ -9,7 +9,7 @@
           <%= link_to chatroom.name, chatroom_path(chatroom)%>
         </div>
         <div class="delete-button">
-          <%= button_to chatroom_path(chatroom), method: :delete, data: { 'confirm-delete': 'Your message histroy in the room will be deleted. Are you sure?' }, class: 'delete-button', form: {class: 'delete-form'} do %>
+          <%= button_to chatroom_path(chatroom), method: :delete, data: { 'confirm-delete': 'Your message history in the room will be deleted. Are you sure?' }, class: 'delete-button', form: {class: 'delete-form'} do %>
             <i class="fa fa-times"></i>
           <% end %>
         </div>

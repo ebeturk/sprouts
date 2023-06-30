@@ -179,6 +179,8 @@ align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 2px;
   background-color: #fff;
+  position: relative;
+  display: inline-block;
 }
 
 .thumbnail-img {
@@ -186,6 +188,28 @@ align-items: center;
   height: 100%;
   object-fit: cover;
   border-radius: 3px;
+  position: relative;
+}
+
+.delete-btn {
+  display: none;
+  position: absolute;
+  border: none;
+  top: 3px;
+  right: 3px;
+  padding: 3px;
+  background-color: transparent;
+  color: #07a45371;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.thumbnail-border:hover .delete-btn {
+  display: block;
+}
+
+.delete-btn i {
+  font-size: 16px;
 }
 
 .btn-sunny {
