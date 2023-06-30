@@ -87,7 +87,7 @@ puts "Lucine is born!"
   emre.photo.attach(io: file, filename: "emre.png", content_type: "image/png")
   emre.save
 
-      
+
 
 puts "Emre is born!"
 
