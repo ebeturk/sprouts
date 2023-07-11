@@ -14,21 +14,21 @@
     <% if @mark.present? %>
       <div class="icon-wrapper">
         <%= link_to mark_path(@mark), data: {turbo_method: :delete }, class: "btn" do %>
-          <i class="fa-solid fa-heart fa-4x"></i>
+          <i class="fa-solid fa-heart fa-3x"></i>
         <% end %>
       </div>
     <% else %>
       <div class="icon-wrapper">
         <%= simple_form_for [@plant, Mark.new] do |f| %>
           <%= f.button :button do %>
-            <i class="fa-regular fa-heart fa-4x"></i>
+            <i class="fa-regular fa-heart fa-3x"></i>
           <% end %>
         <% end %>
       </div>
     <% end %>
   <% end %>
   <%= link_to map_path(@plant) do %>
-    <i class="fa-regular fa-compass fa-4x"></i>
+    <i class="fa-regular fa-compass fa-3x"></i>
   <% end %>
   <%= link_to user_path(@plant.user) do %>
     <% cl_image_tag @plant.user.photo.key, class:"avatar-bordered-marks", width: 80, height: 80, crop: :fill %>

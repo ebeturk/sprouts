@@ -43,16 +43,22 @@ class MarksController < ApplicationController
     end
   end
 
-
   def destroy
     @mark = Mark.find(params[:id])
     @plant = @mark.plant
     @user = @mark.user
     @mark.destroy
     match = Match.where(plant_1: @plant, user_1: @user) .or(Match.where(plant_2: @plant, user_2: @user)).first
+    match_destroyed = match.present?
     match&.destroy
     respond_to do |format|
-      format.html { redirect_to plants_path(@mark.plant), notice: "Your Match was cancelled", status: :see_other }
+      format.html do
+        if match_destroyed
+          redirect_to plants_path, notice: "Your Match was cancelled", status: :see_other
+        else
+          redirect_to plant_path(@plant)
+        end
+      end
       format.json { head :no_content }
     end
   end

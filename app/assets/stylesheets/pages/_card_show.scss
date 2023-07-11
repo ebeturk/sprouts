@@ -88,9 +88,9 @@
 }
 
 .backcard {
-  position: absolute;
-  width: 360px;
-  height: 480px;
+  // position: absolute;
+  width: 100%;
+  height: 100%;
   color: white;
   backface-visibility: hidden;
   // background-color: #94ab96;
@@ -113,8 +113,8 @@
 }
 
 .plant-bg-back {
-  width: 360px;
-  height: 480px;
+  width: 100%;
+  height: 100%;
   // background-image: url("https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80");
   background-size: cover;
   background-position: center;
@@ -128,9 +128,9 @@
 
 
 .backcard-description {
-  position: relative;
-  left: 20px;
-  top: -200px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
   font-family: "Nunito";
 
 }
@@ -212,6 +212,9 @@
   flex-direction: column;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: 100%;
+
   // top: 95px;
   // right: 114px;
 
@@ -229,12 +232,12 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  height: 75%;
   width: 128px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(144, 186, 161, 0.5);
   backdrop-filter: blur(10px);
   border-radius: 12px;
-  padding: 20px 0;
+  padding: 10% 0;
   z-index: 2;
   left: -148px;
   opacity: 0;
@@ -264,11 +267,11 @@
 
 .side-menu.on-card {
   position: absolute;
-  top: 0;
+  // top: 0;
   left: 0;
   width: 30%; /* Adjust the width of the side menu on smaller screens */
   max-width: 128px; /* Set a maximum width for the side menu on smaller screens */
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(144, 186, 161, 0.2);
   z-index: 9; /* Add z-index to ensure the side menu is positioned below the button */
 }
 
