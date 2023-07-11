@@ -7,7 +7,7 @@ class MatchesController < ApplicationController
     @match = Match.find(params:[id])
   end
 
-  def delete
+  def destroy
     @match = match.find(params[:id])
     @mark = mark.find(params[:id])
     @match.destroy if @mark.destroy

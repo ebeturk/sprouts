@@ -44,6 +44,7 @@ class MarksController < ApplicationController
   end
 
   def destroy
+
     @mark = Mark.find(params[:id])
     @plant = @mark.plant
     @user = @mark.user
@@ -56,7 +57,11 @@ class MarksController < ApplicationController
         if match_destroyed
           redirect_to plants_path, notice: "Your Match was cancelled", status: :see_other
         else
-          redirect_to plant_path(@plant)
+          if request.referrer.include?(plant_path(@plant))
+            redirect_to plant_path(@mark)
+          else
+            redirect_to plants_path
+          end
         end
       end
       format.json { head :no_content }

@@ -16,10 +16,17 @@ Rails.application.routes.draw do
 
 
   resources :plants do
-    resources :marks, only: [:create, :edit, :update]
+    resources :marks, only: [:create, :edit, :update, :destroy]
+    resources :matches, only: [:create, :edit, :update, :destroy]
   end
 
   resources :marks, only: [:index, :show, :destroy]
   resources :matches
 
+  # resources :plants do
+  #   resources :marks, only: [:create, :edit, :update, :destroy] do
+  #     member do
+  #       delete :unmark
+  #     end
+  #   end
 end

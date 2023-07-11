@@ -165,7 +165,7 @@
   margin-bottom: 15px;
 
   h6 {
-    font-size: 20px;
+    font-size: 1.1rem;
     font-family: "Nunito";
     color: rgb(143, 25, 143);
     // word-wrap: break-word;
@@ -228,6 +228,7 @@
 
 .side-menu {
   position: absolute;
+  right: -160px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -239,7 +240,6 @@
   border-radius: 12px;
   padding: 10% 0;
   z-index: 2;
-  left: -148px;
   opacity: 0;
   pointer-events: none;
 }
@@ -268,7 +268,7 @@
 .side-menu.on-card {
   position: absolute;
   // top: 0;
-  left: 0;
+  right: 1%;
   width: 30%; /* Adjust the width of the side menu on smaller screens */
   max-width: 128px; /* Set a maximum width for the side menu on smaller screens */
   background-color: rgba(144, 186, 161, 0.2);
