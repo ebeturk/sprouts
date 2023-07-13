@@ -5,9 +5,9 @@
       <% if @user.photo.present? %>
         style="background-image: url('<%= cl_image_path @user.photo.key, width: 100, height: 100, crop: :fill %>')">
       <% end %>
-      <div class="form-group">
-        <label class="btn-sunny" for="user_avatar">Change</label>
-        <%= f.file_field :avatar, id: "user_avatar", class: "d-none" %>
+      <div class="form-group avatar-edit">
+        <label class="btn-sunny" for="user_photo">Change</label>
+        <%= f.file_field :photo, id: "user_photo", class: "d-none" %>
       </div>
     </div>
 
