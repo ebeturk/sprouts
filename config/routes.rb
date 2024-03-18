@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "map", to: "plants#map"
 
   resources :users, only: [:index, :edit, :update]
-    get 'users/:id', to: 'users#show', constraints: { id: /\d+/ }
+  get 'users/:id', to: 'users#show', constraints: { id: /\d+/ }
 
 
   resources :plants do
@@ -22,11 +22,4 @@ Rails.application.routes.draw do
 
   resources :marks, only: [:index, :show, :destroy]
   resources :matches
-
-  # resources :plants do
-  #   resources :marks, only: [:create, :edit, :update, :destroy] do
-  #     member do
-  #       delete :unmark
-  #     end
-  #   end
 end
